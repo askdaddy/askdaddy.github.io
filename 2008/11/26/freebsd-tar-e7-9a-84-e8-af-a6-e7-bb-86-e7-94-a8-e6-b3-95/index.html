@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="" />
+    
+    <title>
+      Freebsd Tar的详细用法 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Freebsd Tar的详细用法</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2008/11/26</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>tar命令<br>tar 文件是几个文件和（或）目录在一个文件中的集合。这是创建备份和归档的佳径。  </p>
+<p>tar 使用的选项有：  </p>
+<p>-c ― 创建一个新归档。  </p>
+<p>-f ― 当与 -c 选项一起使用时，创建的 tar 文件使用该选项指定的文件名；当与 -x 选项<br>一起使用时，则解除该选项指定的归档。  </p>
+<p>-t ― 显示包括在 tar 文件中的文件列表。  </p>
+<p>-v ― 显示文件的归档进度。  </p>
+<p>-x ― 从归档中抽取文件。  </p>
+<p>-z ― 使用 gzip 来压缩 tar 文件。   </p>
+<p>-j ― 使用 bzip2 来压缩 tar 文件。   </p>
+<p>要创建一个 tar 文件，键入：  </p>
+<p>tar -cvf filename.tar directory/file  </p>
+<p>可以使用 tar 命令同时处理多个文件和目录，方法是将它们逐一列出，并用空格间隔：  </p>
+<p>tar -cvf filename.tar /home/mine/work /home/mine/school  </p>
+<p>上面的命令把 /home/mine 目录下的 work 和 school 子目录内的所有文件都放入当前<br>目录中一个叫做 filename.tar 的新文件里。   </p>
+<p>要列出 tar 文件的内容，键入：<br>tar -tvf filename.tar  </p>
+<p>要抽取 tar 文件的内容，键入<br>tar -xvf filename.tar  </p>
+<p>这个命令不会删除 tar 文件，但是它会把被解除归档的内容<br>复制到当前的工作目录下，并保留归档文件所使用的任何<br>目录结构。譬如，如果这个 tar 文件中包含一个叫做<br>bar.txt 的文件，而这个文件包含在 foo/ 目录中，那么，<br>抽取归档文件将会导致在你当前的工作目录中创建<br>foo/ 目录，该目录中包含 bar.txt 文件  </p>
+<p>tar 默认不压缩文件。  </p>
+<p>要创建一个使用 tar 和 bzip 来归档压缩的文件，使用 -j 选项：<br>tar -cjvf filename.tbz file  </p>
+<p>以上命令创建了一个归档文件，然后将其压缩为 filename.tbz 文件。如果你使用 bunzip2 命令为 filename.tbz 文件解压，filename.tbz 文件会被删除，继之以 filename.tar 文件。   </p>
+<p>你还可以用一个命令来扩展并解除归档 bzip tar 文件：<br>tar -xjvf filename.tbz  </p>
+<p>要创建一个用 tar 和 gzip 归档并压缩的文件，使用 -z 选项：<br>tar -czvf filename.tgz file  </p>
+<p>这个命令创建归档文件 filename.tar，然后把它压缩为 filename.tgz 文件（文件 filename.tar 不被保留）。<br>如果你使用 gunzip 命令来给 filename.tgz 文件解压，filename.tgz 文件会被删除，并被<br>替换为 filename.tar。  </p>
+<p>你可以用单个命令来扩展 gzip tar 文件：<br>tar -xzvf filename.tgz  </p>
+<p>一. tar  </p>
+<p>1.压缩一组文件为tar.gz后缀。<br># tar cvf backup.tar /etc<br>#gzip -q backup.tar<br>或<br># tar cvfz backup.tar.gz /etc/<br>tar zxvf XXXX.tar.gz  </p>
+<p>tar jxvf XXXX tar.bz2  </p>
+<p>2.释放一个后缀为tar.gz的文件。<br>#gunzip backup.tar.gz<br>#tar xvf backup.tar<br>或<br># tar xvfz backup.tar.gz  </p>
+<p>3.用一个命令完成压缩<br>#tar cvf - /etc/ | gzip -qc &gt; backup.tar.gz  </p>
+<p>4.用一个命令完成释放<br># gunzip -c backup.tar.gz | tar xvf -  </p>
+<p>5.如何解开tar.Z的文件？<br># tar xvfz backup.tar.Z<br>或<br># uncompress backup.tar.Z<br>#tar xvf backup.tar  </p>
+<p>6.如何解开.tgz文件？<br>#gunzip backup.tgz  </p>
+<p>7.如何压缩和解压缩.bz2的包？<br>#bzip2 /etc/smb.conf<br>这将压缩文件smb.conf成smb.conf.bz2<br>#bunzip2 /etc/smb.conf.bz2<br>这将在当前目录下还原smb.conf.bz2为smb.conf<br>注: .bz2压缩格式不是很常用，你可以man bzip2</p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2008/12/02/centos-e5-ae-98-e6-96-b9-e6-8e-a8-e8-8d-90-e7-9a-84rpmforge-e8-bd-af-e4-bb-b6-e4-bb-93-e5-ba-93-e5-ae-89-e8-a3-85-e6-96-b9-e6-b3-95linux/">CentOS官方推荐的RPMforge软件仓库安装方法[linux]</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2008/11/20/e5-b8-a6-e5-b1-9e-e6-80-a7-e8-bd-ac-e7-a7-bb-e6-96-87-e4-bb-b6-e3-80-90unix-e3-80-91/">带属性转移文件【Unix】</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

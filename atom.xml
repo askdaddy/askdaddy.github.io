@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Seven‘s Lab</title>
+  <icon>http://www.humen1.com/icon.png</icon>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.humen1.com/"/>
+  <updated>2017-12-25T13:42:00.000Z</updated>
+  <id>http://www.humen1.com/</id>
+  
+  <author>
+    <name>Seven Chen</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>清除Chrome App 在Os X 的Launchpad</title>
+    <link href="http://www.humen1.com/2017/12/25/e6-b8-85-e9-99-a4chrome-app-e5-9c-a8os-x-e7-9a-84launchpad/"/>
+    <id>http://www.humen1.com/2017/12/25/e6-b8-85-e9-99-a4chrome-app-e5-9c-a8os-x-e7-9a-84launchpad/</id>
+    <published>2017-12-25T13:42:00.000Z</published>
+    <updated>2017-12-25T13:42:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在自己的台式机上用chrome 创建了2个桌面快捷（实质是创建了chrome app），然后同步到我的Mac os 上来了 = =！&lt;/p&gt;
+&lt;p&gt;手动删除方式见下文。&lt;/p&gt;
+&lt;p&gt;$ cd ~/Applications/Chrome\ Apps.localized&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="Evernote" scheme="http://www.humen1.com/categories/Evernote/"/>
+    
+    
+      <category term="posts" scheme="http://www.humen1.com/tags/posts/"/>
+    
+      <category term="osx" scheme="http://www.humen1.com/tags/osx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Disable IPv6 on Ssh Client</title>
+    <link href="http://www.humen1.com/2017/12/10/disable-ipv6-on-ssh-client/"/>
+    <id>http://www.humen1.com/2017/12/10/disable-ipv6-on-ssh-client/</id>
+    <published>2017-12-10T09:59:56.000Z</published>
+    <updated>2017-12-10T09:59:56.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;问题起于我要经ssh 连git.dn42.us, 比较特别的是我的机器（vps）上启用了IPv6&lt;/p&gt;
+&lt;p&gt;OpenSSH_7.2p2 Ubuntu-4ubuntu2.2, OpenSSL 1.0.2g  1 Mar 2016&lt;/p&gt;
+&lt;p&gt;debug1: Reading co
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu Install Install Security Updates</title>
+    <link href="http://www.humen1.com/2017/12/09/ubuntu-install-install-security-updates/"/>
+    <id>http://www.humen1.com/2017/12/09/ubuntu-install-install-security-updates/</id>
+    <published>2017-12-09T23:56:17.000Z</published>
+    <updated>2017-12-09T23:56:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;$ unattended-upgrades&lt;/p&gt;
+&lt;p&gt;To enable it type&lt;/p&gt;
+&lt;p&gt;$ dpkg-reconfigure  unattended-upgrades&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="posts" scheme="http://www.humen1.com/tags/posts/"/>
+    
+      <category term="Ubuntu" scheme="http://www.humen1.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开源软件许可协议 - GPL</title>
+    <link href="http://www.humen1.com/2017/10/26/e5-bc-80-e6-ba-90-e8-bd-af-e4-bb-b6-e8-ae-b8-e5-8f-af-e5-8d-8f-e8-ae-ae-e4-bb-8b-e7-bb-8d-gpl/"/>
+    <id>http://www.humen1.com/2017/10/26/e5-bc-80-e6-ba-90-e8-bd-af-e4-bb-b6-e8-ae-b8-e5-8f-af-e5-8d-8f-e8-ae-ae-e4-bb-8b-e7-bb-8d-gpl/</id>
+    <published>2017-10-26T02:20:28.000Z</published>
+    <updated>2017-10-26T02:20:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;GNU通用公共许可协议&quot;&gt;GNU通用公共许可协议&lt;a class=&quot;post-anchor&quot; href=&quot;#GNU通用公共许可协议&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;（英语：GNU General Public License，简称 GNU GPL、GPL）是广泛使用的免费软件许
+      
+    
+    </summary>
+    
+    
+      <category term="linux server" scheme="http://www.humen1.com/categories/linux-server/"/>
+    
+      <category term="软件开发" scheme="http://www.humen1.com/categories/linux-server/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Mac OS 传文件到 Android</title>
+    <link href="http://www.humen1.com/2017/07/20/mac-os-e4-bc-a0-e6-96-87-e4-bb-b6-e5-88-b0-android/"/>
+    <id>http://www.humen1.com/2017/07/20/mac-os-e4-bc-a0-e6-96-87-e4-bb-b6-e5-88-b0-android/</id>
+    <published>2017-07-20T21:11:46.000Z</published>
+    <updated>2017-07-20T21:11:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;默认情况下android手机通过USB连接Mac是没办法加载手机里的文件的。 android官方提供了一个App可以解决这个问题。 &lt;a href=&quot;https://www.android.com/filetransfer/&quot; target=&quot;_blank&quot; rel=&quot;noopen
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="android" scheme="http://www.humen1.com/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Windows 环境中使用 Dig 工具</title>
+    <link href="http://www.humen1.com/2017/06/02/e5-9c-a8windows-e7-8e-af-e5-a2-83-e4-b8-ad-e4-bd-bf-e7-94-a8-dig-e5-b7-a5-e5-85-b7/"/>
+    <id>http://www.humen1.com/2017/06/02/e5-9c-a8windows-e7-8e-af-e5-a2-83-e4-b8-ad-e4-bd-bf-e7-94-a8-dig-e5-b7-a5-e5-85-b7/</id>
+    <published>2017-06-02T18:20:17.000Z</published>
+    <updated>2017-06-02T18:20:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Dig 在Linux 里一般是在 bind-utils这个包里的。 作者Windows 环境用的模拟终端为 Babun &lt;a href=&quot;https://github.com/babun/babun&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://g
+      
+    
+    </summary>
+    
+    
+      <category term="network" scheme="http://www.humen1.com/categories/network/"/>
+    
+      <category term="Windows" scheme="http://www.humen1.com/categories/network/Windows/"/>
+    
+    
+      <category term="dns" scheme="http://www.humen1.com/tags/dns/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zabbix Linux Network Interface Traffic Monitor Template</title>
+    <link href="http://www.humen1.com/2017/05/22/zabbix-linux-network-interface-traffic-monitor-template/"/>
+    <id>http://www.humen1.com/2017/05/22/zabbix-linux-network-interface-traffic-monitor-template/</id>
+    <published>2017-05-22T01:33:33.000Z</published>
+    <updated>2017-05-22T01:33:33.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;min zabbix version 3.0 &lt;a href=&quot;/uploads/2017/05/cc328ea529918295f53f591060680fb4.png&quot; data-caption data-fancybox=&quot;images&quot;&gt;&lt;img src=&quot;/uploads
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="zabbix" scheme="http://www.humen1.com/tags/zabbix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>明·杨仪《明良记》</title>
+    <link href="http://www.humen1.com/2017/05/01/e6-98-8e-c2-b7-e6-9d-a8-e4-bb-aa-e3-80-8a-e6-98-8e-e8-89-af-e8-ae-b0-e3-80-8b/"/>
+    <id>http://www.humen1.com/2017/05/01/e6-98-8e-c2-b7-e6-9d-a8-e4-bb-aa-e3-80-8a-e6-98-8e-e8-89-af-e8-ae-b0-e3-80-8b/</id>
+    <published>2017-05-01T19:37:07.000Z</published>
+    <updated>2017-05-01T19:37:07.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;唐解元寅既废弃，诗云： ‘一失足成千古恨，再回头是百年人。’ 比喻一旦犯下严重错误或堕落，就成为终身的憾事。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>非主流VPN方案</title>
+    <link href="http://www.humen1.com/2017/04/25/e9-9d-9e-e4-b8-bb-e6-b5-81vpn-e6-96-b9-e6-a1-88/"/>
+    <id>http://www.humen1.com/2017/04/25/e9-9d-9e-e4-b8-bb-e6-b5-81vpn-e6-96-b9-e6-a1-88/</id>
+    <published>2017-04-25T19:57:17.000Z</published>
+    <updated>2017-04-25T19:57:17.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;常见的VPN（OpenVPN、SSTP、IKEv2、CiscoIPsec、PPTP、GAE、L2TP）已经受到GFW干扰。 如果还要坚持用VPN的方式来翻墙，请使用以下VPN方案 Tinc VPN：&lt;a href=&quot;http://www.[tinc-vpn.org/](http:/
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="vpn" scheme="http://www.humen1.com/tags/vpn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小谢同学写的Linux 服务器调优脚本</title>
+    <link href="http://www.humen1.com/2017/02/23/e5-b0-8f-e8-b0-a2-e5-90-8c-e5-ad-a6-e5-86-99-e7-9a-84linux-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-b0-83-e4-bc-98-e8-84-9a-e6-9c-ac/"/>
+    <id>http://www.humen1.com/2017/02/23/e5-b0-8f-e8-b0-a2-e5-90-8c-e5-ad-a6-e5-86-99-e7-9a-84linux-e6-9c-8d-e5-8a-a1-e5-99-a8-e8-b0-83-e4-bc-98-e8-84-9a-e6-9c-ac/</id>
+    <published>2017-02-23T05:50:45.000Z</published>
+    <updated>2017-02-23T05:50:45.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;modify-sysctl-py&quot;&gt;modify_sysctl.py&lt;a class=&quot;post-anchor&quot; href=&quot;#modify-sysctl-py&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;[code lang=python] # -&lt;em&gt;- coding: utf-8 
+      
+    
+    </summary>
+    
+    
+      <category term="linux server" scheme="http://www.humen1.com/categories/linux-server/"/>
+    
+    
+      <category term="linux" scheme="http://www.humen1.com/tags/linux/"/>
+    
+      <category term="TCP" scheme="http://www.humen1.com/tags/TCP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我们熟知的那些英文，你念对了么？[FW]</title>
+    <link href="http://www.humen1.com/2016/11/27/e6-88-91-e4-bb-ac-e7-86-9f-e7-9f-a5-e7-9a-84-e9-82-a3-e4-ba-9b-e8-8b-b1-e6-96-87-ef-bc-8c-e4-bd-a0-e5-bf-b5-e5-af-b9-e4-ba-86-e4-b9-88-ef-bc-9ffw/"/>
+    <id>http://www.humen1.com/2016/11/27/e6-88-91-e4-bb-ac-e7-86-9f-e7-9f-a5-e7-9a-84-e9-82-a3-e4-ba-9b-e8-8b-b1-e6-96-87-ef-bc-8c-e4-bd-a0-e5-bf-b5-e5-af-b9-e4-ba-86-e4-b9-88-ef-bc-9ffw/</id>
+    <published>2016-11-27T19:28:31.000Z</published>
+    <updated>2016-11-27T19:28:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;()标相应英文单词 []标音标 =====公司/产品名===== Youtube (You-tube [tju:b]) 念 &lt;strong&gt;优tiu啵&lt;/strong&gt; 不念 &lt;strong&gt;优吐毙&lt;/strong&gt; Skype [ˈskaɪp] 念 &lt;strong&gt;死盖破&lt;/st
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Using ES6 With Gulp — Mark Goodyear — Front-End Developer and Designer</title>
+    <link href="http://www.humen1.com/2016/11/22/using-es6-with-gulp-mark-goodyear-front-end-developer-and-designer/"/>
+    <id>http://www.humen1.com/2016/11/22/using-es6-with-gulp-mark-goodyear-front-end-developer-and-designer/</id>
+    <published>2016-11-22T19:53:59.000Z</published>
+    <updated>2016-11-22T19:53:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Jun 24, 2015 With gulp 3.9, we are now able to use ES6 (or ES2015 as it’s now named) in our gulpfile—thanks to the awesome Babel transpiler. 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Javascript" scheme="http://www.humen1.com/tags/Javascript/"/>
+    
+      <category term="es6" scheme="http://www.humen1.com/tags/es6/"/>
+    
+      <category term="h5" scheme="http://www.humen1.com/tags/h5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Manpath: Can&#39;t Set the Locale; Make Sure $LC_* and $LANG Are Correct</title>
+    <link href="http://www.humen1.com/2016/11/13/manpath-cant-set-the-locale-make-sure-lc-and-lang-are-correct/"/>
+    <id>http://www.humen1.com/2016/11/13/manpath-cant-set-the-locale-make-sure-lc-and-lang-are-correct/</id>
+    <published>2016-11-13T21:32:03.000Z</published>
+    <updated>2016-11-13T21:32:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Add &lt;code&gt;LANG=en_US.UTF-8&lt;/code&gt; and &lt;code&gt;LC_ALL=en_US.UTF-8&lt;/code&gt; to /etc/environment&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="linux" scheme="http://www.humen1.com/tags/linux/"/>
+    
+      <category term="Ubuntu" scheme="http://www.humen1.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>How to Configure Client Proxy Server Settings by Using a Registry File</title>
+    <link href="http://www.humen1.com/2016/11/10/how-to-configure-client-proxy-server-settings-by-using-a-registry-file/"/>
+    <id>http://www.humen1.com/2016/11/10/how-to-configure-client-proxy-server-settings-by-using-a-registry-file/</id>
+    <published>2016-11-10T01:01:45.000Z</published>
+    <updated>2016-11-10T01:01:45.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;SUMMARY This article describes how to create a Windows registry file to configure the proxy server settings on a client computer that is runn
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="http://www.humen1.com/categories/Windows/"/>
+    
+    
+      <category term="proxy" scheme="http://www.humen1.com/tags/proxy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js Application as a Windows Service (With Registry Fix) - Measuring Programming Progress by Lines of Code Is Like Measuring Aircraft Building Progress by Weight.</title>
+    <link href="http://www.humen1.com/2016/11/08/node-js-application-as-a-windows-service-with-registry-fix-measuring-programming-progress-by-lines-of-code-is-like-measuring-aircraft-building-progress-by-weight/"/>
+    <id>http://www.humen1.com/2016/11/08/node-js-application-as-a-windows-service-with-registry-fix-measuring-programming-progress-by-lines-of-code-is-like-measuring-aircraft-building-progress-by-weight/</id>
+    <published>2016-11-08T21:27:52.000Z</published>
+    <updated>2016-11-08T21:27:52.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; &lt;a href=&quot;http://www.likeaboss.lt/wp-content/uploads/2013/07/3.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;a href=&quot;/uploads/2016/11/1a0cba83fdad21dc
+      
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://www.humen1.com/categories/nodejs/"/>
+    
+      <category term="Windows" scheme="http://www.humen1.com/categories/nodejs/Windows/"/>
+    
+    
+      <category term="Javascript" scheme="http://www.humen1.com/tags/Javascript/"/>
+    
+      <category term="js" scheme="http://www.humen1.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【“脏牛（Dirty Cow）”漏洞】CVE-2016-5195:Linux 内核本地提权漏洞 通告及修复</title>
+    <link href="http://www.humen1.com/2016/11/08/e3-80-90-e8-84-8f-e7-89-9b-ef-bc-88dirty-cow-ef-bc-89-e6-bc-8f-e6-b4-9e-e3-80-91cve-2016-5195linux-e5-86-85-e6-a0-b8-e6-9c-ac-e5-9c-b0-e6-8f-90-e6-9d-83-e6-bc-8f-e6-b4-9e/"/>
+    <id>http://www.humen1.com/2016/11/08/e3-80-90-e8-84-8f-e7-89-9b-ef-bc-88dirty-cow-ef-bc-89-e6-bc-8f-e6-b4-9e-e3-80-91cve-2016-5195linux-e5-86-85-e6-a0-b8-e6-9c-ac-e5-9c-b0-e6-8f-90-e6-9d-83-e6-bc-8f-e6-b4-9e/</id>
+    <published>2016-11-08T05:33:30.000Z</published>
+    <updated>2016-11-08T05:33:30.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;漏洞编号：CVE-2016-5195&quot;&gt;漏洞编号：CVE-2016-5195&lt;a class=&quot;post-anchor&quot; href=&quot;#漏洞编号：CVE-2016-5195&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3 id=&quot;漏洞名称：脏牛（Dirty-COW）&quot;&gt;漏洞名称：脏牛（Dir
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="linux" scheme="http://www.humen1.com/tags/linux/"/>
+    
+      <category term="vps" scheme="http://www.humen1.com/tags/vps/"/>
+    
+      <category term="aliyun" scheme="http://www.humen1.com/tags/aliyun/"/>
+    
+      <category term="ecs" scheme="http://www.humen1.com/tags/ecs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>来，给你一个简单的方法来看进程占用内存的排行</title>
+    <link href="http://www.humen1.com/2016/10/08/e6-9d-a5-ef-bc-8c-e7-bb-99-e4-bd-a0-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e7-9a-84-e6-96-b9-e6-b3-95-e6-9d-a5-e7-9c-8b-e8-bf-9b-e7-a8-8b-e5-8d-a0-e7-94-a8-e5-86-85-e5-ad-98-e7-9a-84-e6-8e-92-e8-a1-8c/"/>
+    <id>http://www.humen1.com/2016/10/08/e6-9d-a5-ef-bc-8c-e7-bb-99-e4-bd-a0-e4-b8-80-e4-b8-aa-e7-ae-80-e5-8d-95-e7-9a-84-e6-96-b9-e6-b3-95-e6-9d-a5-e7-9c-8b-e8-bf-9b-e7-a8-8b-e5-8d-a0-e7-94-a8-e5-86-85-e5-ad-98-e7-9a-84-e6-8e-92-e8-a1-8c/</id>
+    <published>2016-10-08T08:06:49.000Z</published>
+    <updated>2016-10-08T08:06:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;ps -e -o comm,rsz –sort=-rsz &lt;a href=&quot;/uploads/2016/10/a270b81f159e8b1ddcf18fea2378e5a6.png&quot; data-caption data-fancybox=&quot;images&quot;&gt;&lt;img src=&quot;/u
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="linux" scheme="http://www.humen1.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Openwrt  Ssh-Key 登陆</title>
+    <link href="http://www.humen1.com/2016/10/05/openwrt-ssh-key-e7-99-bb-e9-99-86/"/>
+    <id>http://www.humen1.com/2016/10/05/openwrt-ssh-key-e7-99-bb-e9-99-86/</id>
+    <published>2016-10-05T14:34:22.000Z</published>
+    <updated>2016-10-05T14:34:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;linux上公钥的位置在 ~/.ssh/authorized_keys 但是openwrt毕竟不是linux，auth keys 位置放在  /etc/dropbear 目录下 so， 执行以下命令即可&lt;/p&gt;
+&lt;h1 id=&quot;ln-s-ssh-authorized-keys-et
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 查看进程的文件句柄数</title>
+    <link href="http://www.humen1.com/2016/08/02/linux-e6-9f-a5-e7-9c-8b-e8-bf-9b-e7-a8-8b-e7-9a-84-e6-96-87-e4-bb-b6-e5-8f-a5-e6-9f-84-e6-95-b0/"/>
+    <id>http://www.humen1.com/2016/08/02/linux-e6-9f-a5-e7-9c-8b-e8-bf-9b-e7-a8-8b-e7-9a-84-e6-96-87-e4-bb-b6-e5-8f-a5-e6-9f-84-e6-95-b0/</id>
+    <published>2016-08-02T15:14:01.000Z</published>
+    <updated>2016-08-02T15:14:01.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  lsof -n |awk ‘{print $1}’|sort|uniq -c |sort -nr|more&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="linux" scheme="http://www.humen1.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习Linux，Shell</title>
+    <link href="http://www.humen1.com/2016/06/24/e5-ad-a6-e4-b9-a0linux-ef-bc-8cshell/"/>
+    <id>http://www.humen1.com/2016/06/24/e5-ad-a6-e4-b9-a0linux-ef-bc-8cshell/</id>
+    <published>2016-06-24T06:03:43.000Z</published>
+    <updated>2016-06-24T06:03:43.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;学习Linux，Shell&quot;&gt;学习Linux，Shell&lt;a class=&quot;post-anchor&quot; href=&quot;#学习Linux，Shell&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;code&gt;TECH``linux``shell``posts&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.humen1.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="linux" scheme="http://www.humen1.com/tags/linux/"/>
+    
+      <category term="shell" scheme="http://www.humen1.com/tags/shell/"/>
+    
+  </entry>
+  
+</feed>
