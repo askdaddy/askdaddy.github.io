@@ -1,0 +1,13 @@
+---
+title: squid logformat （适用版本2.7）
+tags:
+  - cdn
+  - squid
+url: 590.html
+id: 590
+categories:
+  - CDN
+date: 2013-05-04 10:02:04
+---
+
+摘抄下官方手册，部分翻译 \[text\] Usage: logformat <name> <format specification> Defines an access log format. The <format specification> is a string with embedded % format codes % format codes all follow the same basic structure where all but the formatcode is optional. Output strings are automatically escaped as required according to their context and the output format modifiers are usually not needed, but can be specified if an explicit output format is desired. % \["|\[|'|#\] \[-\] \[\[0\]width\] \[{argument}\] formatcode " output in quoted string format \[ output in squid text log format as used by log\_mime\_hdrs # output in URL quoted format ' output as-is - left aligned width field width. If starting with 0 the output is zero padded {arg} argument such as header name etc Format codes: >a Client source IP address / 客户端 IP >A Client FQDN / 客户端完整域名，是指主机名+全路径 >p Client source port / 客户端端口 <A Server IP address or peer name / 服务器ip 或者 对端名 la Local IP address (http\_port) / 本地ip地址 lp Local port number (http\_port) / 本地端口号 oa Our outgoing IP address (tcp\_outgoing\_address) / 传出的ip地址 ts Seconds since epoch / unix时间戳 tu subsecond time (milliseconds) / 毫秒 tl Local time. Optional strftime format argument / 本地时间 default %d/%b/%Y:%H:%M:%S %z tg GMT time. Optional strftime format argument / 格林尼治标准时间 default %d/%b/%Y:%H:%M:%S %z tr Response time (milliseconds) / 响应时间（毫秒） >h Request header. Optional header name argument on the format header\[:\[separator\]element\] /请求头 <h Reply header. Optional header name argument as for >h / 响应头 un User name /用户名 ul User name from authentication /认证的用户名 ui User name from ident us User name from SSL ue User name from external acl helper Hs HTTP status code / http 状态码 Ss Squid request status (TCP\_MISS etc) / squid 请求状态 Sh Squid hierarchy status (DEFAULT\_PARENT etc) / squid 层次结构状态 mt MIME content type / MIME内容类型 rm Request method (GET/POST etc) /请求方法 ru Request URL /请求的url rp Request URL-Path excluding hostname /不包含主机名的请求url rv Request protocol version / 请求协议版本 ea Log string returned by external acl <st Reply size including HTTP headers /响应大小，包括HTTP头 >st Request size including HTTP headers /请求大小，包括HTTP头 st Request+Reply size including HTTP headers /请求大小+响应大小，包括HTTP头 sn Unique sequence number per log line entry /唯一序列号 % a literal % character \[/text\]

@@ -1,0 +1,12 @@
+---
+title: 'Squid request status '
+tags:
+  - squid
+url: 596.html
+id: 596
+categories:
+  - CDN
+date: 2013-05-04 21:14:50
+---
+
+**TCP_HIT** A valid copy of the requested object was in the cache. **TCP_MISS** The requested object was not in the cache. **TCP\_REFRESH\_HIT** The requested object was cached but STALE. The IMS query for the object resulted in "304 not modified". **TCP\_REF\_FAIL_HIT** The requested object was cached but STALE. The IMS query failed and the stale object was delivered. **TCP\_REFRESH\_MISS** The requested object was cached but STALE. The IMS query returned the new content. **TCP\_CLIENT\_REFRESH_MISS** The client issued a "no-cache" pragma, or some analogous cache control command along with the request. Thus, the cache has to refetch the object. **TCP\_IMS\_HIT** The client issued an IMS request for an object which was in the cache and fresh. **TCP\_SWAPFAIL\_MISS** The object was believed to be in the cache, but could not be accessed. **TCP\_NEGATIVE\_HIT** Request for a negatively cached object, e.g. "404 not found", for which the cache believes to know that it is inaccessible. Also refer to the explainations for negative_ttl in your squid.conf file. **TCP\_MEM\_HIT** A valid copy of the requested object was in the cache and it was in memory, thus avoiding disk accesses. **TCP_DENIED** Access was denied for this request. **TCP\_OFFLINE\_HIT** The requested object was retrieved from the cache during offline mode. The offline mode never validates any object, see offline_mode in squid.conf file. **UDP_HIT** A valid copy of the requested object was in the cache. **UDP_MISS** The requested object is not in this cache. **UDP_DENIED** Access was denied for this request. **UDP_INVALID** An invalid request was received. **UDP\_MISS\_NOFETCH** During "-Y" startup, or during frequent failures, a cache in hit only mode will return either UDP_HIT or this code. Neighbours will thus only fetch hits. **NONE** Seen with errors and cachemgr requests. The following codes are no longer available in Squid-2: **ERR_*** Errors are now contained in the status code. **TCP\_CLIENT\_REFRESH** See: TCP\_CLIENT\_REFRESH_MISS. **TCP_SWAPFAIL** See: TCP\_SWAPFAIL\_MISS. **TCP\_IMS\_MISS** Deleted, TCP\_IMS\_HIT used instead. **UDP\_HIT\_OBJ** Hit objects are no longer available. **UDP_RELOADING** See: UDP\_MISS\_NOFETCH.
