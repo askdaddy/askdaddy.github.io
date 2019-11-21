@@ -5,7 +5,7 @@
 # Site
 title: 'Seven‘s Lab'
 subtitle: ''
-description: ''
+description: 'Seven‘s Lab'
 keywords: 'technolgy'
 author: 'Seven Chen'
 language: zh-cn
@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.humen1.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:title.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing index.html from permalinks
