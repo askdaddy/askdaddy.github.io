@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      [转]为 PHP 应用提速、提速、再提速！，第 1 部分: 使用操作码缓存软件提升性能和吞吐量 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">[转]为 PHP 应用提速、提速、再提速！，第 1 部分: 使用操作码缓存软件提升性能和吞吐量</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2009/03/19</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/技术杂文">技术杂文</a>
+                
+              
+          </span>
+        </span>
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>2007 年 3 月 20 日<br>PHP 是一种脚本语言，常用于创建 Web 应用程序。它易于掌握，并能迅速生成可视化结果。然而，由于 PHP 是以解释的方式执行的，所以<br>PHP 代码每次执行时都会被解析和转换成操作码（opcode）。操作码缓存能消除这项重复的工作，使 PHP 应用程序运行得更快。<br>在很短的时间内，PHP 成为了一种非常流行的开发 Web 应用程序的程序设计语言。对初学者来说，PHP<br>易于安装和学习。对于有经验的开发人员而言，PHP（从 V5 开始）提供了强大的面向对象特性。PHP<br>开发人员拥有庞大的群体，大量的开源及商业库和工具扩展了该核心语言的功能。PHP 能迅速产生可视化结果，因此备受众人推崇。<br>与其他开发 Web 应用程序的脚本语言（包括 Perl、Python 和 Ruby）相似，每次 HTTP 请求调用时，PHP<br>代码都会被解析和翻译为操作码（PHP 引擎直接执行的原语指令 —-<br>类似于汇编语言）再执行。在要求很低或可忽略的情况下，服务器看上去能立即执行这个复杂的解释过程。但是一旦处理的页面增加，解释 —-<br>从本质上说，重复工作 ---- 就会对服务器造成很大的负担。在某些情况下，”编译” PHP<br>代码的时间会远远超过执行该代码所需的时间。因此，当需求增加时，您常常会自食其果，因为处理这些不断解释和动态生成的页面需要消耗更多的系统资源。<br>若您对处理器和 RAM 的预算没有限制，那么就大可不必通过优化应用栈（硬件、操作系统、数据库、Web 服务器和 PHP<br>代码）来保证站点的可响应性。然而，由于资金通常都是最缺乏的资源，所以改善性能是必不可少的。调优意味着对系统增加内存、修改操作系统参数、加速<br>Web 或数据库服务器、提高代码效率或者这其中的一些组合。每一项都有其各自的作用。<br>不要浪费周期 ---- 重复使用<br>节约 CPU 周期的另一种方法是减少运行 PHP 应用程序所需的重复工作。当然，没有必要每次都把同样的 PHP 代码翻译一遍。PHP<br>代码被翻译成操作码后，可以把它保存起来并重复使用 ---- 直到原始代码被修改。确实，缓存 ---- 用于保存和重用 PHP 操作码 —- 是几种<br>PHP 加速器内部的机制，包括开源 Alternative PHP Cache (APC)、支持 PHP 的 Turck<br>MMCache、XCache、eAccelerator 和商业 Zend<br>Platform。后三类加速器能够缓存和优化字节码，这为系统提供了更多的速度提升。<br>这个月，我将探究如何安装、部署和配置 XCache。XCache 相对较新，但是很多站点使用它的效果都很好。此外，XCache<br>易于构建、安装和配置，因为它是做为 PHP 扩展实现的。不需对 Apache 和 PHP 进行重编译。<br>本文基于 XCache V1.2.0。它可为 PHP V4.3.11 至 V4.4.4、PHP V5.1.x 至 V5.2.x 以及 PHP<br>V6 的早期版本提供可靠支持（XCache 并不支持 PHP V5.0.x）。XCache 兼容 mod_php 和 FastCGI<br>但并不支持 Common Gateway Interface (CGI) 和命令行 PHP 解释器。XCache<br>源代码能构建在许多系统上，包括 FreeBSD、Sun Solaris、Linux(R) 和这里所示的 Mac OS X。使用 Cygwin<br>UNIX(R) 仿真环境或 Visual C，能在 Microsoft(R) Windows(R) 上构建 XCache。还可以为 Cygwin 或原生<br>Win32 构建 XCache。后者与 PHP 的官方 Win32 版本兼容。<br>本文的演示基于 Apache V2.2.3、PHP V5.2.0、XCache V1.2.0（2006 年 10 月发布）和 Mac OS<br>X V10.4.8 Tiger 上的 Xcode V2.4.1。硬件平台为配有 2-GHz Intel(R) Core Duo 处理器和 2<br>GB RAM 的 Apple MacBook。</p>
+<p>回页首</p>
+<p>构建 XCache 的基本步骤<br>在开始之前，首先确保 PHP 正常安装并核实 phpize 是否位于 shell 的 PATH 下。同时，还需要一个 C 编译器，例如<br>GNU Compiler Collection (GCC)，和一组包含 make 和 m4 的开发工具。在 Mac OS X 上，免费的<br>Xcode 软件开发环境提供了必需的构建工具。<br>完成以下操作步骤，在 Mac OS X 上构建、部署 XCache 并对其进行性能检测。在其他平台上构建 XCache 与之类似。如果使用<br>Linux，则其发行版可能已经包含了 XCache 或者已经将其以预先打包好的格式提供给您。<br>增加 Mac OS X 的共享内存<br>首先增加 Mac OS X 上留出的共享内存总量。要实现这一目的，需创建（或编辑）文件 /etc/sysctl.conf 并创建如下条目：</p>
+<p>清单 1. 增加 Mac OS X 上留出的共享内存总量  </p>
+<p>kern.sysv.shmmax=33554432<br>kern.sysv.shmmin=1<br>kern.sysv.shmmni=32<br>kern.sysv.shmseg=8<br>kern.sysv.shmall=8192</p>
+<p>这些设置把共享内存总量增加到了 32 MB。如还需进一步扩展共享内存，可以把 kern.sysv.shmall 设定为<br>kern.sysv.shmmax 除以硬件页面大小。使用 sysctl hw.pagesize 能获得硬件页面大小。例如，假设需要 128<br>MB 的共享内存，那么设定 kern.sysv.shmmax=134217728 并设定 kern.sysv.shmall=32768。<br>重启 Mac OS X 使修改生效。重启后，检验新设置是否生效，键入：<br>sysctl -a | grep kern.sysv</p>
+<p>通过源代码构建 XCache<br>接下来，通过源代码构建 XCache。从 <a href="http://xcache.lighttpd.net" target="_blank" rel="noopener">http://xcache.lighttpd.net</a> 处下载源代码。下载完后解压代码，并转换到<br>.tar 文件创建的新目录。</p>
+<p>清单 2. 通过源代码构建 XCache  </p>
+<p>$ cd /tmp<br>$ wget <a href="http://210.51.190.228/pub/XCache/Releases/xcache-1.2.0.tar.gz" target="_blank" rel="noopener">http://210.51.190.228/pub/XCache/Releases/xcache-1.2.0.tar.gz</a><br>$ tar xzf xcache-1.2.0.tar.gz<br>$ cd xcache</p>
+<p>运行 phpize 为编译 XCache 做准备。</p>
+<p>清单 3. 运行 phpize  </p>
+<p>$ phpize<br>Configuring for:<br>PHP Api Version: 20020918<br>Zend Module Api No: 20020429<br>Zend Extension Api No: 20050606</p>
+<p>运行 configure，创建适合于原生操作系统的 makefile。</p>
+<p>清单 4. 运行 configure 创建 makefile  </p>
+<p>$ ./configure –enable-xcache –enable-xcache-coverager<br>checking build system type… i686-apple-darwin8.8.1<br>checking host system type… i686-apple-darwin8.8.1<br>…<br>creating libtool<br>configure: creating ./config.status<br>config.status: creating config.h</p>
+<p>此处，–enable-xcache 选项包含 XCache 支持，–enable-xcache-coverager<br>选项包含用于测量加速器功效的附加特性。要启用操作码优化，添加 –enable-xcache-optimizer。<br>当然，下一步将使用 make 命令行构建和安装代码。运行 make，然后作为 root 用户运行 make install 。</p>
+<p>清单 5. 利用 make 构建和安装代码  </p>
+<p>$ make<br>…<br>cp ./xcache.so /Users/strike/tmp/xcache/modules/xcache.so<br>Build complete.</p>
+<p>$ sudo make install<br>Installing shared extensions: /usr/lib/php/extensions/no-debug-non-zts-20020429/</p>
+<p>如果上述两项操作顺利完成，那么 XCache 将位于<br>/usr/lib/php/extensions/no-debug-non-zts-20020429/xcache.so。（路径<br>/usr/lib/php/extensions/no-debug-non-zts-20020429 反映了正在使用的 API 版本和用于构建<br>PHP 的编译选项。如果启用了试用的 Zend Thread Safety 特性，则 “no-debug” 应为<br>“debug”，”non-zts” 应为 “zts”。）<br>修改 php.ini 文件<br>因为安装了扩展，所以必需修改 php.ini 文件，使之包含 XCache 扩展并对其进行配置。打开文件<br>/private/etc/php.ini，在其中添加如下代码行：</p>
+<p>清单 6. 为 XCache 扩展修改 php.ini 文件  </p>
+<p>[xcache-common]<br>zend_extension =<br>/usr/lib/php/extensions/no-debug-non-zts-20020429/xcache.so</p>
+<p>[xcache.admin]<br>; Change xcache.admin.user to your preferred login name<br>xcache.admin.user = “admin”</p>
+<p>; Change xcache.admin.pass to the MD5 fingerprint of your password<br>; Use md5 -s “your_secret_password” to find the fingerprint<br>xcache.admin.pass = “0ad72f3f352fcd8acdf266bafd0ac48d”</p>
+<p>[xcache]<br>; Change xcache.size to tune the size of the opcode cache<br>xcache.size = 24M<br>xcache.shm_scheme = “mmap”<br>xcache.count = 2<br>xcache.slots = 8K<br>xcache.ttl = 0<br>xcache.gc_interval = 0</p>
+<p>; Change xcache.var_size to adjust the size of variable cache<br>xcache.var_size = 8M<br>xcache.var_count = 1<br>xcache.var_slots = 8K<br>xcache.var_ttl = 0<br>xcache.var_maxttl = 0<br>xcache.var_gc_interval = 300<br>xcache.test = Off<br>xcache.readonly_protection = On<br>xcache.mmap_path = “/tmp/xcache”<br>xcache.coredump_directory = “”<br>xcache.cacher = On<br>xcache.stat = On<br>xcache.optimizer = Off</p>
+<p>[xcache.coverager]<br>xcache.coverager = On<br>xcache.coveragedump_directory = “”</p>
+<p>注意：为了简明起见，此处省略了一些注释。要了解每个参数的含义，请参阅 XCache 源代码中 xcache.ini 文件设置的例子。<br>操作码和变量缓存的大小是 32 MB，这是 /etc/rc 留出的最大值。对于 Mac OS X，xcache.mmap_path<br>必须为文件名。因为 PHP 代码将在 MacBook 上运行，所以 xcache.count 应设为 2，表示 MacBook 中 CPU<br>的数量。要访问 XCache 统计信息页面，需改变 xcache.admin.pass 设置。运行：<br>$ md5 -s “password”</p>
+<p>此处 password 为您的密码。把输出复制给 xcache.admin.pass。例如，若需将密码设定为 op3nsesam3，可以运行：<br>$ md5 -s “op3nsesam3”<br>MD5 (“op3nsesam3”) = cd959ac3debe8f587546a3fa353b3268</p>
+<p>然后把 cd959ac3debe8f587546a3fa353b3268 复制给 xcache.admin.pass。<br>重启 Web 服务器<br>设置好 XCache 后，重启 Apache Web 服务器。对于大多数系统，可以以 root 用户的身份使用 apachectl restart 进行重启。<br>$ sudo apachectl restart<br>/usr/sbin/apachectl restart: httpd restarted</p>
+<p>创建程序以调用 phpinfo()<br>检验 XCache 是否已启用，需创建一个小型 PHP 程序用于调用 phpinfo() 并在 Web<br>浏览器中打开那个文件。这样就能看到类似下图的 XCache 版面。</p>
+<p>图 1. phpinfo() 方法给出了 XCache 设置</p>
+<p>监控 XCache<br>要监控 XCache，需安装 XCache 源代码的 admin 目录中的管理页面。把整个 admin 目录复制到 Apache<br>文档根目录下。通常来说，Mac OS X 中的文档根目录为 /Library/WebServer/Documents。<br>$ cp -pr admin /Library/WebServer/Documents</p>
+<p>复制完成后，使用 sudo apachectl restart 重启 Web 服务器。用浏览器打开<br><a href="http://localhost/admin" target="_blank" rel="noopener">http://localhost/admin</a>，检验管理面板是否工作正常。请参阅类似图 2 的面板。</p>
+<p>图 2. XCache Administration 面板</p>
+<p>测试应用程序<br>选择一个或两个应用程序进行测试。您可以使用自己的代码或者，如果想要更复杂一点，使用大型的 PHP 应用程序，例如 phpMyAdmin 或者<br>Serendipity。</p>
+<p>回页首</p>
+<p>运行性能检测<br>Apache HTTP Web 服务器提供了一个叫做 ab 的工具，即 Apache HTTP<br>服务器性能检测（benchmark）工具的缩写。ab 用于为 PHP 页面自动化处理大量的请求。phpMyAdmin<br>应用程序将会是一个很好的选择，因为它很可能已经安装到您的系统上了。<br>ab 工具易于使用：只需提供给它一个重复数和一个 URL。ab 工具对这个 URL 提交若干次请求并返回统计信息。由于 XCache<br>已启用，所以第一个性能检测显示了加速后的性能。<br>在运行 ab 之前，用浏览器导航到 <a href="http://localhost/phpmyadmin/%E3%80%82" target="_blank" rel="noopener">http://localhost/phpmyadmin/。</a>访问这个 PHP<br>页面一次，便会加载用来将此页呈现到缓存内的所有 PHP 代码。此时，运行如下的性能检测，重复 100000 次。</p>
+<p>清单 7. phpMyAdmin 的性能检测  </p>
+<p>$ ab -n 100000 <a href="http://localhost/phpmyadmin" target="_blank" rel="noopener">http://localhost/phpmyadmin</a><br>…<br>Concurrency Level: 1<br>Time taken for tests: 14.597 seconds<br>Complete requests: 100000<br>Failed requests: 98262<br>(Connect: 49131, Length: 49131, Exceptions: 0)<br>Broken pipe errors: 0<br>Non-2xx responses: 50869<br>Total transferred: 25739714 bytes<br>HTML transferred: 12005084 bytes<br>Requests per second: 6850.72 [#/sec] (mean)<br>Time per request: 0.15 [ms] (mean)<br>Time per request: 0.15 [ms] (mean, across all concurrent requests)<br>Transfer rate: 1763.36 [Kbytes/sec] received</p>
+<p>有用的统计信息包括每秒的请求数和完成所有测试的总时间。对于前者，值越大越好;对于后者，值越小越好。<br>现在，在 php.ini 文件中禁用 XCache，然后再一次运行性能检测，如清单 8 所示。可以注释掉对 XCache<br>扩展的引用，或者关闭所有的 XCache 特性。再次运行性能检测之前，需重启 Apache。</p>
+<p>清单 8. 禁用 XCache 时的 phpMyAdmin 性能检测  </p>
+<p>$ sudo apachectl restart<br>$ ab -n 100000 <a href="http://localhost/phpmyadmin" target="_blank" rel="noopener">http://localhost/phpmyadmin</a><br>Concurrency Level: 1<br>Time taken for tests: 17.771 seconds<br>Complete requests: 100000<br>Failed requests: 98256<br>(Connect: 49128, Length: 49128, Exceptions: 0)<br>Broken pipe errors: 0<br>Non-2xx responses: 50872<br>Total transferred: 25741232 bytes<br>HTML transferred: 12005792 bytes<br>Requests per second: 5627.15 [#/sec] (mean)<br>Time per request: 0.18 [ms] (mean)<br>Time per request: 0.18 [ms] (mean, across all concurrent requests)<br>Transfer rate: 1448.50 [Kbytes/sec] received</p>
+<p>此处，XCache 禁用之后，每秒的请求数有所下降，表示 Apache 服务器处理每个请求需更长的时间。运行整套测试所需的时间也因此增加了。<br>尽管这只是一个简单的性能检测 ---- phpMyAdmin 连接数据库的功能被禁用了，这样能限制单独解释 PHP 的处理时间 —-<br>并且不是非常科学，但它确实向我们演示了使用 XCache 能够完成哪些任务。对于微小的投入（欣慰地是，PHP 或 Apache<br>不需重编译），XCache 能产生一个相对较大的回报。代码越复杂，可能的受益也越大。<br>若想了解 XCache 是如何有效地运行的，请访问 <a href="http://localhost/xadmin" target="_blank" rel="noopener">http://localhost/xadmin</a> 并单击 List<br>PHP。您能看到缓存中的 PHP 文件列表，连同 cache hit、操作码的代码大小、源文件的字节大小，等等。图 3 显示了 XCache<br>专门为 XAMPP 栈包构建时的结果。</p>
+<p>图 3. XCache 管理页面反映了缓存的状态和内容</p>
+<p>前面已经提及，XCache 是许多加速器中的一种。在强大的 Zend 软件中还有许多免费的开源替代方案和一个商业化产品可选。每种 PHP<br>加速器都有自己的系统需求，所以应主要根据现有的或预期的配置以及应用程序的特性选择合适的加速器。从中推荐一种很难，但是安装编译器缓存是我建议您务必要做的。</p>
+<p>回页首</p>
+<p>大量的调优选择<br>除了缓存之外，还有许多其他途径可以加速应用程序。可以通过删除 PHP 引擎的一些很深奥的特性来简化它。例如，若不需使用 TCP/IP V6<br>(IPv6) 网络，便可在构建 PHP 时禁用该属性。通过在 PHP 源代码树的顶部输入 ./configure –help 可以参阅<br>PHP 配置选项的完整列表。无论选择哪一个配置选项，都应该将：<br>–enable-inline-optimization –disable-debug</p>
+<p>添加到最终的配置命令。前一选项使 PHP 有可能更快地执行（不需使用类似 Zend Engine<br>的软件进行额外的操作码优化）；后一选项取消了 PHP 的调试模式，只有当需要解决 PHP 应用服务器本身的问题时才需开启该模式。<br>当然，正如一些 C 应用程序，我们能利用 C 编译器构建更佳的可执行程序。如果把 PHP 作为 Linux 或 FreeBSD 上的<br>Apache Dynamic Shared Object (DSO) 在 x86 处理器上运行，需考虑在 CFLAGS（存储 C<br>编译器选项的环境变量）中添加 -prefer-non-pic 选项。non-pic 会使用位置独立的代码构建 PHP 并能提供 10%<br>的性能提升。还可以使用 CFLAGS 中的 -march 确定处理器的类型，例如 -march=opteron 表示处理器类型为 AMD<br>Opteron。<br>提升速度的另一个途径是操作码优化。此处，Zend Engine 之类的软件会优化编译过程中产生的操作码，这理论上会减少代码执行的工作总量。<br>缓存和优化都是透明的，并不需额外的编程。要应用一些优化操作，执行结构分析，或检查代码在哪花费了时间。重复的工作既不经济又运算缓慢，这显然会产生瓶颈。通过代码优化弥补周期的不足是很有价值的<br>---- 但是在结构分析之前不要尝试进行任何优化。</p>
+<p>回页首</p>
+<p>展望未来<br>在接下来的几个月我将再次讨论优化，会谈及调试、快速正文搜索、交替 Web 服务器等内容。同时，还将研究一个或多个 PHP<br>加速器和操作码优化器。实现 10% 到 200% 的性能提升只需几个小时的优化和修补。想像一下您的机器利用这些空闲的周期能做多少事情吧！</p>
+<p>humen1 Tech<a href="https://blogger.googleusercontent.com/tracker/7269874978253342363-3775000275174294470?l=www.humen1.net" target="_blank" rel="noopener" data-caption data-fancybox="images"><img src="https://blogger.googleusercontent.com/tracker/7269874978253342363-3775000275174294470?l=www.humen1.net" alt></a></p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="200903/e7-bb-99eclipse-e4-b8-8asvn-e6-8f-92-e4-bb-b6.html">给eclipse上SVN插件</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="200903/mysql.html">Mysql</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

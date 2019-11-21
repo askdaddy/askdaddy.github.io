@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      CentOS_5  Rsync 同步服务器文件 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">CentOS_5  Rsync 同步服务器文件</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2011/04/14</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/linux桌面">linux桌面</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/rsync">rsync</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>Always use rsync over ssh Since rsync does not provide any security while transferring data it is recommended that you use rsync over ssh . This allows a secure remote connection. Now let us see some examples of rsync. rsync command common options –delete : delete files that don’t exist on sender (system) -v : Verbose (try -vv for more detailed information) -e “ssh options” : specify the ssh as remote shell -a : archive mode -r : recurse into directories -z : compress file data Task : Copy file from a local computer to a remote server Copy file from /www/backup.tar.gz to a remote server called openbsd.nixcraft.in $ rsync -v -e ssh /www/backup.tar.gz <a href="mailto:jerry@openbsd.nixcraft.in" target="_blank" rel="noopener">jerry@openbsd.nixcraft.in</a>:~ Output: Password: sent 19099 bytes received 36 bytes 1093.43 bytes/sec total size is 19014 speedup is 0.99 Please note that symbol ~ indicate the users home directory (/home/jerry). Task : Copy file from a remote server to a local computer Copy file /home/jerry/webroot.txt from a remote server openbsd.nixcraft.in to a local computer /tmp directory: $ rsync -v -e ssh <a href="mailto:jerry@openbsd.nixcraft.in" target="_blank" rel="noopener">jerry@openbsd.nixcraft.in</a>:~/webroot.txt /tmp Password Task: Synchronize a local directory with a remote directory $ rsync -r -a -v -e “ssh -l jerry” –delete openbsd.nixcraft.in:/webroot/ /local/webroot Task: Synchronize a remote directory with a local directory $ rsync -r -a -v -e “ssh -l jerry” –delete /local/webroot openbsd.nixcraft.in:/webroot Task: Synchronize a local directory with a remote rsync server $ rsync -r -a -v –delete rsync://rsync.nixcraft.in/cvs /home/cvs Task: Mirror a directory between my “old” and “new” web server/ftp You can mirror a directory between my “old” (my.old.server.com) and “new” web server with the command (assuming that ssh keys are set for password less authentication) $ rsync -zavrR –delete –links –rsh=”ssh -l vivek” my.old.server.com:/home/lighttpd /home/lighttpd /<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>****</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/ 当需要把服务器上的文件复制到另外的机器上，可用rsync来同步文件。 一、服务器端配置： # yum -y install xinetd # vi /etc/xinetd.d/rsync 将如下代码 service rsync { disable = yes socket_type = stream wait = no user = root server = /usr/bin/rsync server_args = –daemon log_on_failure += USERID } 中的 disable = yes 改成 disable = no 然后启动 xinetd # /etc/init.d/xinetd start 注意：如果服务器上装有防火墙记得要打开端口，默认端口是873 # telnet 127.0.0.1 873 Trying 127.0.0.1… telnet: connect to address 127.0.0.1: Connection refused # iptables -A INPUT -s 192.168.0.0/255.255.255.0 -p tcp -m tcp –dport 873 -j ACCEPT # iptables -A INPUT -p tcp -m tcp –dport 873 -j DROP # vi /etc/rsyncd.conf [backup] path = /www auth users = admin uid = root gid = root secrets file = /etc/rsyncd.secrets read only = no [服务器代号] path = 备份文件路径 auth users = 授权帐号 uid = 执行时的uid gid = 执行时的gid secrets file = 密码文件位置 read only = 是否只读 # vi /etc/rsyncd.secrets admin:1234 ＃用户名:密碼 给文件正确的权限 # chown root:root /etc/rsyncd.secrets # chmod 600 /etc/rsyncd.secrets 二、client 端进行同步 客户端默认好像已经装了rsync，没有的话装下： # yum -y install rsync 执行异步同步操作： /usr/bin/rsync -avz –progress <a href="mailto:admin@192.168.1.105" target="_blank" rel="noopener">admin@192.168.1.105</a>::backup /www 同步命令说明： 1 显示目录内容 命令 —— a) rsync b) rsync -r c) rsync <a href="mailto:jack@192.168.0.1" target="_blank" rel="noopener">jack@192.168.0.1</a>:: d) rsync <a href="mailto:ssh_user@192.168.0.1" target="_blank" rel="noopener">ssh_user@192.168.0.1</a>: 命令说明 ——— a) 显示目录内容(第一层) b) 递归显示目录内容 c) 显示远程主机目录内容 <em>注1：端口模式, 基于rsync用户的身份验证 <em>注2：rsync server上的目录必须具有xx7的权限. d) 查看远程主机目录内容 *注1：remote shell模式, 通过ssh连接的基于系统本地用户的身份验证 *注2：这里只使用了一个冒号(:)，同时用户名是远程主机的ssh 用户，密码也是ssh用户对应的密码。 *注3：使用””，则列出文件夹本身的信息。若要列出文件夹内容，应使用”/”。 参数说明 ——— -r 对目录进行递归操作 2 本地目录之间同步 命令 —— a) rsync -av –progress / *</em></em> 注意(/) *** b) rsync -av –progress c) rsync -avu –progress –delete / d) rsync -av –progress –temp-dir=/tmp / 命令说明 ——— a) 同步src-dir目录下所有文件到dst-dir目录下 b) 同步src-dir目录下所有文件到dst-dir/src-dir目录下 c) 对src-dir目录内容向dst-dir目录下进行差异更新，有增加/更新则添加替换，有减少则对其删减 d) 比a)多了–temp-dir=/tmp，即指定/tmp为临时交换区，这样可以避免因目标目录空间不够引起的无法同步文件的错误。 参数说明 ——— -a 相当于 -rlptgoD 的集合 -u 等同于 –update，在目标文件比源文件新的情况下不更新 -v 显示同步的文件 –progress 显示文件同步时的百分比进度、传输速率 –delete 删除目标目录中多于源目录的文件 3 异地主机之间同步 命令 —— a) rsync -avz –progress <a href="mailto:jack@192.168.0.1" target="_blank" rel="noopener">jack@192.168.0.1</a>::/ b) rsync -avz –progress <a href="mailto:jack@192.168.0.1" target="_blank" rel="noopener">jack@192.168.0.1</a>::/ –password-file=/home/jack/rsync.jack c) rsync -avuz –progress –delete <a href="mailto:jack@192.168.0.1" target="_blank" rel="noopener">jack@192.168.0.1</a>::/ –password-file=/home/jack/rsync.jack d) rsync -avz –progress <a href="mailto:jack@192.168.0.1" target="_blank" rel="noopener">jack@192.168.0.1</a>::/ 命令说明 ——— a) 同步本地目录的内容到远程主机192.168.0.1的目录下，jack是rsync数据库用户(参见3. /etc/rsync.secrets) b) 通过自动读取用户密码而实现非交互登录文件同步 c) 较b)多了-u和–delete d) 同步远程主机内容到本地目录</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="201105/linux-e4-b8-8b-e7-9b-b4-e6-8e-a5-e7-94-a8-e5-91-bd-e4-bb-a4-e8-bd-ac-e6-8d-a2unixtime.html">linux下直接用命令转换Unixtime</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="201104/digging-more-into-the-molehill.html">Digging More Into the Molehill</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

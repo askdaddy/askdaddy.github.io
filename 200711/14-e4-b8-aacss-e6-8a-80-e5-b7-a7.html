@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      14个css技巧 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">14个css技巧</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/11/15</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/应用">应用</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p><strong>1、善用css缩写可以减少页面文件大小，提高</strong><a href="http://www.mydown.com/" target="_blank" rel="noopener"><strong>下载</strong></a>**速度，同时使代码简洁可读。  </p>
+<p>**      如：</p>
+<p>以下是引用片段：<br>div{<br>    border-top:1px solid #cccccc;<br>    border-left:1px solid #cccccc;<br>    border-right:1px soli #cccccc;<br>    border-bottom:1px solid #cccccc;<br>}</p>
+<pre><code>可以写为：p{border:1px solid #cccccc}  
+
+再如：</code></pre><p>以下是引用片段：<br>div{<br>    margin-top:10px;<br>    margin-right:20px;<br>    margin-bottom:30px;<br>    margin-left:40px;<br>}</p>
+<pre><code>可以改写为：</code></pre><p>以下是引用片段：<br>/<em>注意上、右、下、左的书写顺序</em>/<br>div{margin:10px 20px 30px 40px}<br>/<em>注意，数值与单位不能有空格，每个值之间用空格隔开</em>/</p>
+<pre><code>**2、可以同时为一个html元素的class属性设定多个规则(多重class定义)。**  
+
+通常我们写法为：
+
+
+
+实际上我们可以为p元素指定多个规则，如：</code></pre><p>以下是引用片段：<br>CSS：<br>.a{…}<br>.b{….}<br>HTML：  </p>
+<p>该元素同时包括a和b中设定的样式</p>
+<pre><code>注意：多个规则之间用空格分开。
+
+**3、明确定义单位，除非值为0**  
+
+忘记定义尺寸是css初学者新手普遍存在的问题。在html我们可以写width=&quot;100&quot;，但在css中应该给出一个准确的单位。如：width:100px;height:50px;font-size:9pt ，0值除外，因为不论对于任何单位。0值的大小都是相等的。
+
+注意：不要在数值和单位之间加空格。
+
+**4、区分大小写  </code></pre><p>**<br>      在xhtml中，css定义的元素名称是区分大小写的，class和id的值在html和xhtml中也是区分大小写的，所以为了避免错误，推荐一律使用小写。如#aaa,与#AAA是不同的，在xhtml中，p和P也是不同的.他们之间不会覆盖。如果在css中定义了#aaa，在html元素中使用AAA来应用将不能得到#aaa中定义的样式。  </p>
+<pre><code>示例代码：</code></pre><p>以下是引用片段：<br>CSS:<br>#aaa{border:1px solid #ccc}<br>HTML:  </p>
+<p>显示不出来1个像素的边线</p>
+<pre><code>**5、CSS的最近优先原则**  
+
+如果对一个元素定义了多次样式，则以最近的一级优先，最近一级的样式将覆盖其他的样式定义。  
+
+如：</code></pre><p>以下是引用片段：<br>CSS:<br>p{color:red}<br>.blue{color:blue}<br>.yellow{color:yellow}<br>HTML:  </p>
+<p>此处显示为红色</p>
+<p>此处显示为蓝色</p>
+<p>此处显示为绿色</p>
+<p>此处显示为黄色</p>
+<pre><code>注意：  
+
+（1）注意样式的几个优先顺序(优先级由上至下递减)：  
+
+--元素style设定   
+
+--head区中的设定   
+
+--外部引用css文件  
+
+（2）优先级不是按访问顺序来设定的，而是又css中的声明顺序来设定的。  
+
+如上例中</code></pre><p>此处显示为黄色</p>
+<p>也显示为黄色， 因为在css定义中.yellow在.blue的后面。</p>
+<pre><code>**6、使用子选择器减少id和class的定义**  
+
+例如：</code></pre><p>以下是引用片段：<br>#contain{..}<br>#contain_ul{…}<br>.contail_li{…}  </p>
+<pre><code>可以更改为：</code></pre><p>以下是引用片段：<br>#contain{..}<br>#contain ul{…}<br>.contain ul li{…}  </p>
+<pre><code>**7、不要给背景[图片](http://pic.yesky.com/) 路径加引号**  
+
+将background:url(&quot;xxx.gif&quot;)改为background:url(xxx.gif)，因为对于部分浏览器加引号反而会引起错误。
+
+**8、背景图片的路径是相对与当前css页面的路径。  </code></pre><p>**<br>      例如：  </p>
+<pre><code>有如下目录结构  
+
+|--images  
+   |--xxx.gif  
+|--css  
+   |--xx.css  
+|--index.html  
+
+代码内容  </code></pre><p>以下是引用片段：<br>index.html引用xx.css文件。<br>xx.css要引用xxx.gif图片其写法为：background:url (../images/xxx.gif)</p>
+<pre><code>**9、使用组选择器为不同元素应用相同的样式**  
+如h1,h2,h3,div{font-size:16px;font-weight:bold}  
+
+则h1,h2,h3,div元素的样式都为字体16像素，字体粗体
+
+**10、书写正确的链接样式  </code></pre><p>**      当用css定义链接的各种状态时，一定要注意其书写顺序，即：:link :visited :hover :active。如果不按照该顺序书写可能无法达到自己希望的效果。为了记忆该顺序我们抽取每个单词的首字母：L V H A，你可以通过记忆LoVe,Hate,两个单词来记住其顺序。</p>
+<pre><code>**11、禁止内容换行与强制内容换行**  
+
+在表格或层中我们可能希望内容不换行或强制换行，我们可以通过一些css属性来达到这些要求。  
+
+禁止换行：white-space:nowrap  
+
+强制换行：word-wrap: break-word; word-break: normal;
+
+**12、区别relative和absolute**  
+
+Absolute，CSS中的写法是：position:absolute; 他的意思是绝对定位，他是参照浏览器的左上角，配合TOP、RIGHT、BOTTOM、LEFT(下面简称TRBL)进行定位，在没有设定TRBL，默认依据父级的做标原始点为原始点。如果设定TRBL并且父级没有设定position属性，那么当前的absolute则以浏览器左上角为原始点进行定位，位置将由TRBL决定。
+
+Relative，CSS中的写法是：position:relative;  他的意思是绝对相对定位，他是参照父级的原始点为原始点，无父级则以BODY的原始点为原始点，配合TRBL进行定位，当父级内有padding等CSS属性时，当前级的原始点则参照父级内容区的原始点进行定位。
+
+**13、区别div和span**  
+
+div是一个块级元素，可以包含段落，表格等内容，用于放置不同的内容。一般我们在[网页](http://homepage.yesky.com/)通过div来布局定位网页中的每个区块。  
+
+span是一个内联元素，没有实际意义，它的存在纯粹是为了应用样式，给一段内容加上标记可以通过在span上定义样式来设定其内容的样式。
+
+**14、区别display和visibility**  
+
+display:none和visibility:hidden都可以隐藏一个元素  
+
+但visibility:hidden只是隐藏了元素的内容，但其使用的位置空间仍然被保留。而display:none则相当把元素从页面中去除，其占用位置也将被删除。  </code></pre><p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="200711/e5-ad-a6-e4-b9-a0-e4-b8-8d-e6-96-ad-e7-9a-84-e5-ad-a6-e4-b9-a0.html">学习不断的学习</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="200711/cc-e5-9f-ba-e7-a1-80.html">C/C++基础</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      在Windows 环境中使用 Dig 工具 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#重点-此方法适用于所有Windows-命令行"><span class="toc-text">重点 ### 此方法适用于所有Windows 命令行</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">在Windows 环境中使用 Dig 工具</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2017/06/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/network">network</a>
+                
+              
+                
+                  <a href="/categories/Windows">Windows</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/dns">dns</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>Dig 在Linux 里一般是在 bind-utils这个包里的。 作者Windows 环境用的模拟终端为 Babun <a href="https://github.com/babun/babun" target="_blank" rel="noopener">https://github.com/babun/babun</a> 是基于Cygwin的。可惜，没有提供dig的二进制包。可惜。 好，其实解决方法很简单，去网上直接下个dig.exe放到Windows path里就好了=）  </p>
+<h3 id="重点-此方法适用于所有Windows-命令行">重点 ### 此方法适用于所有Windows 命令行<a class="post-anchor" href="#重点-此方法适用于所有Windows-命令行"></a></h3><p>A）下载： 下载地址 [<a href="ftp://ftp.nominum.com/pub/isc/bind9/" target="_blank" rel="noopener">ftp://ftp.nominum.com/pub/isc/bind9/</a>] 拉到最下面找最新版本的 <a href="/uploads/2017/06/bc521979dc91c867e703522b0d1eba3e.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/bc521979dc91c867e703522b0d1eba3e.png" alt></a> 下这个 <a href="/uploads/2017/06/17d81d7a6365538765dfd2166c99b981.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/17d81d7a6365538765dfd2166c99b981.png" alt></a> A1) 准备： 解压后在目录里找到C++安装文件，双击安装 <a href="/uploads/2017/06/166a3c4ba8d6b3de647fab52b8ee77e1.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/166a3c4ba8d6b3de647fab52b8ee77e1.png" alt></a> <a href="/uploads/2017/06/3dd4d022aafb71fc38a29d7af49cf983.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/3dd4d022aafb71fc38a29d7af49cf983.png" alt></a>)) B) 安装DLL文件 <a href="/uploads/2017/06/968a8da2625dab1e7c0169862a806693.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/968a8da2625dab1e7c0169862a806693.png" alt></a> 把目录里lib*.dll拷贝到 C:\WINDOWS\System32\ 目录下 B1)安装dig.exe <a href="/uploads/2017/06/06a9d77227053a70030916f92b92e481.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/06a9d77227053a70030916f92b92e481.png" alt></a> 把目录里的dig.exe 也拷贝到 C:\WINDOWS\System32\ 目录下 C)完成！ 测试！ babun <a href="/uploads/2017/06/40aa13970d99724a673b40d2ac1836b4.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/40aa13970d99724a673b40d2ac1836b4.png" alt></a> powershell <a href="/uploads/2017/06/3fdb6b909072225d8b6de372f4f6c586.png" data-caption data-fancybox="images"><img src="/uploads/2017/06/3fdb6b909072225d8b6de372f4f6c586.png" alt></a></p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="201707/mac-os-e4-bc-a0-e6-96-87-e4-bb-b6-e5-88-b0-android.html">Mac OS 传文件到 Android</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="201705/zabbix-linux-network-interface-traffic-monitor-template.html">Zabbix Linux Network Interface Traffic Monitor Template</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      Samba 配置 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Samba 配置</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/11/20</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/linux">linux</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>前言</p>
+<p>SAMBA是一种能把 FreeBSD 的目录开放给Microsoft Windows 95/98/NT</p>
+<p>利用网路芳邻方式存取的软体集。其实并不只针对 FreeBSD，</p>
+<p>其它UN*X 也都可以使用，这对工作平台大部分时间是Microsoft family的人</p>
+<p>在存取档案上，会是个比较方便的选择。</p>
+<p>安装SAMBA 2.0.6</p>
+<p>1.先以 root 身份 login，切换至/usr/ports/net/samba 准备安装SAMBA。</p>
+<p>安装时只要在 SAMBA 的目录下执行 make install 即可</p>
+<p># <a href="mailto:root@ohaha" target="_blank" rel="noopener">root@ohaha</a>[~] cd /usr/ports/net/samba/</p>
+<p># <a href="mailto:root@ohaha[/usr/ports/net/samba" target="_blank" rel="noopener">root@ohaha[/usr/ports/net/samba</a>] make install</p>
+<p>若无出现错误讯息则是安装完成，你可顺手将安装过程中解开的source清掉。</p>
+<p># <a href="mailto:root@ohaha[/usr/ports/net/samba" target="_blank" rel="noopener">root@ohaha[/usr/ports/net/samba</a>] make clean</p>
+<p>设定 SAMBA (smb.conf)</p>
+<p>在安装完 SAMBA 後，它会放一份设定档例在/usr/local/etc 下，</p>
+<p>先将例一份来修改成我们要的设定。</p>
+<p># <a href="mailto:root@ohaha" target="_blank" rel="noopener">root@ohaha</a>[~] cd /usr/local/etc/</p>
+<p># <a href="mailto:root@ohaha[/usr/local/etc" target="_blank" rel="noopener">root@ohaha[/usr/local/etc</a>] cp smb.conf.default smb.conf</p>
+<p>sam.conf.default是设定 SAMBA 的例档，真正读取的预设是 smb.conf，</p>
+<p>为了保留原始的例档以供日後参考用，所以我们用 cp 的方式出设定档，</p>
+<p>大致浏览过 smb.conf 後发现，它主要分成三大设定区，[globe]、[homes]、</p>
+<p>[printers]，我没有印表机，所以没机会试[printers]相关部分。</p>
+<p>我开 SAMBA 的目地是为了方便存取管理 ftp 并使用该台 FreeBSD 上</p>
+<p>的硬碟空间，所以等会设定档的最终目地便是开出一个分享目录 ftp，</p>
+<p>无须密码，但只允许我的工作机器去存取它。</p>
+<p>在 smb.conf 中，所有的＃和；都是解。＃後接的是说明，</p>
+<p>；後接的是指令，预设不打开该项设定，若想让它生效把分号拿掉即可。</p>
+<p>以下只引出我有动过的地方，没提出的就是保留预设值。</p>
+<p>#======================= Global Settings =====================================</p>
+<p>[global]</p>
+<p># workgroup = NT-Domain-Name or Workgroup-Name, eg: REDHAT4</p>
+<p># 设定所在工作群组</p>
+<p>workgroup = center</p>
+<p># server string is the equivalent of the NT Description field</p>
+<p># 该主机的解</p>
+<p>server string = blah~</p>
+<p># This option is important for security. It allows you to restrict</p>
+<p># connections to machines which are on your local network. The</p>
+<p># following example restricts access to two C class networks and</p>
+<p># the “loopback” interface. For more examples of the syntax see</p>
+<p># the smb.conf man page</p>
+<p># 允许连线的主机，允许 <a href="http://163.16.1.99" target="_blank" rel="noopener">163.16.1.99</a> 和 127.<em>.</em>.* 连线</p>
+<p>hosts allow = <a href="http://163.16.1.99" target="_blank" rel="noopener">163.16.1.99</a> 127.</p>
+<p># If you want to automatically load your printer list rather</p>
+<p># than setting them up individually then you’ll need this</p>
+<p># 我没有 printer ，所以有关 printer 的都会关掉</p>
+<p>; load printers = yes</p>
+<p># Uncomment this if you want a guest account, you must add this to /etc/passwd</p>
+<p># otherwise the user “nobody” is used</p>
+<p># 这里设定免密码的帐号，你设什麽帐号，连进来的 client就是那个身份，了吗？</p>
+<p># 所以我把这儿改成 ftp 这个帐号，因为我 share 出来的目录 owner 是 ftp</p>
+<p># 这样我才能以免密码又是 ftp 的身份对目录有完整的存取权。</p>
+<p># 不过记得，这儿填的帐号必须存在 /etc/passwd 中，否则会以 nobody 的身份签入。</p>
+<p>guest account = ftp</p>
+<p># this tells Samba to use a separate log file for each machine</p>
+<p># that connects</p>
+<p># 把 log 建个目录来放比较整齐，记得去 mkdir /var/log/samba 这个目录。</p>
+<p>log file = /var/log/samba/log.%m</p>
+<p># Security mode. Most people will want user level security. See</p>
+<p># security_level.txt for details.</p>
+<p># 设定安全层级，若要不用密码分享的话就要设成 share ，若设 user 的话会要求密码。</p>
+<p># 详情请见 docs/security_level.txt</p>
+<p>security = share</p>
+<p># You may wish to use password encryption. Please read</p>
+<p># ENCRYPTION.txt, Win95.txt and WinNT.txt in the Samba documentation.</p>
+<p># Do not enable this option unless you have read those documents</p>
+<p># 我的目的是不用密码存取，所以这项开不开都没影响，但若你想用密码来控制存取权限时，</p>
+<p># 请记得将此项打开，因为…详见 docs/ENCRYPTION.txt, Win95.txt 和 WinNT.txt。</p>
+<p>; encrypt passwords = yes</p>
+<p># for Traditional Chinese Users</p>
+<p># 若你想看到中文目录、档名的话，把 client code page=950 前的分号拿掉，</p>
+<p># 注意，coding system 那项留着别打开它，两个都打开的话反而会看不到中文</p>
+<p>client code page=950</p>
+<p>; coding system=cap</p>
+<p>#============================ Share Definitions ==============================</p>
+<p># 接下来这一段就是 [homes] 和 [printers] 以及其它任何你想 share 出来的目录设定</p>
+<p># 区，我把 [homes] 也 mark 起来了，因为我不想 share 任何 home 出来。</p>
+<p>;[homes-%U]</p>
+<p>; comment = Home Directories</p>
+<p>; path = /home/%U</p>
+<p>; user = %U</p>
+<p>; browseable = no</p>
+<p>; writeable = yes</p>
+<p># ftp</p>
+<p># 我加了这段，将 ftp 的目录开分享。一开始我们看到的 [ftp] 就是你分享出来的目录</p>
+<p># 在 95/98/NT 中会看到的资料夹名称，path 指向欲 share 目录的绝对路径，</p>
+<p># public = yes 是指定这个分享不须密码，writeable = yes 是指可对该分享做写入动作</p>
+<p># 注意一点，当有 public = yes 这行时，对该分享存取的身份就是之前在 [globe] 区，</p>
+<p># 我们所设定 guest account 的身份，若刚刚 guest account 没改成 ftp，那麽现在</p>
+<p># 即使有设 writeable = yes 也会因为 owner 不对而无 法写入。</p>
+<p>[ftp]</p>
+<p>path = /home/ftp</p>
+<p>public = yes</p>
+<p>writeable = yes</p>
+<p>启动 SAMBA</p>
+<p>在安装完 SAMBA 後，它丢了个启动的 script 在 /usr/local/etc/rc.d/，</p>
+<p>档名是 samba.sh.sample，将之更名并 chmod 成可执行。</p>
+<p># <a href="mailto:root@ohaha[/usr/local/etc/rc.d" target="_blank" rel="noopener">root@ohaha[/usr/local/etc/rc.d</a>] mv samba.sh.sample samba.sh</p>
+<p># <a href="mailto:root@ohaha[/usr/local/etc/rc.d" target="_blank" rel="noopener">root@ohaha[/usr/local/etc/rc.d</a>] chmod 750 samba.sh</p>
+<p>你现在可以重新开机或者手动执行 samba.sh 来启动 SAMBA。</p>
+<p># <a href="mailto:root@ohaha" target="_blank" rel="noopener">root@ohaha</a>[~] /usr/local/etc/rc.d/samba.sh  </p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="200711/vm-e5-ae-89-e8-a3-85magic-linux-e5-88-86-e8-be-a8-e7-8e-87-e9-97-ae-e9-a2-98.html">Vm安装magic Linux 分辨率问题</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="200711/linux-e5-90-84-e5-8f-91-e8-a1-8c-e7-89-88-e6-9c-ac-e7-94-b5-e5-ad-90-e8-b5-84-e6-96-99-e6-b1-87-e6-80-bb.html">Linux各发行版本电子资料汇总</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

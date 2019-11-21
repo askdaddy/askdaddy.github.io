@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      小谢同学写的Linux 服务器调优脚本 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#modify-sysctl-py"><span class="toc-text">modify_sysctl.py</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#modify-ulimit-py"><span class="toc-text">modify_ulimit.py</span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">小谢同学写的Linux 服务器调优脚本</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2017/02/23</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/linux server">linux server</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/linux">linux</a>
+                  
+                
+                  
+                    <a href="/tags/TCP">TCP</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h2 id="modify-sysctl-py">modify_sysctl.py<a class="post-anchor" href="#modify-sysctl-py"></a></h2><p>[code lang=python] # -<em>- coding: utf-8 -</em>- ‘’’ Created on 2015-1-21 @author: xie ‘’’ ‘’’ net.ipv4.tcp_rmem = 4096 87380 16777216 net.ipv4.tcp_wmem = 4096 65536 16777216 net.core.wmem_default = 8388608 net.core.rmem_default = 8388608 net.core.rmem_max = 16777216 net.core.wmem_max = 16777216 net.core.netdev_max_backlog = 30000 net.core.somaxconn = 65535 net.ipv4.tcp_max_syn_backlog = 262144 net.ipv4.tcp_max_tw_buckets = 6000 net.ipv4.tcp_tw_recycle = 1 net.ipv4.tcp_tw_reuse = 1 net.ipv4.tcp_fin_timeout = 30 net.ipv4.ip_local_port_range = 9000 65535 net.ipv4.tcp_syncookies = 1 net.ipv4.tcp_max_orphans = 262144 net.ipv4.tcp_synack_retries = 2 net.ipv4.tcp_syn_retries = 2 ‘’’ import re,commands SYSCTL_CONFIG = ‘/etc/sysctl.conf’ class SetSysctl(): def __init__(self): self._sysctls = [] self._sysctls.append(‘net.ipv4.tcp_rmem = 4096 87380 16777216’) self._sysctls.append(‘net.ipv4.tcp_wmem = 4096 65536 16777216’) self._sysctls.append(‘net.core.wmem_default = 8388608’) self._sysctls.append(‘net.core.rmem_default = 8388608’) self._sysctls.append(‘net.core.rmem_max = 16777216’) self._sysctls.append(‘net.core.wmem_max = 16777216’) self._sysctls.append(‘net.core.netdev_max_backlog = 30000’) self._sysctls.append(‘net.core.somaxconn = 65535’) self._sysctls.append(‘net.ipv4.tcp_max_syn_backlog = 262144’) self._sysctls.append(‘net.ipv4.tcp_max_tw_buckets = 6000’) self._sysctls.append(‘net.ipv4.tcp_tw_recycle = 1’) self._sysctls.append(‘net.ipv4.tcp_tw_reuse = 1’) self._sysctls.append(‘net.ipv4.tcp_fin_timeout = 30’) self._sysctls.append(‘net.ipv4.ip_local_port_range = 9000 65535’) self._sysctls.append(‘net.ipv4.tcp_syncookies = 1’) self._sysctls.append(‘net.ipv4.tcp_max_orphans = 262144’) self._sysctls.append(‘net.ipv4.tcp_synack_retries = 2’) self._sysctls.append(‘net.ipv4.tcp_syn_retries = 2’) self._sysctls.append(‘’) self._sysctls.append(‘kernel.core_pattern = /home/core/core.%p’) self._create_core() self._read_sysctl() self._write_sysctl() def _read_sysctl(self): network = open(SYSCTL_CONFIG, ‘r’) self._lines = [] for line in network: flag = False for sysctl in self._sysctls: regex_str = sysctl.split(‘=’)[0] ma = re.match(r’^’+regex_str+’.*?’, line, re.IGNORECASE) if ma: flag = True break; if not flag: self._lines.append(line) network.close() def _write_sysctl(self): sysctls = open(SYSCTL_CONFIG, ‘w’) self._lines.extend(self._sysctls) sysctls.write(‘\n’.join(self._lines)) sysctls.close() commands.getoutput(‘sysctl -p’) def _create_core(self): commands.getoutput(‘mkdir /home/core’) commands.getoutput(‘chown -R mc-ops:mc-ops /home/core’) if __name__ == ‘__main__‘: SetSysctl() [/code]</p>
+<h2 id="modify-ulimit-py">modify_ulimit.py<a class="post-anchor" href="#modify-ulimit-py"></a></h2><p>[code lang=python] <br># -<em>- coding: utf-8 -</em>- #!/usr/bin/env python2.7 ‘’’ Created on 2013-5-6 @author: xie ‘’’ import commands, re,os LIMIT_CONF = ‘/etc/security/limits.conf’ SOFT_NOFILE = ‘* soft nofile 1048576\n’ HAND_NOFILE = ‘* hard nofile 1048576\n’ SOFT_NPROC = ‘* soft nproc 1048576\n’ HAND_NPROC = ‘* hard nproc 1048576\n’ PROFILE_CONF = ‘/etc/profile’ ULIMIT_NOFILE = ‘ulimit -HSn 1048576\n’ NPROC_LIMIT_CONF = ‘/etc/security/limits.d/90-nproc.conf’ def modify_ulimit(): lines = [] ulimit = open(LIMIT_CONF, ‘r’) for line in ulimit: ma = re.match(r’.<em>?soft *?’, line, re.IGNORECASE) mx = re.match(r’.</em>?hard <em>?’, line, re.IGNORECASE) if ma or mx: continue lines.append(line) ulimit.close() lines.append(SOFT_NOFILE) lines.append(HAND_NOFILE) lines.append(SOFT_NPROC) lines.append(HAND_NPROC) ulimit = open(LIMIT_CONF, ‘w’) ulimit.write(‘’.join(lines)) ulimit.close() commands.getoutput(‘ulimit -HSn 1048576’) if not isCentos7(): modify_nproc_ulimit() writeProfile() def modify_nproc_ulimit(): lines = [] if os.path.exists(NPROC_LIMIT_CONF): ulimit = open(NPROC_LIMIT_CONF, ‘r’) for line in ulimit: ma = re.match(r’.</em>?soft <em>?’, line, re.IGNORECASE) if ma: continue lines.append(line) ulimit.close() lines.append(‘</em> soft nproc 1048576\n’) lines.append(‘root soft nproc unlimited\n’) ulimit = open(NPROC_LIMIT_CONF, ‘w’) ulimit.write(‘’.join(lines)) ulimit.close() def writeProfile(): lines = [] flag = False profile = open(PROFILE_CONF, ‘r’) for line in profile: ma = re.match(r’.<em>?ulimit -HSn 1048576.</em>‘, line, re.IGNORECASE) if ma is not None: flag = True lines.append(line) profile.close() if flag == False: lines.append(ULIMIT_NOFILE) profile = open(PROFILE_CONF, ‘w’) profile.write(‘’.join(lines)) profile.close() def isCentos7(): mage = commands.getoutput(‘cat /etc/redhat-release’).split(‘\n’) #CentOS Linux release 7.1.1503 (Core) #CentOS release 6.6 (Final) cP = re.compile(r’.<em>\s+(?P\d+).</em>‘, re.IGNORECASE) for mess in mage: ma = cP.match(mess) if ma is not None: ip = ma.group(‘release’) if ip == ‘7’: return True return False pass if __name__ == ‘__main__‘: modify_ulimit() [/code]</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="201704/e9-9d-9e-e4-b8-bb-e6-b5-81vpn-e6-96-b9-e6-a1-88.html">非主流VPN方案</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="201611/e6-88-91-e4-bb-ac-e7-86-9f-e7-9f-a5-e7-9a-84-e9-82-a3-e4-ba-9b-e8-8b-b1-e6-96-87-ef-bc-8c-e4-bd-a0-e5-bf-b5-e5-af-b9-e4-ba-86-e4-b9-88-ef-bc-9ffw.html">我们熟知的那些英文，你念对了么？[FW]</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

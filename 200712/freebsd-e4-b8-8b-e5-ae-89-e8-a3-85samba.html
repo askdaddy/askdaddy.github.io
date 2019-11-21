@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      FreeBSD 下安装Samba - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在FreeBSD-下安装Samba"><span class="toc-text">在FreeBSD 下安装Samba </span></a></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">FreeBSD 下安装Samba</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/12/25</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/unix">unix</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h2 id="在FreeBSD-下安装Samba">在FreeBSD 下安装Samba <a class="post-anchor" href="#在FreeBSD-下安装Samba"></a></h2><p>1. Samba 安装</p>
+<p>-----------------</p>
+<p>Samba有二进制安装的版本, 也有源代码安装版本. 我用的系统是FreeBSD,</p>
+<p>Samba的二进制安装并不支持FreeBSD. 所以, 我就选择了源代码安装方式.</p>
+<p>我使用的samba版本是 samba-3.0.21a.tar.gz</p>
+<p>shell&gt; tar zxvf samba-3.0.21a.tar.gz</p>
+<p>shell&gt; cd samba-3.0.21a/source</p>
+<p>shell&gt; ./configure</p>
+<p>shell&gt; make</p>
+<p>shell&gt; make install</p>
+<p>shell&gt; cp ../examples/smb.conf.default /usr/local/samba/lib/smb.conf</p>
+<p>2. 创建用户</p>
+<p>-------------</p>
+<p>这里我不得不说一句,目前我还没看到网上有任何一篇文章仔细地解释samba的用户关系问题!</p>
+<p>不厚道啊~~ 我是摸索了好久才得出以下认识的:</p>
+<pre><code>(1)samba用户管理使用smbpasswd和pdbedit命令
+
+(2)samba认证使用的用户和组首先要在本地系统中存在
+
+(3)samba只存储独立于本地系统的用户和口令信息,组则使用本地系统的组信息</code></pre><p>首先在本地系统中创建用户user1和user2, 创建组group1和group2, user1属于group1,</p>
+<p>user2属于group2.</p>
+<p>然后再创建samba用户:</p>
+<p>shell&gt; /usr/local/samba/bin/smbpasswd -a user1</p>
+<p>New SMB password:<br>Retype new SMB password:</p>
+<p>shell&gt; /usr/local/samba/bin/smbpasswd -a user2</p>
+<p>New SMB password:<br>Retype new SMB password:</p>
+<p>如果失败,则可能是本地系统没有事先建立同名帐号.</p>
+<p>可以使用pdbedit -L列出现有samba用户清单, 如果清单中有新加入的用户名, 则说明用户</p>
+<p>创建成功.</p>
+<p>3. 配置Samba</p>
+<p>-----------------</p>
+<p>shell&gt; vi /usr/local/samba/lib/smb.conf</p>
+<p>下面是我实际搭建环境中的一个实例:</p>
+<p>-----------------------------------</p>
+<p># Samba config file created using SWAT<br># from <a href="http://10.217.15.133" target="_blank" rel="noopener">10.217.15.133</a> (<a href="http://10.217.15.133" target="_blank" rel="noopener">10.217.15.133</a>)<br># Date: 2006/01/05 09:42:54</p>
+<p>[global]<br>        workgroup = MYGROUP<br>        netbios name = SINA-NFS<br>        server string = Sina NFS<br>        log file = /usr/local/samba/var/log-%M-%I<br>        max log size = 50<br>        load printers = No<br>        dns proxy = No</p>
+<p>[it]<br>        path = /data1/it<br>        valid users = @group1, @group2<br>        read list = @group1, @group2<br>        write list = @group1, @group2</p>
+<p>[driver]<br>        path = /data2/driver<br>        write list = @group1<br>        guest ok = Yes</p>
+<p>[software]<br>        path = /data2/software<br>        write list = @group1<br>        guest ok = Yes</p>
+<p>[patch]<br>        path = /data2/patch<br>        write list = @group1<br>        guest ok = Yes</p>
+<p>以上是通过SWAT配置后生成的最终配置文件,但实际上我手工配置时还在global部分加入了:</p>
+<p>   security = user<br>   encrypt passwords = yes<br>   smb passwd file = /usr/local/samba/private/smbpasswd</p>
+<p>那上面配置要实现的目的是:</p>
+<p>(1)所有用户都可以看到(browseable)共享目录it,driver,software,patch;</p>
+<p>(2)group1的用户对共享目录it,driver,software,patch有读写权限;</p>
+<p>(3)group2的用户对共享目录it有读写权限,对共享目录driver,software,patch只读;</p>
+<p>(4)非group1和group2的用户对共享目录driver,software,patch只读,对共享目录it无读写权限;</p>
+<p>4.设置共享目录权限</p>
+<p>---------------------</p>
+<p>shell&gt; chmod -R 0777 /data1/it</p>
+<p>shell&gt; chmod -R 0777 /data2/driver</p>
+<p>shell&gt; chmod -R 0777 /data2/patch</p>
+<p>shell&gt; chmod -R 0777 /data2/software</p>
+<p>5.启动samba</p>
+<p>---------------</p>
+<p>/usr/local/samba/sbin/smbd -D &amp;</p>
+<p>/usr/local/samba/sbin/nmbd -D &amp;</p>
+<p>6.自动运行samba</p>
+<p>------------------</p>
+<p>有两种方法:</p>
+<p>(1)在/etc/rc.local加入以下内容:</p>
+<p>/usr/local/samba/sbin/smbd -D &amp;</p>
+<p>/usr/local/samba/sbin/nmbd -D &amp;</p>
+<p>(2)在/etc/inetd.conf中加入以下内容:</p>
+<p>netbios-ssn  stream  tcp  nowait       root  /usr/local/samba/sbin/smbd -D   smbd<br>netbios-ns   dgram   udp  wait         root  /usr/local/samba/sbin/nmbd -D   nmbd<br>swat         stream  tcp  nowait/400   root  /usr/local/samba/sbin/swat      swat  </p>
+<p>第二种方法要保证inetd正常运行.</p>
+<p>7.SWAT管理</p>
+<p>-------------</p>
+<p>默认情况下SWAT已被安装.</p>
+<p>我试过通过执行/usr/local/samba/sbin/swat启动SWAT没有成功, 只有通过inetd.conf才可以成功启动.</p>
+<p>启动成功后可以通过<a href="http://samba_server_ip:901/" target="_blank" rel="noopener">http://samba_server_ip:901/</a>访问SWAT管理页面.</p>
+<p>默认情况, SWAT使用本地系统的root用户作为管理帐号. 注意, 是系统用户, 不是samba的共享用户.</p>
+<p>8.检查服务是否正常</p>
+<p>---------------------</p>
+<p>通过netstat -an看到服务端口已处理监听状态:</p>
+<p>tcp4       0      0  <em>.901                  *.</em>                    LISTEN<br>tcp4       0      0  <em>.139                  *.</em>                    LISTEN<br>udp4       0      0  10.0.0.38.138          <em>.</em><br>udp4       0      0  10.0.0.38.137          <em>.</em></p>
+<p>udp4       0      0  <em>.138                  *.</em></p>
+<p>udp4       0      0  <em>.137                  *.</em></p>
+<p>9.小技巧</p>
+<p>-------------</p>
+<p>(1)如何在一个共享目录中嵌入其它目录</p>
+<p>有时我们需要使用多块磁盘, 那经常变更目录或更换磁盘非常麻烦, 我还不了解在samba中如何</p>
+<p>使用多个磁盘支持同一共享目录. 所以, 我使用的方法是:</p>
+<pre><code>*在已有共享目录中建立一个到其它磁盘的链接.*</code></pre><p>假设我要在共享目录it下建立一个到磁盘/data3上的目录iso的链接, 那么需要进行以下操作:</p>
+<p>shell&gt; cd /data1/it</p>
+<p>shell&gt; ln -s /data3/iso iso</p>
+<p>shell&gt; chmod -R 0777 /data3/iso</p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="200712/amfphp-1-9-e4-b8-ad-e6-96-87-e4-b9-b1-e7-a0-81-e9-97-ae-e9-a2-98-e8-a7-a3-e5-86-b3-e6-96-b9-e6-b3-95.html">AMFPHP 1.9 中文乱码问题解决方法</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="200712/scpssh-e6-96-87-e4-bb-b6-e5-a4-8d-e5-88-b6freebsd.html">Scp(ssh文件复制)[freebsd]</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

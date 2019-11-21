@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      Linux中文件查找技术大全 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Linux中文件查找技术大全</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/11/02</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/unix">unix</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p> 每一种操作系统都是由成千上万个不同种类的文件所组成的。其中有系统本身自带的<br>文件，用户自己的文件，还有共享文件等等。我们有时候经常忘记某份文件放在硬盘<br>中的哪个地方。在微软的WINDOWS操作系统中要查找一份文件是相当简单的事情，只<br>要在桌面上点击”开始”－”搜索”中就能按照各种方式在本地硬盘上，局域网络，甚至<br>在INTERNET上查找各种文件，文档。  </p>
+<p>可是使用Linux的用户就没有那么幸运了，在Linux上查找某个文件确实是一件比较麻<br>烦的事情。毕竟在Linux中需要我们使用专用的”查找”命令来寻找在硬盘上的文件。<br>Linux下的文件表达格式非常复杂，不象WINDOWS,DOS下都是统一的AAAAAAA.BBB格式<br>那么方便查找，在WINDOWS中，只要知道要查找的文件的文件名或者后缀就非常容易<br>查找到。Linux中查找文件的命令通常为”find”命令，”find”命令能帮助我们在使用,<br>管理Linux的日常事务中方便的查找出我们需要的文件。对于Linux新手来说，”find”<br>命令也是了解和学习Linux文件特点的方法。因为Linux发行版本繁多，版本升级很快，<br>在Linux书籍上往往写明某个配置文件的所在位置，往往Linux新手按图索骥还是不能<br>找到。比如说REDHAT Linux 7.O和REDHAT Linux 7.1中有些重要的配置文件所在的硬<br>盘位置和文件目录就有了很大的改变，如果不学会使用”find”命令，那么在成千上万<br>的Linux文件中要找到其中的一个配置文件是相当困难的，笔者在没有精通”find”命<br>令之前就吃过这样的苦头。好，下面就详细为大家介绍强大的”find”命令的全部使用<br>方法和用途。  </p>
+<p>通过文件名查找法：  </p>
+<p>这个方法说起来就和在WINDOWS下查找文件一样容易理解了。如果你把这个文件放在<br>单个的文件夹里面，只要使用常见的”ls”命令就能方便的查找出来，那么使用”find”<br>命令来查找它就不能给你留下深刻的印象，毕竟”find”命令的强大功能不止这个。如<br>果知道了某个文件的文件名，而不知道这个文件放到哪个文件夹，甚至是层层套嵌的<br>文件夹里。举例说明，假设你忘记了httpd.conf这个文件在系统的哪个目录下，甚至<br>在系统的某个地方也不知道，则这是可以使用如下命令：  </p>
+<p>find / -name httpd.conf  </p>
+<p>这个命令语法看起来很容易就明白了，就是直接在find后面写上 -name，表明要求<br>系统按照文件名查找，最后写上httpd.conf这个目标文件名即可 。稍等一会系统会<br>在计算机屏幕上显示出查找结果列表：  </p>
+<p>etc/httpd/conf/httpd.conf  </p>
+<p>这就是httpd.conf这个文件在Linux系统中的完整路径。查找成功。  </p>
+<p>如果输入以上查找命令后系统并没有显示出结果，那么不要以为系统没有执行<br>find/ -name httpd.conf命令，而可能是你的系统中没有安装Apache服务器，这时<br>只要你安装了Apache Web服务器，然后再使用find / -name httpd.conf就能找到这<br>个配置文件了。  </p>
+<p>无错误查找技巧：  </p>
+<p>在Linux系统中”find”命令是大多数系统用户都可以使用的命令，并不是ROOT系统管理<br>员的专利。但是普通用户使用”find”命令时也有可能遇到这样的问题，那就是Linux系<br>统中系统管理员ROOT可以把某些文件目录设置成禁止访问模式。这样普通用户就没有<br>权限用”find”命令来查询这些目录或者文件。当普通用户使用”find”命令来查询这些<br>文件目录是，往往会出现”Permissiondenied.”（禁止访问）字样。系统将无法查询到<br>你想要的文件。为了避免这样的错误，我们可是使用转移错误提示的方法尝试着查找<br>文件，输入<br>find / -name access_log 2&gt;/dev/null  </p>
+<p>这个方法是把查找错误提示转移到特定的目录中去。系统执行这个命令后，遇到错误<br>的信息就直接输送到stderrstream 2 中，access_log 2就是表明系统将把错误信息输<br>送到stderrstream 2中，/dev/null是一个特殊的文件，表明空的或者错误的信息，这<br>样查询到的错误信息将被转移了，不会再显示了。  </p>
+<p>在Linux系统查找文件也会遇到这样一个实际问题。如果我们在整个硬盘，这个系统中<br>查找某个文件就要花费相当长的一段时间，特别是大型Linux系统和容量较大的硬盘，<br>文件放在套嵌很深的目录中的时候。如果我们知道了这个文件存放在某个大的目录中，<br>那么只要在这个目录中往下找就能节省很多时间了。使用find /etc -name httpd.conf<br>就可以解决这个问题。上面的命令就是表示在etc目录中查询httpd.conf这个文件。<br>这里再说明一下”/ “这个函数符号的含义，如果输入 “find/ “就是表示要求Linux系<br>统在整个ROOT目录下查找文件，也就是在整个硬盘上查找文件，而”find/etc”就是只<br>在 etc目录下查找文件。因为”find/etc”表示只在etc目录下查找文件，所以查找的<br>速度就相应要快很多了。  </p>
+<p>根据部分文件名查找方法：  </p>
+<p>这个方法和在WINDOWS中查找已知的文件名方法是一样的。不过在Linux中根据部分文<br>件名查找文件的方法要比在WINDOWS中的同类查找方法要强大得多。例如我们知道某个<br>文件包含有srm这3个字母，那么要找到系统中所有包含有这3个字母的文件是可以实现<br>的，输入：  </p>
+<p>find /etc -name ‘*srm*‘  </p>
+<p>这个命令表明了Linux系统将在/etc整个目录中查找所有的包含有srm这3个字母的文件，<br>比如 absrmyz， tibc.srm等等符合条件的文件都能显示出来。如果你还知道这个文件<br>是由srm 这3个字母打头的，那么我们还可以省略最前面的星号，命令如下：  </p>
+<p>find/etc -name ‘srm*’  </p>
+<p>这是只有像srmyz 这样的文件才被查找出来，象absrmyz或者 absrm这样的文件都不符<br>合要求，不被显示，这样查找文件的效率和可靠性就大大增强了。  </p>
+<p>根据文件的特征查询方法：  </p>
+<p>如果只知道某个文件的大小，修改日期等特征也可以使用”find”命令查找出来，这和<br>WINDOWS系统中的”搜索”功能是基本相同的。在微软的”搜索”中WINDOWS中的”搜索助理”<br>使得搜索文件和文件夹、打印机、用户以及网络中的其他计算机更加容易。它甚至使在<br>Internet 上搜索更加容易。”搜索助理”还包括一个索引服务，该服务维护了计算机中<br>所有文件的索引，使得搜索速度更快。使用”搜索助理”时，用户可以指定多个搜索标准。<br>例如，用户可以按名称、类型及大小搜索文件和文件夹。用户甚至可以搜索包含特定文<br>本的文件。如果用户正使用 Active Directory，这时还可以搜索带有特定名称或位置的<br>打印机。  </p>
+<p>例如我们知道一个Linux文件大小为1,500 bytes，那么我们可是使用如下命令来查询<br>find / -size 1500c，字符 c 表明这个要查找的文件的大小是以bytes为单位。如果<br>我们连这个文件的具体大小都不知道，那么在Linux中还可以进行模糊查找方式来解决。<br>例如我们输入find/ -size +10000000c 这个命令，则标明我们指定系统在根目录中查找<br>出大于10000000字节的文件并显示出来。命令中的”＋”是表示要求系统只列出大于指定<br>大小的 文件，而使用”-“则表示要求系统列出小于指定大小的文件。下面的列表就是在<br>Linux使用不同” find”命令后系统所要作出的查找动作，从中我们很容易看出在Linux<br>中使用”find”命令的方式是很多的，” find”命令查找文件只要灵活应用，丝毫不必在<br>WINDOWS中查找能力差。  </p>
+<p>find / -amin -10 # 查找在系统中最后10分钟访问的文件<br>　　find / -atime -2 # 查找在系统中最后48小时访问的文件<br>　　find / -empty # 查找在系统中为空的文件或者文件夹<br>　　find / -group cat # 查找在系统中属于 groupcat的文件<br>　　find / -mmin -5 # 查找在系统中最后5分钟里修改过的文件<br>　　find / -mtime -1 #查找在系统中最后24小时里修改过的文件<br>　　find / -nouser #查找在系统中属于作废用户的文件<br>　　find / -user fred #查找在系统中属于FRED这个用户的文件  </p>
+<p>下面的列表就是对find命令所可以指定文件的特征进行查找的部分条件。在这里并没有<br>列举所有的查找条件，参考有关Linux有关书籍可以知道所有find命令的查找函数。<br>　　-amin n<br>　　查找系统中最后N分钟访问的文件<br>　　-atime n<br>　　查找系统中最后n<em>24小时访问的文件<br>　　-cmin n<br>　　查找系统中最后N分钟被改变状态的文件<br>　　-ctime n<br>　　查找系统中最后n</em>24小时被改变状态的文件<br>　　-empty<br>　　查找系统中空白的文件，或空白的文件目录，或目录中没有子目录的文件夹<br>　　-false<br>　　查找系统中总是错误的文件<br>　　-fstype type<br>　　查找系统中存在于指定文件系统的文件，例如：ext2 .<br>　　-gid n<br>　　查找系统中文件数字组 ID 为 n的文件<br>　　-group gname<br>　　查找系统中文件属于gnam文件组，并且指定组和ID的文件  </p>
+<p>Find命令的控制选项说明：  </p>
+<p>　　Find命令也提供给用户一些特有的选项来控制查找操作。下表就是我们总结出的<br>最基本，最常用的find命令的控制选项及其用法。<br>　　选项<br>　　用途描述<br>　　-daystart<br>　　.测试系统从今天开始24小时以内的文件，用法类似-amin<br>　　-depth<br>　　使用深度级别的查找过程方式,在某层指定目录中优先查找文件内容<br>　　-follow<br>　　遵循通配符链接方式查找; 另外，也可忽略通配符链接方式查询<br>　　-help<br>　　显示命令摘要<br>　　-maxdepth levels<br>　　在某个层次的目录中按照递减方法查找<br>　　-mount<br>　　不在文件系统目录中查找， 用法类似 -xdev.<br>　　-noleaf<br>　　禁止在非UNUX文件系统，MS-DOS系统，CD-ROM文件系统中进行最优化查找<br>　　-version<br>　　打印版本数字  </p>
+<p>使用-follow选项后，find命令则遵循通配符链接方式进行查找，除非你指定这个选项，<br>否则一般情况下find命令将忽略通配符链接方式进行文件查找。  </p>
+<p>-maxdepth选项的作用就是限制find命令在目录中按照递减方式查找文件的时候搜索文  </p>
+<p>件超过某个级别或者搜索过多的目录，这样导致查找速度变慢，查找花费的时间过多。<br>例如，我们要在当前(.)目录技巧子目录中查找一个名叫fred的文件，我们可以使用如<br>下命令  </p>
+<p>find . -maxdepth 2 -name fred  </p>
+<p>假如这个fred文件在./sub1/fred目录中，那么这个命令就会直接定位这个文件，查找<br>很容易成功。假如，这个文件在./sub1/sub2/fred目录中，那么这个命令就无法查找<br>到。因为前面已经给find命令在目录中最大的查询目录级别为2，只能查找2层目录下的<br>文件。这样做的目的就是为了让find命令更加精确的定位文件，如果你已经知道了某个<br>文件大概所在的文件目录级数，那么加入-maxdepth n 就很快的能在指定目录中查找<br>成功。  </p>
+<p>使用混合查找方式查找文件  </p>
+<p>find命令可以使用混合查找的方法，例如我们想在/tmp目录中查找大于100000000字<br>节并且在48小时内修改的某个文件，我们可以使用-and 来把两个查找选项链接起来<br>组合成一个混合的查找方式。  </p>
+<p>find /tmp -size +10000000c -and -mtime +2  </p>
+<p>学习过计算机语言的朋友都知道，在计算机语言里，使用and ,or 分别表示”与”和”或”<br>的关系。在Linux系统的查找命令中一样通用。  </p>
+<p>还有这样的例子，  </p>
+<p>find / -user fred -or -user george  </p>
+<p>我们可以解释为在/tmp目录中查找属于fred或者george这两个用户的文件。  </p>
+<p>在find命令中还可以使用”非”的关系来查找文件，如果我们要在/tmp目录中查找所有<br>不属于panda的文件，使用一个简单的  </p>
+<p>find /tmp ! -user panda  </p>
+<p>命令就可以解决了。很简单。  </p>
+<p>查找并显示文件的方法  </p>
+<p>查找到某个文件是我们的目的，我们更想知道查找到的文件的详细信息和属性，如果<br>我们采取现查找文件，在使用LS命令来查看文件信息是相当繁琐的，现在我们也可以<br>把这两个命令结合起来使用。  </p>
+<p>find / -name “httpd.conf” -ls  </p>
+<p>系统查找到httpd.conf文件后立即在屏幕上显示httpd.conf文件信息。  </p>
+<p>12063 34 -rw-r–r– 1 root root 33545 Dec 30 15:36 /etc/httpd/conf/httpd.conf  </p>
+<p>下面的表格就是一些常用的查找文件并显示文件信息的参数和使用方法  </p>
+<p>选项<br>　　用途描述<br>　　-exec command;<br>　　查找并执行命令<br>　　-fprint file<br>　　打印文件完整文件名<br>　　-fprint0 file<br>　　打印文件完整文件名包括空的文件<br>　　-fprintf file format<br>　　打印文件格式<br>　　-ok command;<br>　　给用户命令执行操作，根据用户的Y 确认输入执行<br>　　-printf format<br>　　打印文件格式<br>　　-ls<br>　　打印同种文件格式的文件.</p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="200711/e6-99-ae-e9-80-9a-e7-94-a8-e6-88-b7-e6-89-a7-e8-a1-8csu-e6-8f-90-e7-a4-basusorry.html">普通用户执行su提示su:Sorry</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="200711/vhost-e9-85-8d-e7-bd-ae.html">Vhost 配置</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

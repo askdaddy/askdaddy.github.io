@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      PHP-GTK 介绍及其应用 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">PHP-GTK 介绍及其应用</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2008/12/19</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+                
+                  <a href="/categories/技术杂文">技术杂文</a>
+                
+              
+          </span>
+        </span>
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>1. PHP-GTK介绍</p>
+<p>1.1 PHP-GTK<br>PHP-GTK是PHP的延伸模组，它可以让程式设计师写出在客户端执行的、且独立的GUI的程式。这个模组不允许在浏览器上显视GTK+的程式，它一开始就是开发来写独立的GUI程式的。</p>
+<p>1.2 GTK<br>GTK原本是为GIMP，一个GUI的影像处理软体而开发的。GTK+是GIMP的套装工具。GTK+从这里开始发展，直到现在已经成为Gnome的中心(Gnome是一个桌面环境)。後来GTK+也已经被推广到BeOS和Win32，使得它成为PHP延伸模组的最佳选择，维持PHP可以跨平台并可以用PHP为Linux,BeOS,Windows等平台开发视窗介面的程式。</p>
+<p>2. PHP-GTK概念</p>
+<p>2.1 前言<br>接下来就要教各位一点点比较观念性的东西罗┅因为这章的概念都是非常重要的，所以就算不懂，也还是要慢慢的看懂它，不然┅以後就┅。还有，接下来的内容不建议没有程式设计经验的读者阅读，因为有很多的观念很容易会搞不清楚。还有，接下来该用英文的部分我都会用英文，这样大家在看国外文件的时候才不会不知所措，加油吧!!如果对本章有任何不懂之处，请自行查阅<br>PHP-GTK Manual：<a href="http://gtk.php.net/manual/en/" target="_blank" rel="noopener">http://gtk.php.net/manual/en/</a></p>
+<p>2.2 Widget(s)<br>Widget是一个GUI程式中基本的functions和forms。最常用的几个Widget是：label、button、window、frame和text<br>box。所有的widget都是来自於一个抽象的基本class─GtkWidget。每个widget都是一个class</p>
+<p>一个Widget一生大概都有五个时期：<br>1. 建立(Creation)：宣告一个物件(declaring an object)<br>2. 放置(Placement)：将它加入一个容器中(adding it to a container)<br>3. 信号连接(Signal Connection)：接收信号以及进行动作(the action it will perform)<br>4. 显示(Display)：它是否是可见的(whether it is viewable or not)<br>5. 删除(Destruction)：关闭程式(closing of a program)</p>
+<p>2.3 Container(s)<br>Container是一个可以包含其他widget的widget。大部分的widget都是container，例如：GtkWindow、GtkTable和GtkBox。除了这点之外，container跟其他的widget没两样，也可以被放到其他container去。而所有的container都是来自於一个class─GtkContainer，本身来自於GtkWidget的class。所以container也是widget的一种。</p>
+<p>2.4 Signal(s)<br>当程式设计师在程式中做了一个动作时，程式需要有一个动作来回应使用者的动作。Signals使程式可以知道使用者做了动作并可以触发适合的回应。</p>
+<p>例如，当使用者按了一个可以开新视窗的按钮(GtkButton)，程式认出这个请求，於是就开了一个新的视窗。这件事可以经由signal来做到。当按钮按下去之後，会使widget发出一个signal，接着再由该signal触发callbacks，产生一个新的视窗(GtkWindow)。</p>
+<p>2.5 Callback(s)<br>Callback就是当signal送出之後，被signal唤起的function。Callback会执行function传回一个值或是做一个动作。Callback就是signal的handler<br>funciton。它可以是该signal的预设handler或着是程式设计师定义的function。要建立一个callback，就必须把function<br>connect 到 signal。</p>
+<p>2.6 Signal Inheritance(继承)<br>和methods一样，signals可以被物件继承。一个widget可以送出任何它的parent widget可以送出的还有它自己特有的signal。</p>
+<p>2.7 Connecting Signals<br>你必须为PHP-GTK指定一个callback<br>function当signal送出时来对signal做回应。把一个signal连接到一个function可以用connect()<br>这个object 方法达成。</p>
+<p>如下：</p>
+<?php  
+//建立一个GtkWindow  
+$window = &new GtkWindow();  
+//将"destroy" signal用connect() 方法连接到shutdown函式  
+$window->connect("destroy", "shutdown");  
+//建立一个GtkButton，按钮文字为"按我"  
+$button = &new GtkButton("按我");  
+$button->connect("clicked", "you_clicked");  
+//把GtkButton放到是container的GtkWindow中  
+$window->add($button);  
+//显示$window以及它的所有child widget  
+$window->show_all();  
+//进入程式主回圈(即程式启动之意)  
+gtk::main();  
+?>
+
+
+<p>执行它的话，就会出现一个视窗，里面有一个写着”按我”的按钮，按下按钮程式就会执行you_clicked函式。在这个程式中，$window物件的”destroy”<br>signal是在使用者按下视窗右上角的”X”时会送出的；而$button物件的”clicked”<br>signal是在使用者按下该按钮的时候会送出的。最後那一行的gtk::main()<br>是一定要执行的，这样才能告诉电脑要开始执行程式，既然有开始执行，那就一定有停止吧? 没错，用gtk::main_quit()<br>就可以停止程式了。</p>
+<p>看完了以上的范例，有些读者可能会有疑问「如果我想执行送出signal的widget之外的widget的method怎么办?」，这时候，就要用另一个method了<br>a connect_object()，它可以跨物件呼叫方法或是传递其他物件做为function的叁数。跨物件呼叫方法如下：</p>
+<p>$window-&gt;connect_object(“destroy”, array(“gtk”,”main_quit”))</p>
+<p>如此，在$window物件的”destroy” signal送出的时候就会唤起gtk::main_quit()这个方法，程式就会终指执行。</p>
+<p>在介绍连接方法的最後，再提一下connect() 和 connect_object() 的自订增加要传给callback function的叁数的办法。见例子：<br>&lt;?php<br>$parameter=”新超人”;<br>$button1 = &amp;new GtkButton(“测试”);<br>//将”clicked” signal连接到who_are_you函式，附加叁数$parameter<br>$button1-&gt;connect(“clicked”,”who_are_you”,$parameter);<br>$button2 = &amp;new GtkButton(“测试二”);<br>//将”clicked” signal连接到kill_the_button1函式，附加叁数$button1<br>$button2-&gt;connect_object(“clicked”,”kill_the_button1”,$button1);</p>
+<p>function who_are_you($widget,$parameter){<br>echo $parameter;<br>}</p>
+<p>function kill_the_button($button){<br>$button-&gt;destroy();<br>}<br>?&gt;</p>
+<p>注意那两个function，who_are_you有两个叁数对吧? 第一个是做什么用的呢?为什么它会自动出现??<br>因为，每个signal的callback function都会因为signal的不同而加上一些内定一定会传入callback<br>function的叁数，而基本上所有的signal都至少会传给callback<br>function一个叁数a产生该signal的物件。所以who_are_you的第一个叁数就是$button1，而第二个就是$parameter，也就是新超人。那kill_the_button函式就不一样罗~<br>因为connect_object()函式会呼略原本signal的callback<br>function的预设叁数，所以kill_the_button就只有附加在connect_object最後的$button1叁数了，如此，kill_the_button就可以呼叫$button1的方法或是取得它的属性，这里呼叫了$button1的destroy方法，於是$button1就会被消灭。</p>
+<p>2.8 Event(s)<br>Event是signal的一种，但是它的用途还有功能都非常强大。就signal来说，signal这种东西都是内建在widget上的，所以，例如GtkWindow没有”clicked”signal，那么在不用event<br>signal的情况下，GtkWindow是决对不可能送出clicked之类的signal的。那如果用了event signal呢?<br>Event signal是可以允许被加到任何的widget上的，所以就算这个widget本来没有发出”clicked”signal的功能，你也可以用add_events()<br>来为它加上按了它之後event signal会做什么样的反应。而event<br>signal中包含的资讯比较多，比如说当你在使用”key-press-event”这个event<br>signal的时候，同时也会记录到你按下的是什么按键，於是通常event signal的callback<br>function格式内定会有两个叁数，第一个依然是送出signal的widget，而第二个就是$event，这个$event是一个class，里面的属性和方法会因为送过来的event<br>signal种类而不同。就”key-press-event”传回的$event<br>class来说，里面有一个属性是keyval，内容就是使用者按的是哪一个键。这些对於一个程式设计师来说常常是很有用的资讯。所以event的重要性是不可忽视的，就算刚开始会有点不懂，也要慢慢的融入才行。这一节也非常重要。</p>
+<p>3. 安装PHP-GTK</p>
+<p>3.1 在Windows系统下安装<br>首先要从<a href="http://gtk.php.net/download.php" target="_blank" rel="noopener">http://gtk.php.net/download.php</a>下载…HP-GTK的windows binary档案(本文撰写时为0.5.1版)。</p>
+<p>接着来看看PHP-GTK 0.5.1 binary档的内容：<br>\php4 → php 和 php-gtk binary 档案<br>\winnt → 预设的php.ini档案<br>\winnt\system32 → gtk binaries used by extension<br>\test → 几个测试用的档案<br>\README.txt → 安装说明档</p>
+<p>开始安装：<br>1. 复制 \php4 的内容到你的php安装目录下(例C:\php)。<br>2. 复制 \winnt 的内容到你的winnt资料夹。在Windows<br>NT或Windows2000上是C:\winnt，在Window95、98、xp上是C:\windows。如果该资料夹里已经有<br>php.ini，那就不用做这个动作。<br>3. 复制 \winnt\system32 的内容到你的winnt\system32资料夹。在Windows<br>NT或Windows2000上是C:\winnt\system32，在Window95、98、xp上是C:\windows\system32。<br>4. 复制 \test 的内容到你想要执行你的script的地方(此步骤非必要)。</p>
+<p>如何执行PHP-GTK程式：<br>PHP-GTK程式可以在「开始」-「执行」下输入指令(或是建立捷径)来启动，如：C:\php\php -q<br>c:\php\test\gtk.php ## 表示不送印出 HTTP Header，但一直使用这个视窗，直到关闭程式。<br>C:\php\php -q -c php.ini c:\gtk.php ## 同上，但执行指定的php.ini设定。<br>C:\php\php C:\php\test\gtk.php ## 表示会送印出 HTTP Header，但一直使<br>用这个视窗，直到关闭程序<br>C:\php\php_win C:\php\test\gtk.php ## 表示不使用视窗，执行後独立一个执行程式，他是使用 php<br>-q模式，但是只要output出任何字元，例如错误讯息，就会停止执行。</p>
+<p>3.2 在UNIX系统下安装<br>Debian的使用者可以在 <a href="http://www.debian.org" target="_blank" rel="noopener">http://www.debian.org</a> 下载PHP-GTK的binary档。系统需求须已安装下列package：</p>
+<p>PHP 4.1.0 或之後的版本，必须是编为CGI binary(command-line) 版本，包含所有的header<br>files和devlement scripts。</p>
+<p>PHP-GTK支援GTK+ v1.2而需要安装1.2.6以上版本的GTK+。GTK+<br>v2.0还未被支援，必须等到它开发完成并且普及了之後才会被支援。你可以从下面的网址取得GTK+<br>v1.2.X的最新版本：<a href="ftp://ftp.gtk.org/pub/gtk/v1.2/" target="_blank" rel="noopener">ftp://ftp.gtk.org/pub/gtk/v1.2/</a></p>
+<p>在将取得的档案解压缩或是由CVS中check out出来之後，切换到该目录下，开始进行安装(打指令罗~)：</p>
+<p>取得CVS版本，执行<br>cvs -d server:<a href="mailto:cvsread@cvs.php.net" target="_blank" rel="noopener">cvsread@cvs.php.net</a>:/repository co php-gtk<br>或下载最新版本<br><a href="http://gtk.php.net/download.php" target="_blank" rel="noopener">http://gtk.php.net/download.php</a></p>
+<p>1. ./buildconf<br>2. ./configure (想要加装extensions的话请输任./configure –help看说明)<br>3. make(如果看到”Could not write┅”，只是代表该GTK+ object还没被支援，不算是什么错误讯息)<br>4. make install</p>
+<p>执行看看test/资料夹中的范例scripts来测试，特别是gtk.php，这些都是展示如何使用的好例子。</p>
+<p>4. 第一支程式</p>
+<p>4.1 前言<br>本章会教导各位一些常用的GtkClass(widget)，还有运用这些来做出你的第一支PHP-GTK程式，如果概念那章不是很熟的话，这章可以给你一个练习的机会喔!<br>如果对本章的内容有不懂或是想要深入了解其他的widget，可以到<a href="http://gtk.php.net/manual/en/" target="_blank" rel="noopener">http://gtk.php.net/manual/en/</a><br>看手册，手册里面有不少范例程式。</p>
+<p>4.2 会用到的widgets<br>在开始写程式之前，先来对等一下会用到的widget class们做一个overview。</p>
+<p>GtkWindow()<br>GtkWindow()建立一个视窗，里面有很多方法可以使用，如：set_title,set_name,<br>connect,set_border_width等┅。</p>
+<p>GtkFrame()<br>GtkFrame()纯粹建立一个好Border，你可以设定它的label name,alignment,<br>shadow(用英文，读Manual的时候会比较方便)。</p>
+<p>GtkVBox()<br>GtkVBox()建立一个直立的container来放入widgets。</p>
+<p>GtkLabel()<br>GtkLabel()可以建立一个label，内容文字可以建立时设定也可以建立後用方法来设定，如果没有设定内容文字，将会建立一个空的label(这是废话吗┅?)。</p>
+<p>GtkHSeparator()<br>GtkHseparator()建立一个水平线。</p>
+<p>GtkEntry()<br>GtkEntry()建立一个textbox供使用者输入资讯。</p>
+<p>GtkHButtonBox()<br>GtkHButtonBox()建立一个以水平方式排列Button的container。</p>
+<p>GktBtton()<br>GtkButton()或许可以说是GUI程式中最常用的widget了，它建立一个可以让使用者按的按钮。</p>
+<p>4.3 开始</p>
+<p>If(!class_exist(“gtk”))<br>{<br>dl(“php_gtk.”.(strstr(PHP_OS,”WIN”) ? “dll” : “so”));<br>}</p>
+<p>这段程式码会判断PHP-GTK延伸模组是否已启动，如果没有，它就会读取适当的档案。在上面的范例中，是靠判断执行的作业系统是Windows还是其它来判断要载入<a href="http://php_gtk.xn--dllphp_gtk-j07uf299a.so" target="_blank" rel="noopener">php_gtk.dll还是php_gtk.so</a>。</p>
+<p>Function delete_event()<br>{<br>return false;<br>}</p>
+<p>这里建立了一个名为delete_event的function，这个function是等会儿delete-event<br>signal发出时的callback function。内容传回false会告诉PHP-GTK用预设的signal<br>handler来处理，而预设的handler会关闭视窗(同时会呼叫该视窗的destroy()<br>函式)，在这里，它会关闭程式(因为这个范例程式只有一个主视窗，一旦关闭就会关闭程式)。</p>
+<p>Function destroy()<br>{<br>Gtk::main_quit();<br>}</p>
+<p>这里建立了一个函式，destroy()。在这个程式中，这个函式是很重要的，因为我们在关闭程式的时候会连接到它。之前说过，Gtk::main_quit()会关闭程式，如果我们在这个程式中没有定义这个function或是这个function里面没有Gtk::main_quit()这行，那么这个程式就不会关闭了。以上一段程式码说明里提到的delete-event来说，return<br>false之後预设会执行关闭视窗的动作，还会呼叫destroy()函式，如果这里没有定义或是没有Gtk::main_quit()这段的话，主视窗的确会关闭，可是程式并不会结束，因为主程式回圈aGtk::main()还在跑。</p>
+<?php  
+$window = &new GtkWindow();  
+//设定名字以辨别各个视窗  
+$window->set_name('main window');  
+//设定视窗的标题  
+$window->set_title('对PHP-GTK的介绍');  
+//设定视窗的大小  
+$window->set_usize(160, 120);  
+//呼叫destroy()函式来结束程式  
+$window->connect('destroy', 'destroy');  
+//呼叫delete_event()函式来关闭视窗  
+$window->connect('delete-event', 'delete_event');  
+//设定视窗的边框宽度  
+$window->set\_border\_width(10);  
+//设定视窗的位置  
+$window->set\_position(GTK\_WIN\_POS\_CENTER);  
+//显示视窗和所有child widget (不显示就看不到)  
+//最後这两行一定要放在程式码的最後，否则什么都看不到  
+$window->show_all();  
+Gtk::main();  
+?>
+
+
+<p>执行程式可以看到如下的图：</p>
+<p>//建立一个GtkFrame<br>$frame = &amp;new GtkFrame(‘经过简易修改的程式’);<br>//把GtkFrame放到GtkWindow里<br>$window-&gt;add($frame);<br>//最下面两行不要动</p>
+<p>结果如下图：</p>
+<p>下面这段建立一个GtkVBox作为container，并把GtkEntry、GtkHSeperator、GtkLabel和GtkButtonBox都pack进去，所谓pack，是GtkBox底下的container们特别加入的放入widget的方法，就类似於add()，而pack用的方法一般是pack_start()和pack_end()，比add()好的地方是可以控制将widget增加进去之後widget的位置(不过只要是container就会有add()方法)，欲查询详细资料请至<br><a href="http://gtk.php.net/manual/en" target="_blank" rel="noopener">http://gtk.php.net/manual/en</a>。</p>
+<p>//建立一个GtkVBox，为常用的container<br>$box1 = &amp;new GtkVBox();<br>//把GtkVBox放到GtkFrame里面<br>$frame-&gt;add($box1);<br>//建立一个GtkLabel并将它pack到GtkVBox里<br>$label = &amp;new GtkLabel();<br>$box1-&gt;pack_start($label);<br>//建立一个GtkHSeparator并将它pack到GtkVBox里<br>$separator = &amp;new GtkHSeparator();<br>$box1-&gt;pack_start($separator);<br>//建立一个GtkEntry并将它pack到GtkVBox里<br>$entry = &amp;new GtkEntry();<br>$box1-&gt;pack_start($entry);<br>//建立一个GtkButtonBox并将它add到GtkVBox里<br>//因为GtkButtonBox也是一个无形的container，位置不重要，所以用add()<br>$box2 = &amp;new GtkHButtonBox();<br>$box1-&gt;add($box2);</p>
+<p>执行如下图：</p>
+<p>最後这段程式码会建立两个GtkButton并pack到GtkButtonBox里去，还有为两个按钮加上连接，使它们起作用，并建立一个函式，只要按下GtkButton就会将GtkLabel的内容换成GtkEntry中的文字。</p>
+<p>$button = &amp;new GtkButton(‘显示输入的字’);<br>//连接”clicked” signal到set_name()函式，附加$label和$entry两个widget<br>$button-&gt;connect_object(‘clicked’,’set_name’,$label,$entry);<br>$box2-&gt;pack_start($button);<br>$button = &amp;new GtkButton(‘离开程式’);<br>//连接”clicked” signal到destroy()函式，将会关闭程式<br>$button-&gt;connect(‘clicked’,’destroy’);<br>$box2-&gt;pack_start($button);</p>
+<p>function set_name($label,$entry)<br>{<br>//用GtkEntry的get_text()方法从取得文字方块内容<br>$gettext=$entry-&gt;get_text();<br>//用GtkLabel的set_text()方法设定新的文字<br>$label-&gt;set_text($gettext);<br>}<br>//最後再提一下那两行┅.<br>$window-&gt;show_all();<br>Gtk::main();</p>
+<p>?到??，整?程式就算是完成了，?看看?行的?果吧~</p>
+<p>5. 其它</p>
+<p>5.1 进一步学习<br>如果在结束了上面的课程之后你还想要更了解PHP-GTK，或是对于本文的内容有任何<br>不明白的地方，这里提供你几个地方可以查询资料：</p>
+<p>PHP-GTK官方网站(En)： <a href="http://gtk.php.net" target="_blank" rel="noopener">http://gtk.php.net</a><br>GTK官方网站(En)： <a href="http://www.gtk.org" target="_blank" rel="noopener">http://www.gtk.org</a><br>PHP-GTK官方网站上的Manual(En)： <a href="http://gtk.php.net/manual/en" target="_blank" rel="noopener">http://gtk.php.net/manual/en</a><br>TIM官方网站(zh-Tw)： <a href="http://tim.jerry.com.tw" target="_blank" rel="noopener">http://tim.jerry.com.tw</a></p>
+<p>5.2 另一个范例<br>这里有一个笔者写的猜数字游戏，算是比较进阶的范例，可以抓回去研究看看。<br><a href="http://pc035860.infor.org/download/GuessNumber.zip" target="_blank" rel="noopener">http://pc035860.infor.org/download/GuessNumber.zip</a></p>
+<p>5.3 参考数据<br>本文主要是参考PHP-GTK官方Manual和Zend网站上的Tutorial而编撰成的：<br><a href="http://gtk.php.net/manual/en" target="_blank" rel="noopener">http://gtk.php.net/manual/en</a><br><a href="http://www.zend.com/zend/tut/tutorial-silva.php" target="_blank" rel="noopener">http://www.zend.com/zend/tut/tutorial-silva.php</a><br>5.4 关于作者<br>无敌铁金刚(自称)，目前(2002/08/18)是台北市立建国中学一升二年级的学生，在<br>学校参加了信息社，这篇文章就是放在社刊上的。</p>
+<p>humen1 Tech<a href="https://blogger.googleusercontent.com/tracker/7269874978253342363-4495803211150079018?l=www.humen1.net" target="_blank" rel="noopener" data-caption data-fancybox="images"><img src="https://blogger.googleusercontent.com/tracker/7269874978253342363-4495803211150079018?l=www.humen1.net" alt></a></p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="200812/e6-b5-8b-e8-af-95-e5-b7-a5-e5-85-b7-e6-8e-92-e8-a1-8c2006.html">测试工具排行2006</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="200812/php-gtk.html">Php Gtk</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 
