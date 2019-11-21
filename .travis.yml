@@ -5,7 +5,7 @@ node_js:
 cache: yarn
 branches:
   only:
-    - master # build master branch only
+    - devel # build devel branch only
 script:
   - hexo generate # generate static files
 deploy:
@@ -13,6 +13,8 @@ deploy:
   skip-cleanup: true
   github-token: $GH_TOKEN
   keep-history: true
+  target_branch: master
+  verbose: true
   on:
-    branch: master
+    branch: devel
   local-dir: public
