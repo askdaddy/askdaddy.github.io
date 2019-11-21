@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      数学之美 系列二 -- 谈谈中文分词 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">数学之美 系列二 -- 谈谈中文分词</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/10/11</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/值得一读">值得一读</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>谈谈中文分词<br>----- 统计语言模型在中文处理中的一个应用  </p>
+<p>上回我们谈到<a href="http://googlechinablog.com/2006/04/blog-post.html" target="_blank" rel="noopener">利用统计语言模型进行语言处理</a>，由于模型是建立在词的基础上的，对于中日韩等语言，首先需要进行分词。例如把句子 “中国航天官员应邀到美国与太空总署官员开会。”  </p>
+<p>分成一串词：<br>中国 / 航天 / 官员 / 应邀 / 到 / 美国 / 与 / 太空 / 总署 / 官员 / 开会。  </p>
+<p>最容易想到的，也是最简单的分词办法就是查字典。这种方法最早是由北京航天航空大学的梁南元教授提出的。  </p>
+<p>用 “查字典” 法，其实就是我们把一个句子从左向右扫描一遍，遇到字典里有的词就标识出来，遇到复合词（比如 “上海大学”）就找最长的词匹配，遇到不认识的字串就分割成单字词，于是简单的分词就完成了。这种简单的分词方法完全能处理上面例子中的句子。八十年代， <a href="http://www.cs.hit.edu.cn/cn/teacher.jsp?teacher=wangxiaolong" target="_blank" rel="noopener">哈工大的王晓龙博士</a>把它理论化，发展成最少词数的分词理论，即一句话应该分成数量最少的词串。这种方法一个明显的不足是当遇到有二义性 （有双重理解意思）的分割时就无能为力了。比如，对短语 “发展中国家” 正确的分割是”发展-中-国家”，而从左向右查字典的办法会将它分割成”发展-中国-家”，显然是错了。另外，并非所有的最长匹配都一定是正确的。比如”上海大学城书店”的正确分词应该是 “上海-大学城-书店，” 而不是 “上海大学-城-书店”。  </p>
+<p>九十年代以前，海内外不少学者试图用一些文法规则来解决分词的二义性问题，都不是很成功。90年前后，清华大学的郭进博士用统计语言模型成功解决分词二义性问题，将汉语分词的错误率降低了一个数量级。  </p>
+<p>利用统计语言模型分词的方法，可以用几个数学公式简单概括如下：<br>我们假定一个句子S可以有几种分词方法，为了简单起见我们假定有以下三种：<br>A1, A2, A3, …, Ak,<br>B1, B2, B3, …, Bm<br>C1, C2, C3, …, Cn  </p>
+<p>其中，A1, A2, B1, B2, C1, C2 等等都是汉语的词。那么最好的一种分词方法应该保证分完词后这个句子出现的概率最大。也就是说如果 A1,A2,…, Ak 是最好的分法，那么 （P 表示概率）：<br>P (A1, A2, A3, …, Ak） 〉 P (B1, B2, B3, …, Bm), 并且<br>P (A1, A2, A3, …, Ak） 〉 P(C1, C2, C3, …, Cn)<br>因此，只要我们利用上回提到的统计语言模型计算出每种分词后句子出现的概率，并找出其中概率最大的，我们就能够找到最好的分词方法。  </p>
+<p>当然，这里面有一个实现的技巧。如果我们穷举所有可能的分词方法并计算出每种可能性下句子的概率，那么计算量是相当大的。因此，我们可以把它看成是一个 <a href="http://algorithm.diy.myrice.com/algorithm/technique/dynamic_programming/chapter3.htm" target="_blank" rel="noopener">动态规划</a>（Dynamic Programming) 的问题，并利用 “维特比”（<a href="http://www.comp.leeds.ac.uk/roger/HiddenMarkovModels/html_dev/viterbi_algorithm/s2_pg1.html" target="_blank" rel="noopener">Viterbi</a>） 算法快速地找到最佳分词。  </p>
+<p>在清华大学的郭进博士以后，海内外不少学者利用统计的方法，进一步完善中文分词。其中值得一提的是清华大学孙茂松教授和香港科技大学吴德凯教授的工作。  </p>
+<p>需要指出的是，语言学家对词语的定义不完全相同。比如说 “北京大学”，有人认为是一个词，而有人认为该分成两个词。一个折中的解决办法是在分词的同时，找到复合词的嵌套结构。在上面的例子中，如果一句话包含”北京大学”四个字，那么先把它当成一个四字词，然后再进一步找出细分词 “北京” 和 “大学”。这种方法是最早是郭进在 “Computational Linguistics” （《计算机语言学》）杂志上发表的，以后不少系统采用这种方法。  </p>
+<p>一般来讲，根据不同应用，汉语分词的颗粒度大小应该不同。比如，在机器翻译中，颗粒度应该大一些，”北京大学”就不能被分成两个词。而在语音识别中，”北京大学”一般是被分成两个词。因此，不同的应用，应该有不同的分词系统。Google 的葛显平博士和朱安博士，专门为搜索设计和实现了自己的分词系统。  </p>
+<p>也许你想不到，中文分词的方法也被应用到英语处理，主要是手写体识别中。因为在识别手写体时，单词之间的空格就不很清楚了。中文分词方法可以帮助判别英语单词的边界。其实，语言处理的许多数学方法通用的和具体的语言无关。在 Google 内，我们在设计语言处理的算法时，都会考虑它是否能很容易地适用于各种自然语言。这样，我们才能有效地支持上百种语言的搜索。  </p>
+<p>对中文分词有兴趣的读者，可以阅读以下文献：  </p>
+<p>1. 梁南元<br><a href="http://www.touchwrite.com/demo/LiangNanyuan-JCIP-1987.pdf" target="_blank" rel="noopener">书面汉语自动分词系统</a><br><a href="http://www.touchwrite.com/demo/LiangNanyuan-JCIP-1987.pdf" target="_blank" rel="noopener">http://www.touchwrite.com/demo/LiangNanyuan-JCIP-1987.pdf</a>  </p>
+<p>2. 郭进<br><a href="http://www.touchwrite.com/demo/GuoJin-JCIP-1993.pdf" target="_blank" rel="noopener">统计语言模型和汉语音字转换的一些新结果</a><br><a href="http://www.touchwrite.com/demo/GuoJin-JCIP-1993.pdf" target="_blank" rel="noopener">http://www.touchwrite.com/demo/GuoJin-JCIP-1993.pdf</a>  </p>
+<p>3. 郭进<br><a href="http://acl.ldc.upenn.edu/J/J97/J97-4004.pdf" target="_blank" rel="noopener">Critical Tokenization and its Properties</a><br><a href="http://acl.ldc.upenn.edu/J/J97/J97-4004.pdf" target="_blank" rel="noopener">http://acl.ldc.upenn.edu/J/J97/J97-4004.pdf</a>  </p>
+<p>4. 孙茂松<br><a href="http://portal.acm.org/citation.cfm?coll=GUIDE&dl=GUIDE&id=980775" target="_blank" rel="noopener">Chinese word segmentation without using lexicon and hand-crafted training data</a><br><a href="http://portal.acm.org/citation.cfm?coll=GUIDE&dl=GUIDE&id=980775" target="_blank" rel="noopener">http://portal.acm.org/citation.cfm?coll=GUIDE&dl;=GUIDE&id;=980775</a></p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2007/10/e8-82-a1-e7-a5-a8-e5-85-a5-e9-97-a8-e7-9f-a5-e8-af-86.html">股票入门知识</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2007/10/e6-95-b0-e5-ad-a6-e4-b9-8b-e7-be-8e-e7-b3-bb-e5-88-97-e4-b8-80-e7-bb-9f-e8-ae-a1-e8-af-ad-e8-a8-80-e6-a8-a1-e5-9e-8b.html">数学之美 系列一 -- 统计语言模型</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

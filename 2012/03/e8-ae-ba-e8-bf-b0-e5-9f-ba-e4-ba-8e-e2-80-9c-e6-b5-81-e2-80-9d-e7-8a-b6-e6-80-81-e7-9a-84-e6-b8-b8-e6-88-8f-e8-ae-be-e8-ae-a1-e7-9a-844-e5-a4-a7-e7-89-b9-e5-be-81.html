@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      论述基于“流”状态的游戏设计的4大特征 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">论述基于“流”状态的游戏设计的4大特征</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2012/03/27</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/游戏制作">游戏制作</a>
+                
+              
+          </span>
+        </span>
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>作者：Sean Baron 你本来可能只是打算坐下来玩几分钟游戏；而过了好几个小时后，你才后知后觉地意识到自己正在扮演一个柔术演员的角色，并一直努力地在游戏中获取更高分数。此时的你可能会问自己：时间怎么过得这么快？我是在什么时候沉浸到游戏中？ 也许你并未真正沉浸于游戏中，但是如果你认为自己是一名游戏玩家，你便可能已经遇到过类似的情况。而当你面对任何游戏都无法自拔之时，你便深陷这种情形中了。 特别是当你在玩一款优秀的游戏时更能够深刻体会到这种感受。如果游戏开发者能够塑造并添加具有强大用户粘性的设计要素，他们便可能创造出有趣，且畅销的好游戏。 幸运的是，一些心理学家已经察觉并研究了这种能够提高用户粘性的内容；他们甚至为其命名为：认知流。我将在以下内容中详细介绍这种“流”及其四大特征。我将从心理角度阐述每一个特征，并提供给游戏开发者一些重要的建议。 介绍 在20世纪70年代，心理学家Mihaly Csikszentmihalyi通过实验发现了“流”的存在。他发现人们的技能以及他们所面对的任务难度将导致不同的认知和情感状态的产生。如果人们的技能太低但却面对过于复杂的任务，他们便会感到焦虑。相反地，如果是技能高超之人面对过于简单的任务，他也会对此感到厌烦。而当人们的技能和任务难度成正比时，他们便会进入“流”状态。 在这种状态下，人们便会体验到： 1.极度专注于任务。 2.具有主动控制感。 3.整合行动和意识。 4.失去自我意识。 5.忘却了时间的流逝。 6.感受到完成任务是继续前进的唯一方法。 Csikszentmihalyi同样也提到了任务中能够推动技能和任务难度平衡的四大特征（能够提到流状态的概率）。这些特征分别是： 1.拥有明确的目标和管理规则。 2.以个人能力为基准完成目标。 3.明确且即时地反馈执行力和目标完成状况。 4.减少外部干扰，便于集中注意力。 如果游戏开发者希望玩家能够在游戏中产生“流”状态，他们就需要好好研究这四大任务特征。以下我将更加详细地分析这四大特征。   <strong>特征1：游戏应该拥有明确的目标和管理规则。</strong> “我完全被搞糊涂了。一个非玩家角色（NPC）告诉我我应该做什么，但是我却因为房间中央的战利品而分神了，并且这时候我还发现了来自四面八方的Giant Spiders。此时我不但不能再访问NPC，我还注意到这个地牢中的所有房间都拥有相同的形状以及相同的颜色，我对此更加迷糊了！我不知道该去哪里也不知道如何才能到达目的地。过了15分钟后我才找到我需要面对的谜题，但是现在我却不知道该使用库存中20个任务道具中的哪一个去揭开谜题。过了一会后，我最终放弃了任务。” 如果玩家不知道目标是什么，不知道自己该如何完成目标或者使用何种技能去解决谜题，他们的“流”状态便会瓦解。并且他们将最终停止游戏。   <strong>为何明确的目标和管理规则对于人们来说如此重要？</strong>因为我们的信息处理和关注能力都非常局限；我们不可能完全消化所有来自屏幕上或者说话人口中的信息。尽管我们能够同时处理许多基于图像或声音的信息，但是这种处理能力也是非常局限。   特别是当我们的注意力出现分散时，这种处理局限便会更加明显。除此之外，如果任务相关信息过快呈现于人们眼前或者同时展开了多条信息，人们也会明显感受到信息处理的局限性。不管是何种情况，人们都会终止任务的执行。因为此时的人们会充满各种交流，觉得自己不可能完成任务，而因此抑制了内心“流”的发展。 关于信息处理的另外一大重要元素便是确保指示与任务的一致性。如果你能够确保任务和信息/指示保持一致，人们便能够更加容易理解并使用这些信息。 信息处理和注意力问题将直接影响我们解决问题与做决定的能力。如果你的信息处理出了问题，那么人们对于任务目标和规则的理解也会受到牵连。也就是如果人们不能理解问题的本质，他们便会感到焦虑而不愿意去尝试着解决问题。最终，这种挫败感将导致“流”状态的下降并因此影响人们解决问题的能力。 如果面对过多的打击，人们可能会后退求助于他们早前所使用的解决问题方法。但是开发者却不一定能够考虑到这种逆转。 明确目标和管理规则是一种切实可行的方法。获取目标是一种有报答的行为，从而因此能够推动个体继续努力完成目标。不论完成目标能够让你的角色获得升级还是争取更多分数，你都会因此而更加坚定达到目标的最终信念。目标——成就——奖励，如此循环不仅能够让玩家对游戏更加着迷，而且能够推动他们“流”状态的发展。 <strong>游戏设计师该如何解决目标和规则问题？</strong>如果设计师们能够考虑上述所提到的心理元素，他们便能够轻松地解决这些规则和目标问题。 * 不论是用户界面还是游戏屏幕上的任何内容都应该明确地向玩家指示他们的任务。情境线索，HUD信息以及NPC等也都应该确保目标的浅显易懂。 * 因为注意力的分散会影响理解力，所以设计师应该避免在玩家面对高度刺激感时刻（游戏邦注：如玩家在《光晕2》中面对Flood的肆虐或者在《天际》中需要避开成群的Draugr时）提供目标和指示内容。 * 在提供重要信息时更需要小心谨慎，以此确保信息和任务/目标保持一致。《死亡空间》中的指示线索便是一个典型的例子。开发者通过在玩家所处环境周围覆盖关于下个目标的相关提示，从而让玩家能够清楚地知道自己该如何前进。 * 而关于规则，玩家则希望能够在游戏过程中尝试更多不同的游戏技巧。 但是，在关卡或游戏中间段引入新的机制则会抑制“流”状态的发展。不过有时候这么做却是必要的，并且能够提高游戏的乐趣以及游戏玩法的多元化（例如，在《半条命》中主人公Gordon Freeman第一次获得Zero-point能量场操纵器时）。 但是当你提供新技能给玩家时，你还需要谨慎地面对如何培养他们使用新技能的问题（例如，当Gordon使用Zero-point能量场操纵器去追赶Dog时）的。 * 将小目标（如清除一地的野猪）与更大的目标（如获得足量的XP进行升级）并且与更大的目标（如进入特定关卡的齿轮）相互联系起来。这种联系将创造一系列的奖励体验，从而因此吸引更多玩家玩游戏并构建起“目标——成就——奖励”循环。 如果玩家能够较容易完成目标，他们便更乐意继续游戏。不过就像之前所说的，我们必须平衡玩家技能与任务难度之间的比例。 <strong>特征2：游戏只能要求玩家执行自己能力范围内的行动。</strong> “我知道我应该朝着Fiend攻击的相反方向发动进攻，这么做才能够避开他的攻击，并朝着我的相反方向打击他。但是事实上我却做不到这一点。不知道是因为我不够放松还是这是我初次游戏，我的行动都非常笨拙。对此我感到非常沮丧。” 理解玩家的能力局限并培养他们的技能非常重要。如果玩家没有能力完成目标，那么即使你的目标和规则再明确，他们也不会感受到游戏体验的乐趣。 <strong>为什么游戏只能要求玩家执行自己能力范围内的行动？</strong> 因为如果不这么做，“玩家便会停止游戏！”还有许多心理元素拥有值得借鉴之处： 压力和执行力影响着“流”。如果玩家的能力不足以帮助他们完成游戏目标，他们便会倍感压力从而使得自己的执行力大大下降。最终瓦解了他们的“流”状态并破坏了游戏体验的乐趣。 目标难度和玩家的毅力。随着目标难度的提升（与玩家技能紧密相关），玩家关于完成这些目标的耐性也会被慢慢磨平，从而最终不愿意继续游戏。   <strong>游戏设计师该如何处理涉及玩家技能与任务难度的问题？</strong> 每个玩家都拥有自己的执行力-压力曲线（见图2）。这就意味着一名压力值为+7（随机值）的玩家可能拥有非常高的执行力，而另外一名同时拥有+7压力值的玩家就可能就执行力欠佳。 这同样也意味着游戏难度的层次（如简单，中等，困难）设置不合理也会导致糟糕的游戏体验。 游戏开发者应该在游戏中设置能够调整不同游戏情况以适应不同难度的AI，从而对玩家的执行力产生积极的影响（例如《求生之路》系列游戏中的AI Director）。 对于这种AI，你应该着重考虑执行力和乐趣之间的关系。有些玩家在面对越来越困难的任务时执行力也会慢慢提高，但是在这种复杂的挑战下他们却不一定能够感受到游戏的乐趣。在这种情况下，他们反倒会充满焦虑感（如图1所示）。游戏开发者便是从那些拥有较高执行力同时也属于较高流失率玩家中意识到这一点（如，即使玩家因为任务难度的改变而离开游戏，但是他们的执行力却仍保持稳定）。 另外一个需要考虑的元素便是，这些AI该如何针对不同多人玩家团队（如《求生之路2》战役中的4名玩家）设置难度。如此看来，开发者必须深刻意识到任务难度的变化将从不同方面影响着不同能力的玩家。因此，开发者首先需要考虑如何在不破坏游戏的前提下平衡同一个团队中最优秀玩家或最糟糕玩家，从而做出最合理的难度改变。 逐步向玩家传输游戏中的特殊技能。如果你的游戏中没有那些玩家熟知的技能（游戏邦注：如典型的FPS控制或瞄准技能），你就需要逐步地教授玩家你的游戏中的新技能。鉴于之前提到的信息处理局限，你应该让玩家能够在一种相对缓和的环境下学习这种技能。 <strong>特征3：游戏应该明确且即时地反馈玩家的执行力</strong> “我这样做对吧？我刚刚创造的斧头是否放置到我的库存中了？这一行动是否能够提高我的魔法能力？” 无论这种反馈信息是基于虚拟高尔夫俱乐部所发出的声音，还是RPG游戏中经典的经验指示栏，或者是FPS游戏中模拟血的红色指示图标，你都需要让玩家清楚自己在游戏中的发展。 <strong>为何玩家需要获得即时的反馈？</strong> 这源自人类与生俱来的学习和调节机制。如果在完成行动后（200至400分毫秒内）或期间给予玩家相关反馈，便能够帮助他们更好地处理行动与结果之间的关系。 但是有趣的是，在行动开始的同时给予反馈信息却不见得有多大成效。（见图3）。 再次回到目标上，如果游戏能够在玩家的游戏进程中提供中期和长期目标（完成一个关卡或完成游戏）反馈，便能够进一步提高游戏的用户粘性并推动玩家最终完成游戏。 这也就意味着接收到反馈信息的玩家更愿意长时间玩游戏。   <strong>游戏设计师应该如何处理反馈问题？</strong> 如果玩家发现行动和结果之间出现了矛盾，他们便很难理解自己的行动对于执行力的影响。 所以开发者应该建立相关机制并尽早呈现给玩家长期和短期目标，随后在整个游戏过程中始终围绕着这些目标而发展。 <strong>特征4：游戏应该排除任何会破坏注意力的外部信息。</strong> “这些穿梭于屏幕上方和下方的咒语和图标看起来真有趣！你看我的Ice Storm咒语的粒子影响！等等！谁袭击了我？” 如果面对的是越来越多噪杂的内容，玩家关于察觉并评估重要刺激物的能力便会大大减弱。这就意味着设计师应该确保那些穿梭于游戏中（不论是UI还是HUD）的额外内容足够简单。 <strong>为何需要排除任何会破坏玩家注意力的外部信息？</strong> 我们不得不再次提到人类对于信息处理的局限：就像我们在第一个特征中所提到的“流”状态，人类对于信息的处理具有一定的局限。而杂乱的视野将会打乱玩家的信息处理过程；并因此影响玩家对于目标和规则的理解，从而最终影响他们的“流”状态。 游戏设计师应该如何处理外部信息问题？HUD和游戏内部的菜单设置便是最简单的方法（游戏邦注：如《死亡空间》或《辐射》中那样）。 如果你的游戏中牵扯到游戏技能或选择，或者说这是开发者为了突破艺术或技术界限所强调的内容，你就必须将其涵括到游戏中去。 <strong>结论</strong> 能够创造出“流”状态的任务将拥有明确的目标和管理规则；基于玩家的能力调整目标；提供清晰且即时的执行力反馈；并且擅于排除任何外部信息。如果游戏开发者在设计过程中能够考虑这些特征，他们定能够创造出具有较高用户粘性（且高销量）的游戏。 我针对于每个特征所列举出的设计要素只是一种例子；或者说只是基于心理元素的基本原理。你应该根据你所创造的游戏类型——不论简单还是复杂，采用不同方法去应对这些特征和问题——就像每种特征中还存在许多推动着“流”状态发展的心理要素。 同时值得注意的是，大多数优秀的游戏设计师和游戏公司都已经明确（或含蓄）认可了这些“流”特征的重要性。 最后我想说的是，我所提供的这些内容只是引导开发者和设计师思考如何提高游戏的用户粘性；而真正的实践完全取决于那些参与游戏创造的人。</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2012/04/e6-8f-90-e9-ab-98-linux-e4-b8-8a-socket-e6-80-a7-e8-83-bd.html">提高 Linux 上 Socket 性能</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2011/12/e6-9c-88-e4-bb-bd-e7-bc-a9-e5-86-99.html">月份缩写</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

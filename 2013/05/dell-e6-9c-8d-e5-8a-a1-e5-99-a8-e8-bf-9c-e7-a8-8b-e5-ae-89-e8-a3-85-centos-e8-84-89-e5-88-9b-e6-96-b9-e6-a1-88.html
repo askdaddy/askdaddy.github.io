@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      Dell 服务器远程安装 Centos 脉创方案 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Dell 服务器远程安装 Centos 脉创方案</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2013/05/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/linux server">linux server</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/dell">dell</a>
+                  
+                
+                  
+                    <a href="/tags/idrac">idrac</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>手头的服务器大多是dell R410&amp;R610，都有 iDrac 。服务器的配置很不错，需要充分的利用。 远程开关机这些自然不在话下。于是寻思着如果能重装系统呢？ 也问了几个牛B的运维大大，给的方案有这么些 1.netinstall - 这个很传统，很耗带宽（不过是上行带宽的话IDC也无所谓哦～） 2.自己做centos 软件源 - 这个很牛，直接在IDC内部做个发布版本的yum镜像，一样的耗带宽，不过比方案1省很多 以上2个方案适合在一个物理地点集中托管很多服务器，但是我们的应用决定了我们有很多分散的物理地点，每个物理地点托管的机器不超过20台，所以… 自己想了2个方案: 3. 用USB安装，现在usb很便宜一个30元左右，成本合理（遇到的问题后面再说） 4. 刻录光盘放在服务器里的CD中，随时可重装系统（遇到的问题后面再说） 问题来了。。。来的很快： 方案3在安装过程中很ok但是装完了发现因为是usb启动引导的，所以grub把引导区写在usb上了 。。。 囧～ 虽然可以通过改grub来纠正这个错误，但是！ 首先我没能搞定，其次，我都搞不定运维肯定也搞不定！！ 方案4 完全没问题，光盘这种介质在现在是多么的便宜，合下来1张系统盘只要1.3元成本～ 这是我梦想的解决方案啊！！！！ 但是！！ 有个致命的弱点：系统装完后光驱会弹出！！！ 本来采取远程安装就是不想依赖机房运维，如果每次装系统都要机房值班推光驱，这太让我不能接受了！ 后来一次再和我们运维总监聊的过程中给我一个很好的启发：可以将光盘镜像存在usb里（插服务器里），然后用iDrac的虚拟介质引导安装！ 说干就干： 第一步，分离光盘镜像 把引导部分抽离 成启动iso 这个iso是安装时引导用 最终我分离的iso为35m （可以进一步优化） 这部分是要从本地传给服务器的。 建立一个工作目录，网上一般叫 myiso/ 目录结构如下 myiso/ ======isolinux/ ===============<a href="/uploads/2013/05/抓图3.png"><a href="/uploads/2013/05/%E6%8A%93%E5%9B%BE3.png" data-caption="抓图3" data-fancybox="images"><img src="/uploads/2013/05/%E6%8A%93%E5%9B%BE3.png" alt="抓图3"></a></a> 然后在myiso上一个目录跑一下这个命令 [bash] mkisofs -o myiso.iso -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table myiso [/bash] 这样你就有个用来做虚拟介质的镜像了 》》》 myiso.iso 补充： 要说isolinux这个目录和里面的文件的来源，是我从 centos的安装镜像里解压出来的～ 对的，完全用官方的东西哦 又补充：boost.msg &amp;&amp; isolinux.cfg是可以修改的，比如我改的 isolinux.cfg如下 [text] prompt 1 timeout 600 display boot.msg menu title Welcome to CentOS 6.3! label linux menu label ^Install or upgrade an existing system menu default kernel vmlinuz append initrd=initrd.img label rescue menu label ^Rescue installed system kernel vmlinuz append initrd=initrd.img rescue [/text] 第二步,简简单单的把U盘格式一下（fat32）然后把 官方镜像iso里的 images/ 和镜像本身放入U盘， Done！ 第二.一步，把u盘插入dell 服务器内部usb接口 ：） 第三步，启动idrac虚拟终端，挂载虚拟介质（myiso.iso） 第四步，开始安装centos， 此处略去50字。。。</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2013/05/e8-bd-af-e4-bb-b6-e5-bc-80-e5-8f-91-e7-9a-84-e9-ad-94-e5-8a-9b-e4-b8-89-e8-a7-92.html">软件开发的“魔力三角”</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2013/04/e5-90-8e-e5-8f-b0-e7-ae-a1-e7-90-86-e7-94-a8-e6-a8-a1-e6-9d-bf.html">后台管理用模板</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

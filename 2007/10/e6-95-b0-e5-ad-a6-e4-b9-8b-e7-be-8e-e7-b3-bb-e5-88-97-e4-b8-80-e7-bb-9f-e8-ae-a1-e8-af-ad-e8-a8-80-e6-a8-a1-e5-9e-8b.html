@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      数学之美 系列一 -- 统计语言模型 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">数学之美 系列一 -- 统计语言模型</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/10/11</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/值得一读">值得一读</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>系列一： 统计语言模型 (Statistical Language Models)  </p>
+<p>Google 的使命是整合全球的信息，所以我们一直致力于研究如何让机器对信息、语言做最好的理解和处理。长期以来，人类一直梦想着能让机器代替人来翻译语言、识别语音、认识文字（不论是印刷体或手写体）和进行海量文献的自动检索，这就需要让机器理解语言。但是人类的语言可以说是信息里最复杂最动态的一部分。为了解决这个问题，人们容易想到的办法就是让机器模拟人类进行学习 - 学习人类的语法、分析语句等等。尤其是在乔姆斯基（Noam Chomsky 有史以来最伟大的语言学家）提出 “形式语言” 以后，人们更坚定了利用语法规则的办法进行文字处理的信念。遗憾的是，几十年过去了，在计算机处理语言领域，基于这个语法规则的方法几乎毫无突破。  </p>
+<p>其实早在几十年前，数学家兼信息论的祖师爷 <a href="http://www.google.com/search?hl=zh-CN&newwindow=1&q=%E4%BF%A1%E6%81%AF%E8%AE%BA+%E9%A6%99%E5%86%9C+Claude&btnG=%E6%90%9C%E7%B4%A2&lr=" target="_blank" rel="noopener">香农</a> (Claude Shannon)就提出了用数学的办法处理自然语言的想法。遗憾的是当时的计算机条件根本无法满足大量信息处理的需要，所以他这个想法当时并没有被人们重视。七十年代初，有了大规模集成电路的快速计算机后，香农的梦想才得以实现。  </p>
+<p>首先成功利用数学方法解决自然语言处理问题的是语音和语言处理大师贾里尼克 (<a href="http://www.clsp.jhu.edu/people/jelinek/" target="_blank" rel="noopener">Fred Jelinek</a>)。当时贾里尼克在 IBM 公司做学术休假 (Sabbatical Leave)，领导了一批杰出的科学家利用大型计算机来处理人类语言问题。统计语言模型就是在那个时候提出的。  </p>
+<p>给大家举个例子：在很多涉及到自然语言处理的领域，如机器翻译、语音识别、印刷体或手写体识别、拼写纠错、汉字输入和文献查询中，我们都需要知道一个文字序列是否能构成一个大家能理解的句子，显示给使用者。对这个问题，我们可以用一个简单的统计模型来解决这个问题。  </p>
+<p>如果 S 表示一连串特定顺序排列的词 w1， w2，…， wn ，换句话说，S 可以表示某一个由一连串特定顺序排练的词而组成的一个有意义的句子。现在，机器对语言的识别从某种角度来说，就是想知道S在文本中出现的可能性，也就是数学上所说的S 的概率用 P(S) 来表示。利用条件概率的公式，S 这个序列出现的概率等于每一个词出现的概率相乘，于是P(S) 可展开为：  </p>
+<p>P(S) = P(w1)P(w2|w1)P(w3| w1 w2)…P(wn|w1 w2…wn-1)  </p>
+<p>其中 P (w1) 表示第一个词w1 出现的概率；P (w2|w1) 是在已知第一个词的前提下，第二个词出现的概率；以次类推。不难看出，到了词wn，它的出现概率取决于它前面所有词。从计算上来看，各种可能性太多，无法实现。因此我们假定任意一个词wi的出现概率只同它前面的词 wi-1 有关(即马尔可夫假设），于是问题就变得很简单了。现在，S 出现的概率就变为：  </p>
+<p>P(S) = P(w1)P(w2|w1)P(w3|w2)…P(wi|wi-1)…<br>(当然，也可以假设一个词又前面N-1个词决定，模型稍微复杂些。）  </p>
+<p>接下来的问题就是如何估计 P (wi|wi-1)。现在有了大量机读文本后，这个问题变得很简单，只要数一数这对词（wi-1,wi) 在统计的文本中出现了多少次，以及 wi-1 本身在同样的文本中前后相邻出现了多少次，然后用两个数一除就可以了,P(wi|wi-1) = P(wi-1,wi)/ P (wi-1)。  </p>
+<p>也许很多人不相信用这么简单的数学模型能解决复杂的语音识别、机器翻译等问题。其实不光是常人，就连很多语言学家都曾质疑过这种方法的有效性，但事实证明，统计语言模型比任何已知的借助某种规则的解决方法都有效。比如在 Google 的<a href="http://www.google.com/language_tools?hl=zh-CN" target="_blank" rel="noopener">中英文自动翻译</a> 中，用的最重要的就是这个统计语言模型。去年美国标准局(NIST) 对所有的机器翻译系统进行了评测，Google 的系统是不仅是全世界最好的，而且高出所有基于规则的系统很多。  </p>
+<p>现在，读者也许已经能感受到数学的美妙之处了，它把一些复杂的问题变得如此的简单。当然，真正实现一个好的统计语言模型还有许多细节问题需要解决。贾里尼克和他的同事的贡献在于提出了统计语言模型，而且很漂亮地解决了所有的细节问题。十几年后，李开复用统计语言模型把 997 词语音识别的问题简化成了一个 20 词的识别问题，实现了有史以来第一次大词汇量非特定人连续语音的识别。  </p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2007/10/e6-95-b0-e5-ad-a6-e4-b9-8b-e7-be-8e-e7-b3-bb-e5-88-97-e4-ba-8c-e8-b0-88-e8-b0-88-e4-b8-ad-e6-96-87-e5-88-86-e8-af-8d.html">数学之美 系列二 -- 谈谈中文分词</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2007/09/e4-b8-80-e4-b8-aa-e5-bc-ba-e5-a4-a7-e7-9a-84-e5-9b-be-e8-a1-a8-e7-b1-bb-jpgraph.html">一个强大的图表类-Jpgraph</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

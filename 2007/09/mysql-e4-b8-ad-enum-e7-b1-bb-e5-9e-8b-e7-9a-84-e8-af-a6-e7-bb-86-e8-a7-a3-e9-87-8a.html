@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      MYSQL中 ENUM 类型的详细解释 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">MYSQL中 ENUM 类型的详细解释</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/09/04</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/数据库">数据库</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>MYSQL中 ENUM 类型的详细解释  </p>
+<p><code>ENUM</code> 类型</p>
+<p><code>ENUM</code> 是一个字符串对象，其值通常选自一个允许值列表中，该列表在表创建时的列规格说明中被明确地列举。</p>
+<p>在下列某些情况下，值也可以是空串(<code>&quot;&quot;</code>) 或 <code>NULL</code>：</p>
+<ul>
+<li>如果将一个无效值插入一个 <code>ENUM</code> (即，一个不在允许值列表中的字符串)，空字符串将作为一个特殊的错误值被插入。事实上，这个字符串有别于一个”普通的”空字符串，因为这个字符串有个数字索引值为 0。稍后有更详细描述。</li>
+<li>如果一个 <code>ENUM</code> 被声明为 <code>NULL</code>，<code>NULL</code> 也是该列的一个合法值，并且该列的缺省值也将为 <code>NULL</code> 。如果一个 <code>ENUM</code> 被声明为 <code>NOT NULL</code>，该列的缺省值将是该列表所允许值的第一个成员。</li>
+</ul>
+<p>每个枚举值均有一个索引值：</p>
+<ul>
+<li><p>在列说明中列表值所允许的成员值被从 1 开始编号。</p>
+</li>
+<li><p>空字符串错误值的索引值为 0。这就意味着，你可以使用下面所示的 <code>SELECT</code> 语句找出被赋于无效 <code>ENUM</code> 值的记录行。</p>
+<p>mysql&gt; SELECT * FROM tbl_name WHERE enum_col=0; </p>
+</li>
+<li><p><code>NULL</code> 值的索引值为 <code>NULL</code>。</p>
+</li>
+</ul>
+<p>例如，指定为 <code>ENUM(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)</code> 的一个列，可以有下面所显示的任一值。每个值的索引值也如下所示：</p>
+<p><strong>值</strong></p>
+<p><strong>索引值</strong></p>
+<p><code>NULL</code></p>
+<p><code>NULL</code></p>
+<p><code>&quot;&quot;</code></p>
+<p>0</p>
+<p><code>&quot;one&quot;</code></p>
+<p>1</p>
+<p><code>&quot;two&quot;</code></p>
+<p>2</p>
+<p><code>&quot;three&quot;</code></p>
+<p>3</p>
+<p>换个枚举最大可以有 65535 个成员值。</p>
+<p>从 MySQL 3.23.51 开始，当表被创建时，<code>ENUM</code> 值尾部的空格将会自动删除。</p>
+<p>当为一个 <code>ENUM</code> 列赋值时，字母的大小写是无关紧要的。然而，以后从列中检索出来的值的大小写却是匹配于创建表时所指定的允许值。</p>
+<p>如果在一个数字语境中检索一个<code>ENUM</code>，列值的索引值将被返回。例如，你可以像这样使用数字值检索一个 <code>ENUM</code> 列：</p>
+<p>mysql&gt; SELECT enum_col+0 FROM tbl_name; </p>
+<p>如果将一个数字存储到一个 <code>ENUM</code> 中，数字被当作为一个索引值，并且存储的值是该索引值所对应的枚举成员。(但是，这在 <code>LOAD DATA</code> 将不能工作，因为它视所有的输入均为字符串。) 在一个 <code>ENUM</code> 字符串中存储数字是不明智的，因为它可能会打乱思维。</p>
+<p><code>ENUM</code> 值依照列规格说明中的列表顺序进行排序。(换句话说，<code>ENUM</code> 值依照它们的索引号排序。)举例来说，对于 <code>ENUM(&quot;a&quot;, &quot;b&quot;)</code> <code>&quot;a&quot;</code> 排在 <code>&quot;b&quot;</code> 后，但是对于 <code>ENUM(&quot;b&quot;, &quot;a&quot;)</code> ， <code>&quot;b&quot;</code> 却排在 <code>&quot;a&quot;</code> 之前。空字符串排在非空字符串前，<code>NULL</code> 值排在其它所有的枚举值前。为了防止意想不到的结果，建议依照字母的顺序定义 <code>ENUM</code> 列表。也可以通过使用 <code>GROUP BY CONCAT(col)</code> 来确定该以字母顺序排序而不是以索引值。</p>
+<p>如果希望得到一个 <code>ENUM</code> 列的所有可能值，可以使用 <code>SHOW COLUMNS FROM table_name LIKE enum_colum</code></p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2007/09/e5-87-a0-e8-bf-91-e7-98-ab-e7-97-aa-e7-9a-84www-miibeian-gov-cn.html">几近瘫痪的www.miibeian.gov.cn</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2007/09/ime-mode.html">Ime-Mode</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

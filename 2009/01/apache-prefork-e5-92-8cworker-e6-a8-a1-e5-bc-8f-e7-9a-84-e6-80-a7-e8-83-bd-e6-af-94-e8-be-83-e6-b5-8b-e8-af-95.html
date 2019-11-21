@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      Apache Prefork和Worker模式的性能比较测试 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Apache Prefork和Worker模式的性能比较测试</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2009/01/09</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+                
+                  <a href="/categories/技术杂文">技术杂文</a>
+                
+              
+          </span>
+        </span>
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>选择prefork还是worker可以在编译时使用�with-mpm=MPM参数指定,默认为prefork,<br>prefork<br>prefork采用预派生子进程方式，用单独的子进程来处理 不同的请求，进程之间彼此独立。在make编译和make<br>install安装后，使用httpd<br>-l来确定当前使用的MPM是prefork.c。查看httpd-mpm.conf配置文件，里面包含如下默认的配置段：<br><ifmodule prefork.c><br>StartServers 5<br>MinSpareServers 5<br>MaxSpareServers 10<br>MaxClients 150<br>MaxRequestsPerChild 0<br></ifmodule><br>prefork 控制进程在最初建立”StartServers”个子进程后，为了满足MinSpareServers设置的需要创建一个进程，等待一秒钟，继续创建两<br>个，再等待一秒钟，继续创建四个……如此按指数级增加创建的进程数，最多达到每秒32个，直到满足MinSpareServers设置的值为止。这种模式<br>可以不必在请求到来时再产生新的进程，从而减小了系统开销以增加性能。MaxSpareServers设置了最大的空闲进程数，如果空闲进程数大于这个<br>值，Apache会自动kill掉一些多余进程。这个值不要设得过大，但如果设的值比MinSpareServers小，Apache会自动把其调整为<br>MinSpareServers+1。如果站点负载较大，可考虑同时加大MinSpareServers和MaxSpareServers。<br>MaxRequestsPerChild设置的是每个子进程可处理的请求数。每个子进程在处理了”MaxRequestsPerChild”个请求后将自<br>动销毁。0意味着无限，即子进程永不销毁。虽然缺省设为0可以使每个子进程处理更多的请求，但如果设成非零值也有两点重要的好处：1、可防止意外的内存泄<br>漏。2、在服务器负载下降的时侯会自动减少子进程数。因此，可根据服务器的负载来调整这个值。MaxClients是这些指令中最为重要的一个，设定的是<br>Apache可以同时处理的请求，是对Apache性能影响最大的参数。其缺省值150是远远不够的，如果请求总数已达到这个值（可通过ps<br>-ef|grep http|wc<br>-l来确认），那么后面的请求就要排队，直到某个已处理请求完毕。这就是系统资源还剩下很多而HTTP访问却很慢的主要原因。虽然理论上这个值越大，可以<br>处理的请求就越多，但Apache默认的限制不能大于256。ServerLimit指令无须重编译Apache就可以加大MaxClients。<br><ifmodule prefork.c><br>ServerLimit 10000<br>StartServers 5<br>MinSpareServers 5<br>MaxSpareServers 10<br>MaxClients 10000<br>MaxRequestsPerChild 0<br></ifmodule></p>
+<p>Worker<br>相 对于prefork，worker全新的支持多线程和多进程混合模型的MPM。由于使用线程来处理，所以可以处理相对海量的请求，而系统资源的开销要小于<br>基于进程的服务器。但是，worker也使用了多进程，每个进程又生成多个线程，以获得基于进程服务器的稳定性。在configure<br>�with-mpm=worker后，进行make编译、make<br>install安装。在缺省生成的httpd-mpm.conf中有以下默认配置段：<br><ifmodule worker.c><br>StartServers 2<br>MaxClients 150<br>MinSpareThreads 25<br>MaxSpareThreads 75<br>ThreadsPerChild 25<br>MaxRequestsPerChild 0<br></ifmodule><br>Worker 由主控制进程生成”StartServers”个子进程，每个子进程中包含固定的ThreadsPerChild线程数，各个线程独立地处理请求。同样，<br>为了不在请求到来时再生成线程，MinSpareThreads和MaxSpareThreads设置了最少和最多的空闲线程数；而MaxClients<br>设置了同时连入的clients最大总数。如果现有子进程中的线程总数不能满足负载，控制进程将派生新的子进程。MinSpareThreads和<br>MaxSpareThreads的最大缺省值分别是75和250。这两个参数对Apache的性能影响并不大，可以按照实际情况相应调节。<br>ThreadsPerChild是worker<br>MPM中与性能相关最密切的指令。ThreadsPerChild的最大缺省值是64，如果负载较大，64也是不够的。这时要显式使用<br>ThreadLimit指令，它的最大缺省值是20000。Worker模式下所能同时处理的请求总数是由子进程总数乘以ThreadsPerChild<br>值决定的，应该大于等于MaxClients。如果负载很大，现有的子进程数不能满足时，控制进程会派生新的子进程。默认最大的子进程总数是16，加大时<br>也需要显式声明ServerLimit（最大值是20000）。需要注意的是，如果显式声明了ServerLimit，那么它乘以<br>ThreadsPerChild的值必须大于等于MaxClients，而且MaxClients必须是ThreadsPerChild的整数倍，否则<br>Apache将会自动调节到一个相应值。<br><ifmodule worker.c><br>ServerLimit 25<br>ThreadLimit 200<br>StartServers 3<br>MaxClients 2000<br>MinSpareThreads 50<br>MaxSpareThreads 200<br>ThreadsPerChild 100<br>MaxRequestsPerChild 0<br></ifmodule><br>下面是利用Apache自带的测试工具ab对Server进行测试的情况(设定请求的index页面为6bytes),cpu%为cpu占用率，mem为内存使用量(M为单位)，RequestsPerSecond为每秒处理的请求数。<br>1、Prefor方式<br>(ServerLimit,StartServer,MinSpareServers,MaxSpareServers,MaxClients,MaxRequestPerChild)<br>-n/-c(ab参数) Cpu% Mem<br>Requestspersecond<br>(－,5,5,10,150,0)<br>100000/100 28.8 285 8434<br>100000/200 29.2 304 8032<br>100000/500 25.3 323 7348<br>100000/1000 24.4 330 5886<br>(10000,5,5,10,500,0)<br>100000/100 28.7 371 8345<br>100000/200 27.4 389 7929<br>100000/500 24.9 417 7229<br>100000/1000 23.4 437 6676<br>(10000,5,5,10,1000,0)<br>100000/100 28.8 408 8517<br>100000/200 27.0 422 8045<br>100000/500 24.2 455 7236<br>100000/1000 22.5 470 6570<br>(10000,5,5,10,1500,0)<br>100000/100 29.6 330 8407<br>100000/200 28.1 349 8014<br>100000/500 26.4 380 7290<br>100000/1000 24.0 400 6686<br>2、Worker方式<br>(ServerLimt,Threadlimt,Startservers,MaxClients,MinspareThread,MaxspareThread,ThreadperChild,MaxRequestPerChild)</p>
+<p>-n/-c(ab参数) cpu% mem RequestsperSecond<br>(50,500,5,10000,50,200,200,0)<br>100000/100 18.6 188 6020<br>100000/200 20.1 195 5892<br>100000/500 19.8 209 5708<br>100000/1000 22.2 218 6081<br>(100,500,5,10000,50,200,100,0)<br>100000/100 24.5 240 6919<br>100000/200 23.6 247 6798<br>100000/500 24.6 254 6827<br>100000/1000 22.3 271 6114<br>(200,500,5,10000,50,200,50,0)<br>100000/100 27.3 301 7781<br>100000/200 27.4 307 7789<br>100000/500 26.0 320 7141<br>100000/1000 21.8 344 6110<br>相对来说，prefork方式速度要稍高于worker，然而它需要的cpu和memory资源也稍多于woker。</p>
+<p>humen1 Tech<a href="https://blogger.googleusercontent.com/tracker/7269874978253342363-2824117072610295259?l=www.humen1.net" target="_blank" rel="noopener" data-caption data-fancybox="images"><img src="https://blogger.googleusercontent.com/tracker/7269874978253342363-2824117072610295259?l=www.humen1.net" alt></a></p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2009/01/e6-9f-a5-e7-9c-8bhttpd-e8-bf-9b-e7-a8-8b-e6-95-b0.html">查看Httpd进程数</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2009/01/e6-b5-b7-e5-ba-95-e4-b8-96-e7-95-8c.html">海底世界</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

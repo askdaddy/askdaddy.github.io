@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      基于Apache Mod_proxy的反向代理缓存加速实现 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">基于Apache Mod_proxy的反向代理缓存加速实现</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2008/01/11</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/unix">unix</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>　　Apache包含了mod_proxy模块，可以用来实现代理<a href="http://www.bitscn.com/server/" target="_blank" rel="noopener">服务器</a>，针对后台<a href="http://www.bitscn.com/server/" target="_blank" rel="noopener">服务器</a>的反向加速<br>　　安装apache 1.3.x 编译时：<br>　　–enable-shared=max –enable-module=most<br>　　注：Apache 2.x中mod_proxy已经被分离成mod_proxy和mod_cache：同时mod_cache有基于文件和基于内存的不同实现<br>　　创建/var/www/proxy，设置apache服务所用户可写<br>　　mod_proxy配置样例：反相代理缓存＋缓存<br>　　架设前台的<a href="http://www.example.com反向代理后台的www.backend.com的8080端口服务。" target="_blank" rel="noopener">www.example.com反向代理后台的www.backend.com的8080端口服务。</a><br>　　修改：httpd.conf<br>　　<br>　　ServerName <a href="http://www.example.com" target="_blank" rel="noopener">www.example.com</a><br>　　ServerAdmin <a href="mailto:admin@example.com" target="_blank" rel="noopener">admin@example.com</a><br>　　# reverse proxy setting<br>　　ProxyPass / <a href="http://www.backend.com:8080/" target="_blank" rel="noopener">http://www.backend.com:8080/</a><br>　　ProxyPassReverse / <a href="http://www.backend.com:8080/" target="_blank" rel="noopener">http://www.backend.com:8080/</a><br>　　# cache dir root<br>　　CacheRoot “/var/www/proxy”<br>　　# max cache storage<br>　　CacheSize 50000000<br>　　# hour: every 4 hour<br>　　CacheGcInterval 4 bitsCN_com<br>　　# max page expire time: hour<br>　　CacheMaxExpire 240<br>　　# Expire time = (now - last_modified) * CacheLastModifiedFactor<br>　　CacheLastModifiedFactor 0.1<br>　　# defalt expire tag: hour<br>　　CacheDefaultExpire 1<br>　　# force complete after precent of content retrived: 60-90%<br>　　CacheForceCompletion 80<br>　　CustomLog /usr/local/apache/logs/dev_access_log combined<br>　　<br>　　<br>　　<strong>基于Squid的反向代理加速实现</strong><br>　　Squid是一个更专用的代理<a href="http://www.bitscn.com/server/" target="_blank" rel="noopener">服务器</a>，性能和效率会比Apache的mod_proxy高很多。<br>　　如果需要combined格式日志补丁：<br>　　 <a href="http://www.squid-cache.org/mail-archive/squid-dev/200301/0164.html" target="_blank" rel="noopener">http://www.squid-cache.org/mail-archive/squid-dev/200301/0164.html</a><br>　　squid的编译：<br>　　./configure –enable-useragent-log　–enable-referer-log –enable-default-err-language=Simplify_Chinese –enable-err-languages=”Simplify_Chinese English” –disable-internal-dns　<br>　　make<br>　　#make install<br>　　#cd /usr/local/squid<br>　　make dir cache<br>　　chown squid.squid *<br>　　vi /usr/local/squid/etc/squid.conf 中国网管论坛<br>　　在/etc/hosts中：加入内部的DNS解析，比如：<br>　　 <a href="http://192.168.0.4" target="_blank" rel="noopener">192.168.0.4</a> [url]<a href="http://www.chedong.com\[/url\]" target="_blank" rel="noopener">www.chedong.com\[/url\]</a><br>　　<a href="http://192.168.0.4" target="_blank" rel="noopener">192.168.0.4</a> <a href="http://news.chedong.com" target="_blank" rel="noopener">news.chedong.com</a><br>　　<a href="http://192.168.0.3" target="_blank" rel="noopener">192.168.0.3</a> <a href="http://bbs.chedong.com" target="_blank" rel="noopener">bbs.chedong.com</a><br>　　———————cut here———————————-<br>　　# visible name<br>　　visible_hostname <a href="http://cache.example.com" target="_blank" rel="noopener">cache.example.com</a><br>　　# cache config: space use 1G and memory use 256M<br>　　cache_dir ufs /usr/local/squid/cache 1024 16 256<br>　　cache_mem 256 MB<br>　　cache_effective_user squid<br>　　cache_effective_group squid<br>　　<br>　　http_port 80<br>　　httpd_accel_host virtual<br>　　httpd_accel_single_host off<br>　　httpd_accel_port 80<br>　　httpd_accel_uses_host_header on<br>　　httpd_accel_with_proxy on<br>　　# accelerater my domain only<br>　　acl acceleratedHostA dstdomain .example1.com<br>　　acl acceleratedHostB dstdomain .example2.com<br>　　acl acceleratedHostC dstdomain .example3.com<br>　　# accelerater http protocol on port 80<br>　　acl acceleratedProtocol protocol HTTP<br>　　acl acceleratedPort port 80<br>　　# access arc 中国网管联盟<br>　　acl all src <a href="http://0.0.0.0/0.0.0.0" target="_blank" rel="noopener">0.0.0.0/0.0.0.0</a><br>　　# Allow requests when they are to the accelerated machine AND to the<br>　　# right port with right protocol<br>　　http_access allow acceleratedProtocol acceleratedPort acceleratedHostA<br>　　http_access allow acceleratedProtocol acceleratedPort acceleratedHostB<br>　　http_access allow acceleratedProtocol acceleratedPort acceleratedHostC<br>　　# logging<br>　　emulate_httpd_log on<br>　　cache_store_log none<br>　　# manager<br>　　acl manager proto cache_object<br>　　http_access allow manager all<br>　　cachemgr_passwd pass all<br>　　<br>　　———————-cut here———————————<br>　　创建缓存目录：<br>　　/usr/local/squid/sbin/squid -z<br>　　启动squid<br>　　/usr/local/squid/sbin/squid<br>　　停止squid：<br>　　/usr/local/squid/sbin/squid -k shutdown<br>　　启用新配置：<br>　　/usr/local/squid/sbin/squid -k reconfig<br>　　通过crontab每天0点截断/轮循日志：<br>　　0 0 * * * (/usr/local/squid/sbin/squid -k rotate)<br>　　<br>　　<strong>附：SQUID性能测试试验</strong></p>
+<p><a href="http://bitscn.com" target="_blank" rel="noopener">bitscn.com</a></p>
+<p>　　phpMan.php是一个基于php的man page server，每个man<br>　　page需要调用后台的man命令和很多页面格式化工具，系统负载比较高，提供了Cache<br>　　Friendly的URL，以下是针对同样的页面的性能测试资料：<br>　　测试环境：Redhat 8 on Cyrix 266 / 192M Mem<br>　　测试程序：使用apache的ab(apache benchmark)：<br>　　测试条件：请求50次，并发50个连接<br>　　测试项目：直接通过apache 1.3 (80端口) vs squid 2.5(8000端口：加速80端口)<br>　　<br>　　测试1：无CACHE的80端口动态输出：<br>　　ab -n 100 -c 10 [url]<a href="http://www.chedong.com:81/phpMan.php/man/kill/1\[/url\]" target="_blank" rel="noopener">http://www.chedong.com:81/phpMan.php/man/kill/1\[/url\]</a><br>　　This is ApacheBench, Version 1.3d &lt;$Revision: 1.2 $&gt; apache-1.3<br>　　Copyright (c) 1996 Adam Twiss, Zeus Technology Ltd,<br>　　[url]<a href="http://www.zeustech.net/\[/url\]" target="_blank" rel="noopener">http://www.zeustech.net/\[/url\]</a><br>　　Copyright (c) 1998-2001 The Apache Group, [url]<a href="http://www.apache.org/\[/url\]" target="_blank" rel="noopener">http://www.apache.org/\[/url\]</a><br>　　<br>　　Benchmarking localhost (be patient)…..done<br>　　Server Software:　　　<br>　　Apache/1.3.23　　　　　　　　　　　　　　　　　　<br>　　Server Hostname:　　　　localhost<br>　　Server<br>　　Port:　　　　　 BBS.bitsCN.com网管论坛<br>　　80<br>　　<br>　　Document Path:　　　　<br>　　/phpMan.php/man/kill/1<br>　　Document Length:　　　　4655 bytes<br>　　<br>　　Concurrency Level:　　　5<br>　　Time taken for tests:　 63.164 seconds<br>　　Complete requests:　　　50<br>　　Failed requests:　　　　0<br>　　Broken pipe errors:　　 0<br>　　Total transferred:　　　245900 bytes<br>　　HTML transferred:　　　 232750 bytes<br>　　Requests per second:　　0.79 [#/sec] (mean)<br>　　Time per request:　　　 6316.40 [ms]<br>　　(mean)<br>　　Time per request:　　　 1263.28 [ms]<br>　　(mean, across all concurrent requests)<br>　　Transfer rate:　　　　<br>　　3.89 [Kbytes/sec] received<br>　　<br>　　Connnection Times (ms)<br>　　　　　　　　<br>　　min　mean[+/-sd] median　 max<br>　　Connect:　　　　0　<br>　　29　106.1　　　0　 553<br>　　Processing:　2942　6016<br>　　1845.4　 6227 10796<br>　　<br>　　Waiting:　　<br>　　2941　5999 1850.7　 6226 10795<br>　　<br>　　Total:　　　<br>　　2942　6045 1825.9　 6227 10796<br>　　<br>　　Percentage of the requests served within a certain time (ms)</p>
+<p>bitsCN.Com</p>
+<p>　　　50%　 6227<br>　　　66%　 706 9<br>　　　75%　 7190<br>　　　80%　 7474<br>　　　90%　 8195<br>　　　95%　 8898<br>　　　98%　 9721<br>　　　99%　10796<br>　　100%　10796 (last request)<br>　　<br>　　测试2：SQUID缓存输出<br>　　/home/apache/bin/ab -n50 -c5<br>　　“<a href="http://localhost:8000/phpMan.php/man/kill/1" target="_blank" rel="noopener">http://localhost:8000/phpMan.php/man/kill/1</a>“<br>　　This is ApacheBench, Version 1.3d &lt;$Revision: 1.2 $&gt; apache-1.3<br>　　Copyright (c) 1996 Adam Twiss, Zeus Technology Ltd,<br>　　[url]<a href="http://www.zeustech.net/\[/url\]" target="_blank" rel="noopener">http://www.zeustech.net/\[/url\]</a><br>　　Copyright (c) 1998-2001 The Apache Group, [url]<a href="http://www.apache.org/\[/url\]" target="_blank" rel="noopener">http://www.apache.org/\[/url\]</a><br>　　<br>　　Benchmarking localhost (be patient)…..done<br>　　Server Software:　　　<br>　　Apache/1.3.23　　　　　　　　　　　　　　　　　　<br>　　Server Hostname:　　　　localhost<br>　　Server<br>　　Port:　　　　　<br>　　8000<br>　　<br>　　Document Path:　　　　<br>　　/phpMan.php/man/kill/1<br>　　Document Length:　　　　4655 bytes<br>　　<br>　　Concurrency Level:　　　5<br>　　Time taken for tests:　 4.265 seconds<br>　　Complete requests:　　　50</p>
+<p>bitsCN.nET中国网管博客</p>
+<p>　　Failed requests:　　　　0<br>　　Broken pipe errors:　　 0<br>　　Total transferred:　　　248043 bytes<br>　　HTML transferred:　　　 232750 bytes<br>　　Requests per second:　　11.72 [#/sec] (mean)<br>　　Time per request:　　　 426.50 [ms] (mean)<br>　　Time per request:　　　 85.30 [ms] (mean,<br>　　across all concurrent requests)<br>　　Transfer rate:　　　　<br>　　58.16 [Kbytes/sec] received<br>　　<br>　　Connnection Times (ms)<br>　　　　　　　　<br>　　min　mean[+/-sd] median　 max<br>　　Connect:　　　<br>　　0　　 1　<br>　　9.5　　　0　　68<br>　　Processing:　　<br>　　7　　83　537.4　　<br>　　7　3808<br>　　<br>　　Waiting:　　　<br>　　5　　81　529.1　　<br>　　6　3748<br>　　<br>　　Total:　　　　<br>　　7　　84　547.0　　<br>　　7　3876<br>　　<br>　　Perce  </p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2008/01/flashmediaserver-e5-ae-89-e8-a3-85-e7-af-87.html">FlashMediaServer安装篇</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2008/01/windows-xp-e5-88-a0-e9-99-a4-e6-9c-8d-e5-8a-a1.html">Windows Xp 删除服务</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

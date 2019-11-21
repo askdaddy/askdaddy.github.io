@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      Mysql 主从镜像机制[Freebsd] - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Mysql 主从镜像机制[Freebsd]</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/12/18</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/unix">unix</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>测试用例</p>
+<p>主机和从机配置完全一样。环境vm5.5.3 Freebsd6.2 Mysql-5.1.4</p>
+<p>master : <a href="http://192.168.1.71" target="_blank" rel="noopener">192.168.1.71</a><br>slave  : <a href="http://192.168.1.72" target="_blank" rel="noopener">192.168.1.72</a></p>
+<p>mysql是ports默认设置安装的<br>数据文件在/var/db/mysql/下</p>
+<p>1.主机配置<br>#mysql -u root -p<br>#Enter password:</p>
+<p>mysql&gt;GRANT FILE,SELECT,REPLICATION SLAVE ON <em>.</em> TO <a href="mailto:seven@192.168.1.72" target="_blank" rel="noopener">seven@192.168.1.72</a> IDENTIFIED BY ‘seven’;<br>mysql&gt; flush tables with read lock;<br>mysql&gt; show master status;<br>+——————+———-+————–+——————+<br>| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |<br>+——————+———-+————–+——————+<br>| mysql-bin.000035 |      106 |              |                  |<br>+——————+———-+————–+——————+<br>1 row in set (0.01 sec)<br>记下file &amp; position</p>
+<p>mysql&gt;exit<br>#/usr/local/etc/rc.d/mysql_server stop</p>
+<p>#ee /etc/my.cnf</p>
+<p>[mysqld]下<br>server-id=1<br>log-bin=mysql-bin #log文件名</p>
+<p>2.从机配置</p>
+<p>#ee /etc/my.cnf<br>[mysqld]下<br>server-id=2</p>
+<p>重启mysql<br>#mysql -u root -p<br>#Enter password:</p>
+<p>mysql&gt;CHANGE MASTER TO<br>    -&gt;     MASTER_HOST=’<a href="http://192.168.1.71" target="_blank" rel="noopener">192.168.1.71</a>‘,           -- 主服务器名或IP地址<br>    -&gt;     MASTER_USER=’seven’,<br>    -&gt;     MASTER_PASSWORD=’seven’,<br>    -&gt;     MASTER_LOG_FILE=’mysql-bin.000035’,    – 日志名<br>    -&gt;     MASTER_LOG_POS=106;                    – 显示偏移量<br>mysql&gt;START SLAVE;                                – 启动从服务器线程</p>
+<p>—–重启2台服务器—–</p>
+<p><strong>**</strong>测试<strong><strong>*<br>在主服务器（1.71）数据库上做如下操作:<br>mysql&gt; show processlist\G<br>*************************** 1. row <strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong></strong><br>     Id: 1<br>   User: root<br>   Host: localhost<br>     db: NULL<br>Command: Query<br>   Time: 0<br>  State: NULL<br>   Info: show processlist<br>*************************** 2. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>     Id: 2<br>   User: seven<br>   Host: <a href="http://192.168.1.72:56493" target="_blank" rel="noopener">192.168.1.72:56493</a><br>     db: NULL<br>Command: Binlog Dump<br>   Time: 510<br>  State: Has sent all binlog to slave; waiting for binlog to be updated<br>   Info: NULL<br>2 rows in set (0.01 sec)</p>
+<p>在从服务器（1.72）数据库上做如下操作:</p>
+<p>mysql&gt; show processlist\G<br>*************************** 1. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>     Id: 1<br>   User: system user<br>   Host:<br>     db: NULL<br>Command: Connect<br>   Time: 577<br>  State: Waiting for master to send event<br>   Info: NULL<br>*************************** 2. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>     Id: 2<br>   User: system user<br>   Host:<br>     db: NULL<br>Command: Connect<br>   Time: 451<br>  State: Has read all relay log; waiting for the slave I/O thread to update it<br>   Info: NULL<br>*************************** 3. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>     Id: 3<br>   User: root<br>   Host: localhost<br>     db: NULL<br>Command: Query<br>   Time: 0<br>  State: NULL<br>   Info: show processlist<br>3 rows in set (0.01 sec)</p>
+<p>还可以使用。。。。</p>
+<p>查看主机状态<br>mysql&gt; show master status\G<br>*************************** 1. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>            File: mysql-bin.000022<br>        Position: 453<br>    Binlog_Do_DB:<br>Binlog_Ignore_DB:<br>1 row in set (0.00 sec)</p>
+<p>查看从服务器状态<br>mysql&gt; show slave status\G<br>*************************** 1. row <strong><strong><strong><strong><strong><strong>***</strong></strong></strong></strong></strong></strong><br>               Slave_IO_State: Waiting for master to send event<br>                  Master_Host: <a href="http://192.168.1.71" target="_blank" rel="noopener">192.168.1.71</a><br>                  Master_User: seven<br>                  Master_Port: 3306<br>                Connect_Retry: 60<br>              Master_Log_File: mysql-bin.000022<br>          Read_Master_Log_Pos: 453<br>               Relay_Log_File: bsd_s-relay-bin.000009<br>                Relay_Log_Pos: 598<br>        Relay_Master_Log_File: mysql-bin.000022<br>             Slave_IO_Running: Yes<br>            Slave_SQL_Running: Yes<br>              Replicate_Do_DB:<br>          Replicate_Ignore_DB:<br>           Replicate_Do_Table:<br>       Replicate_Ignore_Table:<br>      Replicate_Wild_Do_Table:<br>  Replicate_Wild_Ignore_Table:<br>                   Last_Errno: 0<br>                   Last_Error:<br>                 Skip_Counter: 0<br>          Exec_Master_Log_Pos: 453<br>              Relay_Log_Space: 898<br>         &amp;nbs p;    Until_Condition: None<br>               Until_Log_File:<br>                Until_Log_Pos: 0<br>           Master_SSL_Allowed: No<br>           Master_SSL_CA_File:<br>           Master_SSL_CA_Path:<br>              Master_SSL_Cert:<br>            Master_SSL_Cipher:<br>               Master_SSL_Key:<br>        Seconds_Behind_Master: 0<br>Master_SSL_Verify_Server_Cert: No<br>                Last_IO_Errno: 2013<br>                Last_IO_Error: error connecting to master <a href="mailto:'seven@192.168.1.71:3306'">‘seven@192.168.1.71:3306’</a> - retry-time: 60  retries: 86400<br>               Last_SQL_Errno: 0<br>               Last_SQL_Error:<br>1 row in set (0.00 sec)  </p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2007/12/e4-b8-8d-e8-83-bd-e7-94-a8outlook-e5-8f-91-e4-bf-a1-ef-bc-9ffreebsd-sendmail.html">不能用Outlook发信？(freebsd Sendmail)</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2007/12/e5-bf-98-e8-ae-b0mysql-e5-af-86-e7-a0-81-ef-bc-9ffreebsd.html">忘记Mysql密码？[freebsd]</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

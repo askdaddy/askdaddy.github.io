@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      FreeBSD 利用 Ports 安装与配置 Apache,mysql,php - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">FreeBSD 利用 Ports 安装与配置 Apache,mysql,php</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2007/11/20</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/unix">unix</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>首先申明,本帖非原创,但也不是转帖,是本人结合网络搜集的资料与自己实际安装操作过程中总结所得.那么就让我代表广大爱好者向那些站在我们脚下的巨人以及那些能抽出时间为我们写总结的人们致敬吧,因为在本人实践中深切地体会到他们的伟大与能够在百忙与他人分享经验的难能可贵.本帖适合新手或安装过程中出现同类问题的同志们参考,高人可以跳过了;但若能留下指点,自是不胜感激了.  </p>
+<p>众所周知,FreeBSD 提供了软件的 ports 安装方式, 可以很方便的定制安装所需要的应用软件.当我们装好系统之后,当然首先想到是配置 web 服务器,FreeBSD 默认标准安装并没有安装 apache,mysql 和 php,所以就要亲自动手安装了.ports 安装方式的好处在于,不会像 LINUX 那样,由于一个依懒包或者库文件而导至不得不到处找依懒包或库文件,下载下来全部装好再来装需要安装的软件;因为它会自动下载并安装依懒包或库文件,当然也不是每次都成功的,毕竟每个人遇到的错误可能是千奇百怪的.尽管网络上关于这方面的东西一搜一大堆 ,但个人认为好多都只是概念性的,但手册毕竟不是万能的;所以本人结合网摘与自己在安装过程遇的问题以及对问题的分析与解决来清晰的描述整个安装过程.  </p>
+<p>测试机环境:%uname -aFreeBSD <a href="http://www.myfreebsd.cn/6.2-RELEASE" target="_blank" rel="noopener">http://www.myfreebsd.cn/6.2-RELEASE</a> FreeBSD 6.2-RELEASE #0: Fri Jan 11 11:11:11 UTC 2007 <a href="mailto:root@dessler.cse.buffalo.edu:/usr/obj/usr/src/sys/GENERIC" target="_blank" rel="noopener">root@dessler.cse.buffalo.edu:/usr/obj/usr/src/sys/GENERIC</a> i386  </p>
+<p>言归正传(安装系统不在讨论之列),开始我们的令人兴奋不已的征程吧.  </p>
+<p>1.apache 的安装与配置apache 给人感觉不光是稳定,还有亲切.之前偶在 RedHat 下手工编译安装过,相当顺利.这次用 ports 安装,同样的顺畅.  </p>
+<p>%whereis apache22apache22: /usr/ports/www/apache22 %cd /usr/ports/www/apache22%su /<em>取得管理员权限</em>/Password:www#make WITH_MPM=worker WITHOUT_IPV6=yes WITH_THREADS=yes WITHOUT_SSL=yes install clean  </p>
+<p>上面是手工指定编译选项,其实也可用以下命令来通过一个简易图形化界面选择编译选项:www# make config选择好选项 OK ,然后再www# make install clean  </p>
+<p>现在来配置 apache.www# cd /usr/local/etc/apache22/ /*apache 配置文件的目录*/www# cp httpd.conf httpd.conf.bak /<em>备份文件,以防不测</em>/www# vi httpd.conf /<em>编辑配置文件</em>/ 以下有改动的地方,当然您要是对 apache 相当熟悉了,可以略过了.(比如默认的服务器目录是 /usr/local/www/apache22/data ,可以根据需要设置.相关的配置文件忒多了.只要记得对应修改就行了.)…#管理员的电子邮箱;ServerAdmin <a href="mailto:hy0kle@gmail.com" target="_blank" rel="noopener">hy0kle@gmail.com</a>…#服务的名称,若没有 DNS 域名最写作主机的 IP;ServerName 192.168.0.226:80…#反正装了 PHP 后要回来设置的,不如一次性写好了.^_^添加对 PHP 的支持;偶当时少写了一个 d ,导至 apache 无法解析 PHP 文件,提示要下载文件;网有网友少写 / ;小小的疏忽造成的后果是花在量时间排错; DirectoryIndex index.html index.php…AddType application/x-gzip .gz .tgz AddType application/x-httpd-php .phpAddType application/x-httpd-php-source .phps…  </p>
+<p>设置为开机自动运行.www# vi /etc/rc.conf#添加下面这句后保存退出;apache22_enable=”YES”  </p>
+<p>启动 apache.www# cd /usr/local/etc/apche22/rc.d/www# ./apache22 start  </p>
+<p>Now,激动人心的时间到了,打开浏览器,输入 <a href="http://127.0.0.1/" target="_blank" rel="noopener">http://127.0.0.1/</a> 或 <a href="http://localhost/" target="_blank" rel="noopener">http://localhost</a> 回车.如果看到大大的”It works!”字样,那么恭喜了,apache 安装成功了.  </p>
+<p>2.安装 mysqlmysql 对我来说有阴影.大四的时候,我一同学在 FreeBSD 下安装 mysql 的次数绝对不下于我在 BSD 下安装五笔[scim]所尝试的次数(几乎方试遍了我所能找到的方法,要不是爱迪生的精神支持着我,怕就放弃了,只不过他在发明,我在发现.最终还是尝到了成功的喜悦).故安装的时候并没有”吊以轻心”.但是安装过程还是出了问题,出错信息当时忘了记录了,大致意思是 mysql-client 已经存在,但版本不一致, 无法安装.因为之前我安装过 KDE 桌面,而 mysql-client-5.0 作为一个依懒包已经安装上了.于是为为防止强制安装造成无法使用,而且最新版本不一定就好于旧版本(有点吃不到葡萄说葡萄酸的嫌疑^*^),所以我退而求其次了,没有装 5.1 ,改装 5.0 了.  </p>
+<p>%cd /usr/ports/databases/mysql50-server/%suPassword:www# make WITH_CHARSET=gbk WITH_XCHARSET=all WITH_PROC_SCOPE_PTH=yes BUILD_OPTIMIZED=yes BUILD_STATIC=yes SKIP_DNS_CHECK=yes WITHOUT_INNODB=yes install clean 同样, mysql 也有简易图形化编译选项设置;www# make config选择好选项 OK ,然后再www# make install clean  </p>
+<p>等待一会儿了…如果没有报错回到提示符,那就说明是好消息了,恭喜! mysql 也安装成功了,下面就设置它也为开机启动吧. www# rehash /<em>刷新一下系统</em>/www# vi /etc/rc.conf#添加下面的选项后保存退出;mysql_enable=”YES”  </p>
+<p>OK,来启动 mysql 吧.www# cd /usr/local/etc/rc.d/wwww# ./mysql-server start如果不出意外,现在 mysql 已经启动了,那么就怀着得意的心情测试一下吧:www# mysql理论上会出现 mysql 的提示符.:)  </p>
+<p>3.安装 phpcome on.当初以为 php 应该不会再有什么问题了吧,可结果装了两次才算完全成功.第一次安装时 php 的扩展选项不怎么搞的没有编译进去,运行 phpMyAdmi 时报错.打印出 phpinfo 和查看 apache 配置文件时才发现, apache 根本就没有加载 php 扩展模块.于是只好卸载了重装了一遍 php.如果遇到无法卸载,想要强制重新安装,可以用以下命令:# make install FORCE_PKG_REGISTER=”yes”  </p>
+<p>OK,开始吧.%cd /usr/ports/lang/php5%suPassword:www# make config#记得一定要选中 APACHE22 ,否则 apache 不认 php 文件,会提示你让你下载文件. OK www# make install clean  </p>
+<p>又是等待…如果无报错,回到提示符时,则 php 已经安装了,但是还没有扩展库.  </p>
+<p>www# rehashwww# cd /usr/ports/lang/php5-extensionswww# make config/* php 的扩展库,如 GD,FTP,ZLIB,SESSION,PDF,MYSQL,HASH等等了,按需要定制吧. OK */www# make install clean  </p>
+<p>如果不出什么意外,就等着收获成功的喜悦吧.不过,现在还不算完.  </p>
+<p>www# rehash www# cd /usr/local/etc/rc.d/www# ./apache22 restartwww# cd /usr/local/etc/www# cp php.ini-dist php.ini www# vi php.ini/<em>配置 php.ini,想必到这儿所有都已经不成问题了.还是那句话,按需配置吧;保存并退出.</em>/…safe_mode_gid = Off…www# rehashwww# cd /usr/local/etc/rc.d/www# ./apache22 restart</p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2007/11/linux-e5-90-84-e5-8f-91-e8-a1-8c-e7-89-88-e6-9c-ac-e7-94-b5-e5-ad-90-e8-b5-84-e6-96-99-e6-b1-87-e6-80-bb.html">Linux各发行版本电子资料汇总</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2007/11/freebsd6-0apache2-2-0mysql5-1-7php5-1-2.html">freebsd6.0+apache2.2.0+mysql5.1.7+php5.1.2</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

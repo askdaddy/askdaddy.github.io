@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      Winxp下修改一些默认文件夹的路径 - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Winxp下修改一些默认文件夹的路径</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2008/04/03</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+        
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>首先要在”开始”――”运行”内输入”regedit”打开注册表编辑器，然后要在”文件”下拉菜单中的”导出”功能备份好注册表，以防万一，接着在左侧窗口依次打开：<br>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders<br>在右侧窗口里，你看到的”名称”就代表那些特殊的文件夹，”数据”就是它们所对应的默认存储路径。</p>
+<p>下面介绍一下各个”名称”所代表的文件夹<br>名称 含义 默认路径<br>AppData 应用程序数据目录 C:\Documents and Settings\User name\Application Data<br>Cookies Cookies路径 C:\Documents and Settings\User name\Cookies<br>Desktop 桌面路径 C:\Documents and Settings\User name\桌面<br>Favorites 收藏夹 C:\Documents and Settings\User name\Favorites<br>NetHood NetHood路径 C:\Documents and Settings\User name\NetHood<br>Personal 我的文档 C:\Documents and Settings\User name\My Documents<br>PrintHood 打印 C:\Documents and Settings\User name\PrintHood<br>Recent 文档项路径 C:\Documents and Settings\User name\Recent<br>SendTo SendTo路径 C:\Documents and Settings\User name\SendTo<br>Start Menu 开始菜单路径 C:\Documents and Settings\User name\「开始」菜单<br>Templates 新建文件目录 C:\Documents and Settings\User name\Templates<br>Programs 程序菜单路径 C:\Documents and Settings\User name\「开始」菜单\程序<br>Startup 启动路径 C:\Documents and Settings\User name\「开始」菜单\程序\启动<br>History 网页历史记录 C:\Documents and Settings\ User name \Local Settings\History<br>My Pictures 图片收藏 C:\Documents and Settings\User name\My Documents\My Pictures<br>My Music 我的音乐 C:\Documents and Settings\User name\My Documents\My Music<br>My Video 我的视频 C:\Documents and Settings\User name\My Documents\My Videos<br>Cache Internet临时文件夹 C:\ Documents and Settings\User name \Temporary Internet Files<br>这些文件夹称为Shell文件夹<br>其中”User name”为当前用户的名称<br>了解了对应的文件夹，就可以根据自己的需要去更改对应的路径了。（千万不要在这儿改啊，那样可就瞎忙乎了，系统重起后它会恢复成原来的路径）<br>在同一层中你可以看到一个”User Shell Folders”的子键，即在HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ User Shell Folders<br>这里包括了用户定制的所有Shell文件夹的值项。只要通过修改”数据”，就可以改变它们的存储路径。双击需要修改的名称，在弹出的”编辑字符串”的”数值数据”里填上你要更改的完整路径，按下”确定”就完成了。如果没有你需要的，可以在右边窗口单击鼠标右键，选择”新建”菜单中的”字符串值”命令，对应上表，添加一个用于Shell文件夹的字符串值。<br>在上面的文件夹中，并没有outlook的通讯簿和邮件存放路径，它们分别在<br>通讯簿路径：<br>HKEY_CURRENT_USER\Software\Microsoft\WAB\WAB4\Wab File Name主键下，将”默认”键值改为你需要的路径。<br>邮件存放路径：<br>HKEY_CURRENT_USER\Identities\{8150FA22-A51C-4993-8A96-DC4B9A6B4C55}\Software\Microsoft\Outlook Express\5.0下，将 “Store Root”键值改为你需要的路径。<br>最后别忘了将修改好的这部分注册表导出保存，以便重装系统后可以直接导入而无须再次修改。<br>注意：修改了文件夹的路径值后，原有文件夹中的文件并不会移到新的文件夹中，这样做只改变了文件夹的指向。<br>提示：此方法在win9x 中同样可行。此外，我的文档、Internet临时文件夹可以在它们的属性中修改，邮件存放路径可以在outlook的”工具”→”选项”→”维护”中修改。<br>如果你是多操作系统的用户，可以将相同的文件夹放在同一路径下，这样既减少了硬盘的存储量，也方便了管理和访问，只是”Internet临时文件夹”的”使用的磁盘空间”要设置的相同。  </p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2008/04/freebsd-e4-b8-8d-e9-87-8d-e5-90-af-e6-9b-b4-e6-96-b0-e7-bd-91-e7-bb-9c-e9-85-8d-e7-bd-ae.html">Freebsd不重启更新网络配置</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2008/03/e4-bf-ae-e6-94-b9mysql-root-e5-af-86-e7-a0-81.html">修改Mysql Root密码</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

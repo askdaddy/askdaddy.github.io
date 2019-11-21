@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="technolgy" />
+    <meta name="description" content="Seven‘s Lab" />
+    
+    <title>
+      mcrypt使用[PHP] - Seven‘s Lab
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../style/style.css">
+  <link rel="alternate" href="atom.xml" title="Seven‘s Lab" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="../../index.html" class="">
+          Home
+        </a>
+        
+        <a href="../../archives" class="">
+          Archives
+        </a>
+        
+        <a href="../../categories" class="">
+          Categories
+        </a>
+        
+        <a href="../../tags" class="">
+          Tags
+        </a>
+        
+        <a href="../../about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">Seven Chen</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">Seven Chen</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="../../index.html" class="">
+            Home
+          </a>
+          
+          <a href="../../archives" class="">
+            Archives
+          </a>
+          
+          <a href="../../categories" class="">
+            Categories
+          </a>
+          
+          <a href="../../tags" class="">
+            Tags
+          </a>
+          
+          <a href="../../about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/askdaddy" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/humen1" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://twitter.com/humen1" target="_block">
+              <span class="iconfont icon-twitter"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">mcrypt使用[PHP]</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2008/02/27</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/NULL">NULL</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/php">php</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <p>要使用本函数库要先准备 mcrypt 程序，可以到 <a href="ftp://argeas.cs-net.gr/pub/unix/mcrypt" target="_blank" rel="noopener">ftp://argeas.cs-net.gr/pub/unix/mcrypt</a> 下载这个程序 libmcrypt-x.x.tar.gz。同时在编译 php 程序时需要加入 –with-mcrypt 的选项，俾使本函数库能顺利运作。<br>本函数提供的编码方式有 des、tripledes、blowfish (默认值)、3-way、safer-sk64、safer-sk128、twofish、tea、rc2 及使用 cbc, ofb, cfb, ecb 作为密码检索的 gost。此外还有 rc6 及 idea 等非免费的编码方式。<br>见下面列示为已定义的密码：</p>
+<p>mcrypt_blowfish<br>mcrypt_des<br>mcrypt_tripledes<br>mcrypt_threeway<br>mcrypt_gost<br>mcrypt_crypt<br>mcrypt_des_compat<br>mcrypt_safer64<br>mcrypt_safer128<br>mcrypt_cast128<br>mcrypt_tean<br>mcrypt_rc2<br>mcrypt_twofish (mcrypt 2.x 前的版本用)<br>mcrypt_twofish128 (mcrypt 2.x 后的版本用)<br>mcrypt_twofish192<br>mcrypt_twofish256<br>mcrypt_rc6<br>mcrypt_idea<br>在密码检索本 (cipher) 方面，本函库支持 cbc、ofb、cfb 与 ecb 四种密码检索本。这四种密码检索本的简单叙述如下，更详细的信息请参考 schneier 所着作的 applied cryptography (isbn: 0-471-11709-9)：</p>
+<p>ecb (electronic codebook): 适合随机的资料，例如使用另外的密钥。若资料量少且随机时，使用 ecb 较不适合。<br>cbc (cipher block chaining): 适合文件的加密，安全性较 ecb 好。<br>cfb (cipher feedback): 适合对位组资料流中的某段独立位组资料 (single bytes) 加密。<br>ofb (output feedback): 与 cfb 相容，尤其适合在无法忍受错误波及的应用上。<br>目前 php 仍无法对单位 (bit) 的熵值做加密解密的步骤，目前只适合对字符串作密码处理。</p>
+<p>在使用 cfb 及 ofb 二种模式时，必须要向量初始化 (initialization vector, iv)，cbc 模式也可以使用向量初始化。<br>向量初始化的值在加解密时必须是独一无二的，同时也要保持相同。当加密后的资料输出时，也可同时输出密码钥匙 (例如存在文件中)；或者也可以将向量初始化的值与加密后的资料一起输出。</p>
+<p>mcrypt_get_cipher_name: 取得编码方式的名称。<br>mcrypt_get_block_size: 取得编码方式的区块大小。<br>mcrypt_get_key_size: 取得编码钥匙大小。<br>mcrypt_create_iv: 从随机源将向量初始化。<br>mcrypt_cbc: 使用 cbc 将资料加/解密。<br>mcrypt_cfb: 使用 cfb 将资料加/解密。<br>mcrypt_ecb: 使用 ecb 将资料加/解密。<br>mcrypt_ofb: 使用 ofb 将资料加/解密。</p>
+<p>mcrypt_get_cipher_name<br>取得编码方式的名称。<br>语法: string mcrypt_get_cipher_name(int cipher);<br>返回值: 字符串<br>函数种类: 编码处理<br>内容说明: 本函数用来取得编码方式的名称。返回值为名称字符串，若没有指定的编码方式则返回 false 或输入的名称。<br>使用范例<br>下例会输出 tripledes 字符串。<br>$cipher = mcrypt_tripledes;<br>print mcrypt_get_cipher_name($cipher);<br>?&gt;</p>
+<p>mcrypt_get_block_size<br>取得编码方式的区块大小。<br>语法: int mcrypt_get_block_size(int cipher);<br>返回值: 整数<br>函数种类: 编码处理<br>内容说明: 本函数用来取得编码方式的区块大小。参数为编码名称，返回整数单位为位组 (byte)。</p>
+<p>mcrypt_get_key_size<br>取得编码钥匙大小。<br>语法: int mcrypt_get_key_size(int cipher);<br>返回值: 整数<br>函数种类: 编码处理<br>内容说明: 本函数用来取得编码钥匙的大小。参数为编码名称，返回整数治募�单位为位组 (byte)。</p>
+<p>mcrypt_create_iv<br>从随机源将向量初始化。<br>语法: string mcrypt_create_iv(int size, int source);<br>返回值: 字符串<br>函数种类: 编码处理<br>内容说明: 本函数用来建立向量初始化 (initialization vector, iv) 的值。参数 size 为指定的向量初始化长度。<br>参数 source 为随机资料的来源，来源可以是 mcrypt_rand (系统产生的随机值)、mcrypt_dev_random (unix 系统中 /dev/random 的资料)、mcrypt_dev_urandom (unix 系统中 /dev/urandom 的资料)，若使用 mcrypt_rand 当做随机源，记得先使用 srand() 产生乱数种子。<br>使用范例<br>$cipher = mcrypt_tripledes;<br>$block_size = mcrypt_get_block_size($cipher);<br>$iv = mcrypt_create_iv($block_size, mcrypt_dev_random);<br>?&gt;</p>
+<p>mcrypt_cbc<br>使用 cbc 将资料加/解密。<br>语法: string mcrypt_cbc(int cipher, string key, string data, int mode, string [iv]);<br>返回值: 字符串<br>函数种类: 编码处理<br>内容说明: 本函数使用 cbc 密码检索本 (cipher block chaining)，将资料加密及解密。参数 cipher 为加/解密方式，例如 mcrypt_tripledes。参数 key 是密码钥匙，当然要注意保持它的机密性。欲加密或解密的字符串就放在参数 data 之中。参数 mode 表示加密 mcrypt_encrypt 或是解密 mcrypt_decrypt。参数 iv 是可省略的参数，代表向量初始化 (initialization vector, iv)。</p>
+<p>mcrypt_cfb<br>使用 cfb 将资料加/解密。<br>语法: string mcrypt_cfb(int cipher, string key, string data, int mode, string iv);<br>返回值: 字符串<br>函数种类: 编码处理<br>内容说明: 本函数使用 cfb 密码检索本 (cipher feedback)，将资料加密及解密。参数 cipher 为加/解密方式，例如 mcrypt_tripledes。参数 key 是密码钥匙，当然要注意保持它的机密性。欲加密或解密的字符串就放在参数 data 之中。参数 mode 表示加密 mcrypt_encrypt 或是解密 mcrypt_decrypt。参数 iv 是代表向量初始化 (initialization vector, iv)。</p>
+<p>mcrypt_ecb<br>使用 ecb 将资料加/解密。<br>语法: string mcrypt_ecb(int cipher, string key, string data, int mode);<br>返回值: 字符串<br>函数种类: 编码处理<br>内容说明: 本函数使用 ecb 密码检索本 (electronic codebook)，将资料加密及解密。参数 cipher 为加/解密方式，例如 mcrypt_tripledes。参数 key 是密码钥匙，当然要注意保持它的机密性。欲加密或解密的字符串就放在参数 data 之中。参数 mode 表示加密 mcrypt_encrypt 或是解密 mcrypt_decrypt。</p>
+<p>mcrypt_ofb<br>使用 ofb 将资料加/解密。<br>语法: string mcrypt_ofb(int cipher, string key, string data, int mode, string iv);<br>返回值: 字符串<br>函数种类: 编码处理<br>内容说明: 本函数使用 ofb 密码检索本 (output feedback)，将资料加密及解密。参数 cipher 为加/解密方式，例如 mcrypt_tripledes。参数 key 是密码钥匙，当然要注意保持它的机密性。欲加密或解密的字符串就放在参数 data</p>
+<p>humen1 Tech</p>
+
+
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="2008/03/e7-bd-91-e7-ab-99-e6-a3-80-e6-9f-a5-e5-b7-a5-e5-85-b7.html">网站检查工具</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="2008/02/redhat-e6-9f-a5-e7-9c-8b-e7-a1-ac-e4-bb-b6-e4-bf-a1-e6-81-aflinux.html">redhat查看硬件信息[Linux]</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="http://www.humen1.com">Seven Chen</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="http://www.humen1.com">http://www.humen1.com</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="http://www.humen1.com">Seven Chen</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="http://www.humen1.com">Seven Chen</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 
